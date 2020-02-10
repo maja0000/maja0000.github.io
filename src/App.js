@@ -1,15 +1,13 @@
 import React from "react";
 import "./App.css";
+import Onboarding from "./Component/Onboarding.js";
 
-import mainpic from "./pictures/fog.jpg";
+// import mainpic from "./pictures/fog.jpg";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={mainpic} alt="x" />
-        <p></p>
-      </header>
+      <Onboarding />
     </div>
   );
 }
