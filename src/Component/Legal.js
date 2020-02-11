@@ -4,6 +4,7 @@ import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import Link from "@material-ui/core/Link";
+import "./Legal.css";
 
 function Legal() {
   const useStyles = makeStyles(theme => ({
@@ -21,11 +22,11 @@ function Legal() {
   const classes = useStyles();
 
   return (
-    <div className={classes.root}>
+    <div className={classes.root} className="legal">
       <h1>Impressum</h1>
       <p>Angaben gemäß § 5 TMG</p>
-      <p>Wild Code School: Students Heller,Gach and Kolem</p>
-      <p>Oudenarder Straße 16%2C Building E23 </p>
+      <p>Wild Code School: Students Heller, Gach and Kolem</p>
+      <p>Oudenarder Straße 16, Building E23 </p>
       <p> 13347 Berlin</p>
 
       <h1>Privacy Policy for MyMeteo</h1>
