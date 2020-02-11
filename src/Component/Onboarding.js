@@ -1,5 +1,4 @@
 import React from "react";
-import { render } from "@testing-library/react";
 
 class Onboarding extends React.Component {
   render() {
