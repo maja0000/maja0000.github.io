@@ -1,15 +1,13 @@
 import React from "react";
 import "./App.css";
-import Onboarding from "./Component/Onboarding.js";
-import FrontPagePicture from "./Component/FrontPagePicture";
-
-// import mainpic from "./pictures/fog.jpg";
+// import Onboarding from "./Component/Onboarding.js";
+import WeatherDisplay from "./Component/WeatherDisplay";
 
 function App() {
   return (
     <div className="App">
-      <FrontPagePicture />
-      <Onboarding />
+      <WeatherDisplay />
+      {/* <Onboarding />  */}
     </div>
   );
 }
