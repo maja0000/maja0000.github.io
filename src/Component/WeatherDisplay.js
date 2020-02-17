@@ -23,11 +23,28 @@ class WeatherDisplay extends React.Component {
             </li>
           </ul>
         </div>
-        <div className="daily-weather"></div>
+        <div className="daily-weather">
+          <ul className="daily-prediction-list">
+            <li className="daily-prediction-list-leftcolumn">
+              {" "}
+              Rain prediction : 0% <br /> Wind: 12km/h <br /> Humidity: 60%{" "}
+              <br />
+              Visibility 5.0 mi
+            </li>
+            <li>
+              UV Index 0 of 10
+              <br />
+              Sunrise : 7:25am <br />
+              Sunset: 5:15 pm
+            </li>
+          </ul>
+        </div>
+
         <div className="weekly-weather slider">
           <div className="blurred-background slide">
             <p className="day">
               Monday <br />
+              date here <br />
               <img alt="cloud" src={cloud}></img>
             </p>
             <ul className="daily-list">
@@ -40,6 +57,10 @@ class WeatherDisplay extends React.Component {
           </div>
           <div className="blurred-background slide">
             Tuesday <br />
+            <img alt="cloud" src={cloud}></img>
+          </div>
+          <div className="blurred-background slide">
+            Friday <br />
             <img alt="cloud" src={cloud}></img>
           </div>
           <div className="blurred-background slide">
