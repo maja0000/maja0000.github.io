@@ -18,16 +18,7 @@ const useStyles = makeStyles(theme => ({
     height: "100vh",
     width: "100%"
   },
-  //   image: {
-  //     backgroundImage: "url(https://source.unsplash.com/random)",
-  //     backgroundRepeat: "no-repeat",
-  //     backgroundColor:
-  //       theme.palette.type === "dark"
-  //         ? theme.palette.grey[900]
-  //         : theme.palette.grey[50],
-  //     backgroundSize: "cover",
-  //     backgroundPosition: "center"
-  //   },
+
   paper: {
     margin: theme.spacing(8, 4),
     display: "flex",
@@ -37,7 +28,11 @@ const useStyles = makeStyles(theme => ({
 
   form: {
     width: "100%", // Fix IE 11 issue.
-    marginTop: theme.spacing(1)
+    marginTop: theme.spacing(1),
+    display: "flex",
+    justifyContent: "space-between",
+    flexDirection: "column",
+    alignItems: "center"
   },
 
   submitButton: {
@@ -45,7 +40,7 @@ const useStyles = makeStyles(theme => ({
     margin: theme.spacing(3, 0, 2),
     boxShadow:
       "0px 3px 1px -2px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 1px 5px 0px rgba(0,0,0,0.12)",
-    width: "100px"
+    width: "150px"
   }
 }));
 
@@ -85,13 +80,13 @@ export default function SignInSide() {
               id="password"
               autoComplete="current-password"
             />
+            <Button type="submit" className={classes.submitButton}>
+              Sign In
+            </Button>
             <FormControlLabel
               control={<Checkbox value="remember" color="primary" />}
               label="Remember me"
             />
-            <Button type="submit" className={classes.submitButton}>
-              Sign In
-            </Button>
             <Grid container>
               <Grid item xs>
                 <Link href="#" variant="body2">
