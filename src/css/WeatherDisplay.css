@@ -3,7 +3,7 @@
   width: 65%;
   height: 90%;
   margin: 20px;
-  background: url(./pictures/berlin-sky.jpg);
+  background: url(../pictures/berlin-sky.jpg);
   border-radius: 20px;
   display: flex;
 }

@@ -1,5 +1,5 @@
 import React from "react";
-import "./WeatherDisplay.css";
+import "../css/WeatherDisplay.css";
 import WeatherCard from "./WeatherCard.js";
 
 class WeatherDisplay extends React.Component {

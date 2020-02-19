@@ -1,7 +1,7 @@
 import React from "react";
-import cloud from "./pictures/clouds-icon.svg";
+import cloud from "../pictures/clouds-icon.svg";
 import DailyWeatherDetails from "./DailyWeatherDetails";
-import "./WeatherDisplay.css";
+import "../css/WeatherDisplay.css";
 
 function WeatherCard(props) {
   return (
