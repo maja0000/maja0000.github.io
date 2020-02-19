@@ -1,4 +1,5 @@
 import React from "react";
+import SearchBar from "./Component/Searchbar/Searchbar";
 import WeatherDisplay from "./Component/WeatherDisplay";
 import StickyFooter from "./Component/StickyFooter.js";
 import Legal from "./Pages/Legal";
@@ -23,3 +24,4 @@ function App() {
 }
 
 export default App;
+
