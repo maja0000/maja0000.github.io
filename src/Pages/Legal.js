@@ -1,10 +1,16 @@
 import React, { PureComponent } from "react";
-import CssBaseline from "@material-ui/core/CssBaseline";
-import Typography from "@material-ui/core/Typography";
+// import CssBaseline from "@material-ui/core/CssBaseline";
+// import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
+<<<<<<< HEAD:src/Component/Legal.js
 import { Container } from "@material-ui/core/Container";
 import Link from "@material-ui/core/Link";
 import "../css/Legal.css";
+=======
+// import Container from "@material-ui/core/Container";
+// import Link from "@material-ui/core/Link";
+import "../Component/Legal.css";
+>>>>>>> d58c1d250497e524cfd087dcb2b8ff74126f7d21:src/Pages/Legal.js
 
 function Legal() {
   const useStyles = makeStyles(theme => ({
