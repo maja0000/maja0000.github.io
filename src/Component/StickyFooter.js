@@ -1,5 +1,5 @@
 import React from "react";
-import CssBaseline from "@material-ui/core/CssBaseline";
+// import CssBaseline from "@material-ui/core/CssBaseline";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
@@ -11,7 +11,7 @@ function Copyright() {
       {"Copyright © "}
       <Link color="inherit" href="https://juliaheller.github.io/myMeteo/">
         MyMeteo
-      </Link>{" "}
+      </Link>
       {new Date().getFullYear()}
       {"."}
     </Typography>
