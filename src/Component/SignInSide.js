@@ -1,5 +1,4 @@
 import React from "react";
-import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import TextField from "@material-ui/core/TextField";
@@ -12,21 +11,25 @@ import Grid from "@material-ui/core/Grid";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
+import { yellow } from "@material-ui/core/colors";
+import Colors from "../utils/Colors";
+import WeatherDisplay from "./WeatherDisplay.js";
 
 const useStyles = makeStyles(theme => ({
   root: {
-    height: "100vh"
+    height: "100vh",
+    width: "100%"
   },
-  image: {
-    backgroundImage: "url(https://source.unsplash.com/random)",
-    backgroundRepeat: "no-repeat",
-    backgroundColor:
-      theme.palette.type === "dark"
-        ? theme.palette.grey[900]
-        : theme.palette.grey[50],
-    backgroundSize: "cover",
-    backgroundPosition: "center"
-  },
+  //   image: {
+  //     backgroundImage: "url(https://source.unsplash.com/random)",
+  //     backgroundRepeat: "no-repeat",
+  //     backgroundColor:
+  //       theme.palette.type === "dark"
+  //         ? theme.palette.grey[900]
+  //         : theme.palette.grey[50],
+  //     backgroundSize: "cover",
+  //     backgroundPosition: "center"
+  //   },
   paper: {
     margin: theme.spacing(8, 4),
     display: "flex",
@@ -38,8 +41,13 @@ const useStyles = makeStyles(theme => ({
     width: "100%", // Fix IE 11 issue.
     marginTop: theme.spacing(1)
   },
-  submit: {
-    margin: theme.spacing(3, 0, 2)
+
+  submitButton: {
+    backgroundColor: Colors.mainYellow,
+    margin: theme.spacing(3, 0, 2),
+    boxShadow:
+      "0px 3px 1px -2px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 1px 5px 0px rgba(0,0,0,0.12)",
+    width: "100px"
   }
 }));
 
@@ -47,17 +55,19 @@ export default function SignInSide() {
   const classes = useStyles();
 
   return (
-    <Grid container component="main" className={classes.root}>
+    <Grid container className={classes.root}>
       <CssBaseline />
-      <Grid item xs={false} sm={4} md={7} className={classes.image} />
-      <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
+      <Grid item xs={8} square>
+        {/* <WeatherDisplay /> */}
+      </Grid>
+      <Grid item xs={4} component={Paper} square>
         <div className={classes.paper}>
           <Typography component="h1" variant="h5">
             Sign in
           </Typography>
           <form className={classes.form} noValidate>
             <TextField
-              variant="outlined"
+              //   variant="outlined"
               margin="normal"
               required
               fullWidth
@@ -68,7 +78,7 @@ export default function SignInSide() {
               autoFocus
             />
             <TextField
-              variant="outlined"
+              //   variant="outlined"
               margin="normal"
               required
               fullWidth
@@ -82,13 +92,7 @@ export default function SignInSide() {
               control={<Checkbox value="remember" color="primary" />}
               label="Remember me"
             />
-            <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              color="primary"
-              className={classes.submit}
-            >
+            <Button type="submit" className={classes.submitButton}>
               Sign In
             </Button>
             <Grid container>
