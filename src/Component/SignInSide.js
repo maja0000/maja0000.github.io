@@ -8,10 +8,8 @@ import Link from "@material-ui/core/Link";
 import Paper from "@material-ui/core/Paper";
 import Box from "@material-ui/core/Box";
 import Grid from "@material-ui/core/Grid";
-import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
-import { yellow } from "@material-ui/core/colors";
 import Colors from "../utils/Colors";
 import WeatherDisplay from "./WeatherDisplay.js";
 
@@ -58,7 +56,7 @@ export default function SignInSide() {
     <Grid container className={classes.root}>
       <CssBaseline />
       <Grid item xs={8} square>
-        {/* <WeatherDisplay /> */}
+        <WeatherDisplay />
       </Grid>
       <Grid item xs={4} component={Paper} square>
         <div className={classes.paper}>
@@ -67,7 +65,6 @@ export default function SignInSide() {
           </Typography>
           <form className={classes.form} noValidate>
             <TextField
-              //   variant="outlined"
               margin="normal"
               required
               fullWidth
