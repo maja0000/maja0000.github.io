@@ -1,17 +1,17 @@
 import React from "react";
-import "./App.css";
+import SearchBar from "./Component/Searchbar/Searchbar";
 
-import mainpic from "./pictures/fog.jpg";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={mainpic} alt="x" />
-        <p></p>
+        <SearchBar/>
+        
       </header>
     </div>
   );
 }
 
 export default App;
+
