@@ -1,9 +1,10 @@
-import React, { PureComponent } from "react";
-// import CssBaseline from "@material-ui/core/CssBaseline";
-// import Typography from "@material-ui/core/Typography";
+import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
+<<<<<<< HEAD
 // import Container from "@material-ui/core/Container";
 // import Link from "@material-ui/core/Link";
+=======
+>>>>>>> 9d96cbc0ca08b00495cbbd6685a512bae6c93d62
 import "../css/Legal.css";
 
 function Legal() {
