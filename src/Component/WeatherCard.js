@@ -7,8 +7,8 @@ import LocationSearchBar from "./LocationSearchBar.js";
 function WeatherCard(props) {
   return (
     <div className="background">
-      <LocationSearchBar />
       <div className="date-temperature">
+        <LocationSearchBar />
         <ul>
           <li className="temperature">9°</li>
           <li className="">
@@ -25,7 +25,6 @@ function WeatherCard(props) {
         </ul>
       </div>
       <DailyWeatherDetails />
-
       {/* SLIDER CARDS */}
       <div className="weekly-weather slider">
         {/* component goes here! */}

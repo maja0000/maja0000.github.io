@@ -1,12 +1,23 @@
+.weatherDisplay {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .background {
-  /* position: absolute;
-  width: 65%; */
+  /* position: absolute; */
+  width: 90%;
   height: 90%;
   margin: 20px;
   background: url(../pictures/berlin-sky.jpg);
   background-repeat: no-repeat;
   border-radius: 20px;
   display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  min-height: 100vh;
+  justify-content: flex-start;
+  align-items: center;
 }
 .blurred-background {
   position: relative;
@@ -20,8 +31,16 @@
 }
 .date-temperature {
   list-style-type: none;
-  margin-right: 20px;
-  position: absolute;
+  margin: 20px;
+  padding-bottom: 10px;
+  /* position: absolute;
+  left: 0; */
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row-reverse;
+  min-width: 90%;
+  align-items: flex-start;
+  justify-content: space-between;
 }
 li {
   display: inline-block;
@@ -47,7 +66,7 @@ img {
   margin-left: 20px;
   margin-right: 20px;
   margin-bottom: 20px;
-  margin-top: 300px;
+  margin-top: 30px;
   width: 100%;
 }
 .daily-prediction-list {
@@ -59,28 +78,31 @@ img {
   margin-right: 100px;
 }
 .slider {
-  width: 200%;
-  height: 280px;
+  width: 90%;
+  height: 30%;
   display: flex;
   overflow-x: auto;
 }
 .slide {
-  width: 300px;
+  width: 40%;
   flex-shrink: 0;
-  height: 100%;
+  max-height: 230px;
 }
+
 .daily-weather {
   background: rgba(255, 251, 251, 0.32);
   backdrop-filter: blur(2px);
   border-radius: 20px;
-  position: absolute;
-  margin-top: 110px;
-  margin-left: 20px;
-  margin-right: 25px;
-  width: 59%;
-  height: 20%;
-
+  /* right: 0; */
+  /* margin-top: 110px; */
+  min-width: 90%;
+  /*height: 20%;
+  */
   padding: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
 }
 .daily-list {
   justify-content: flex-start;
@@ -88,6 +110,7 @@ img {
   margin-left: 0px;
   background: rgba(255, 251, 251, 0.32);
   margin-top: 0px;
+  line-height: 0.6;
 }
 
 .daily-list li {
