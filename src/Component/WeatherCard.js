@@ -2,7 +2,7 @@ import React from "react";
 import cloud from "../pictures/clouds-icon.svg";
 import DailyWeatherDetails from "./DailyWeatherDetails";
 import "../css/WeatherDisplay.css";
-import LocationSearchBar from "./Searchbar/LocationSearchBar.js";
+import LocationSearchBar from "./LocationSearchBar.js";
 
 function WeatherCard(props) {
   return (

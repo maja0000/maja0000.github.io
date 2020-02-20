@@ -1,0 +1,13 @@
+.navbar {
+  float: right;
+  display: flex;
+  justify-content: end;
+  flex-wrap: nowrap;
+  padding: 15px;
+}
+
+.navbarIcon {
+  margin: 10px;
+  padding: 5px;
+  min-height: 40px;
+}
