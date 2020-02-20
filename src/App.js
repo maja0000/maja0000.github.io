@@ -1,5 +1,5 @@
 import React from "react";
-import SearchBar from "./Component/Searchbar/Searchbar";
+import Header from "./Component/Header";
 import WeatherDisplay from "./Component/WeatherDisplay";
 import StickyFooter from "./Component/StickyFooter.js";
 import Legal from "./Pages/Legal";
@@ -10,6 +10,7 @@ import Frontpage from "./Pages/Frontpage.js";
 function App() {
   return (
     <Router>
+      <Header />
       <Switch>
         <Route path="/" exact>
           <Frontpage />
