@@ -1,0 +1,6 @@
+.frontpage {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: no-wrap;
+  justify-content: space-between;
+}
