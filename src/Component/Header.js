@@ -4,7 +4,6 @@ import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import { fade, makeStyles } from "@material-ui/core/styles";
 import profileIcon from "../pictures/icons/profileIcon.svg";
-// import Link from "@material-ui/core/Link";
 import "../css/Header.css";
 import calendarIcon from "../pictures/icons/calendarIcon.svg";
 import statisticIcon from "../pictures/icons/statisticIcon.svg";

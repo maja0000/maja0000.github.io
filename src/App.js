@@ -1,5 +1,4 @@
 import React from "react";
-// import { ReactComponent as Logo } from "./pictures/logo.svg";
 import Header from "./Component/Header";
 import StickyFooter from "./Component/StickyFooter.js";
 import Legal from "./Pages/Legal";
@@ -11,8 +10,8 @@ function App() {
     <Router>
       <Header />
       <Switch>
+        <Route exact path="/" component={Frontpage} />
         <Route exact path="/home" component={Frontpage} />
-        {/* <Route exact path="/" component={Frontpage} /> */}
         <Route exact path="/legal" component={Legal} />
       </Switch>
       <StickyFooter />
