@@ -46,7 +46,9 @@ export default function StickyFooter() {
       <footer className={classes.footer}>
         <Container maxWidth="sm">
           <Typography variant="body1">
-            <a href={""}>Legal notice and data privacy policy</a>
+            {/* <a href={}> */}
+            Legal notice and data privacy policy
+            {/* </a> */}
           </Typography>
 
           <Copyright />

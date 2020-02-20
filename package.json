@@ -3,15 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-<<<<<<< HEAD
     "@material-ui/core": "^4.9.3",
     "@material-ui/icons": "^4.9.1",
-=======
-
-    "@material-ui/core": "^4.9.3",
-    "@material-ui/icons": "^4.9.1",
-
->>>>>>> 9d96cbc0ca08b00495cbbd6685a512bae6c93d62
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
