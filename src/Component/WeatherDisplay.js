@@ -31,7 +31,7 @@ class WeatherDisplay extends React.Component {
   render() {
     const { loading } = this.state;
     return (
-      <div>
+      <div className="weatherDisplay">
         <WeatherCard />
         {loading ? (
           "...loading</br> Please wait!"
