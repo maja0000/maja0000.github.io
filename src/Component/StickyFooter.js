@@ -3,7 +3,8 @@ import React from "react";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
-import Link from "@material-ui/core/Link";
+// import Link from "@material-ui/core/Link";
+import { Link } from "react-router-dom";
 
 function Copyright() {
   return (
@@ -46,7 +47,7 @@ export default function StickyFooter() {
       <footer className={classes.footer}>
         <Container maxWidth="sm">
           <Typography variant="body1">
-            <a href={""}>Legal notice and data privacy policy</a>
+            <Link to="/legal">Legal notice and data privacy policy</Link>
           </Typography>
 
           <Copyright />

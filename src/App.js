@@ -1,10 +1,8 @@
 import React from "react";
 import Header from "./Component/Header";
-import WeatherDisplay from "./Component/WeatherDisplay";
 import StickyFooter from "./Component/StickyFooter.js";
 import Legal from "./Pages/Legal";
-import SignInSide from "./Component/SignInSide.js";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Frontpage from "./Pages/Frontpage.js";
 
 function App() {
@@ -12,12 +10,9 @@ function App() {
     <Router>
       <Header />
       <Switch>
-        <Route path="/" exact>
-          <Frontpage />
-        </Route>
-        <Route path="/legal">
-          <Legal />
-        </Route>
+        <Route exact path="/" component={Frontpage} />
+        <Route exact path="/home" component={Frontpage} />
+        <Route exact path="/legal" component={Legal} />
       </Switch>
       <StickyFooter />
     </Router>

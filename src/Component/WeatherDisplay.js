@@ -18,6 +18,7 @@ class WeatherDisplay extends React.Component {
   // get API function
   getAPI() {
     fetch(`api.openweathermap.org/data/2.5/weather?q=${this.state.citySearch}&appid=886d3852a40cc28c819dfcb6e2ae6402
+
     `) // "https://api.openweathermap.org/data/2.5/weather?q=London,uk&appid=f5365eb604c7d477c4906365a030169e"
       .then(response => response.json())
       .then(result => {
@@ -33,6 +34,7 @@ class WeatherDisplay extends React.Component {
     return (
       <div className="weatherDisplay">
         <WeatherCard />
+        {/* add information that data isn't here yet */}
         {loading ? (
           "...loading</br> Please wait!"
         ) : (
