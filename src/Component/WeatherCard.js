@@ -3,31 +3,75 @@ import cloud from "../pictures/clouds-icon.svg";
 import DailyWeatherDetails from "./DailyWeatherDetails";
 import "../css/WeatherDisplay.css";
 import LocationSearchBar from "./LocationSearchBar.js";
+// import WeatherSlider from "./WeatherSlider.js";
+
+var today = new Date();
+var day = today.getDay();
+var daylist = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday ",
+  "Thursday",
+  "Friday",
+  "Saturday"
+];
+console.log("Today is : " + daylist[day] + ".");
+var hour = today.getHours();
+var minute = today.getMinutes();
+var second = today.getSeconds();
+var prepand = hour >= 12 ? " PM " : " AM ";
+hour = hour >= 12 ? hour - 12 : hour;
+if (hour === 0 && prepand === " PM ") {
+  if (minute === 0 && second === 0) {
+    hour = 12;
+    prepand = " Noon";
+  } else {
+    hour = 12;
+    prepand = " PM";
+  }
+}
+if (hour === 0 && prepand === " AM ") {
+  if (minute === 0 && second === 0) {
+    hour = 12;
+    prepand = " Midnight";
+  } else {
+    hour = 12;
+    prepand = " AM";
+  }
+}
+console.log(
+  "Current Time : " + hour + prepand + " : " + minute + " : " + second
+);
 
 function WeatherCard(props) {
+  // console.log("test", props.weatherProps.main.temp);
   return (
     <div className="background">
+      {/* {props.weatherProps.map((element, idx) => (
+        <WeatherSlider key={idx} uniqueProps={element} /> */}
+      {/* ))} */}
       <div className="date-temperature">
         <LocationSearchBar />
         <ul>
-          <li className="temperature">9°</li>
+          <li className="temperature">{props.weatherProps.main.temp}</li>
           <li className="">
-            <p className="city">
-              {/* {props.weatherProps.name} */}
-              Berlin
-            </p>
+            <p className="city">{props.weatherProps.name}</p>
             <p className="date">
-              Monday
+              {daylist[day]}
               <br />
-              7th January
+              7th January <br /> {hour}:{minute}
+              {prepand}
             </p>
           </li>
         </ul>
       </div>
-      <DailyWeatherDetails />
+      <DailyWeatherDetails weatherDetailsProps={props.weatherProps} />
+      {/* weatherProps={props.state.weatherDisplay} */}
       {/* SLIDER CARDS */}
       <div className="weekly-weather slider">
         {/* component goes here! */}
+        {/* <WeatherSlider/> */}
         <div className="blurred-background slide">
           <p className="day">
             Monday <br />
@@ -35,13 +79,19 @@ function WeatherCard(props) {
             <img alt="cloud" src={cloud}></img>
           </p>
           <ul className="daily-list">
-            <li className="weather-details">Wind :</li>
+            <li className="weather-details">
+              Wind :{props.weatherProps.wind.speed}km/h ↑
+            </li>
             <br />
-            <li className="weather-details">Humidity:</li>
+            <li className="weather-details">
+              Humidity :{props.weatherProps.main.humidity}%
+            </li>
             <br />
-            <li className="weather-details">Air quality:</li>
+            <li>Temp :{props.weatherProps.main.temp}</li>
           </ul>
         </div>
+
+        {/* end of component */}
         <div className="blurred-background slide">
           Tuesday <br />
           <img alt="cloud" src={cloud}></img>

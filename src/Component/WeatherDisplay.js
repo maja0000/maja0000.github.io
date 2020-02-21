@@ -1,6 +1,7 @@
 import React from "react";
 import "../css/WeatherDisplay.css";
 import WeatherCard from "./WeatherCard.js";
+// import DailyWeatherDetails from "./DailyWeatherDetails";
 
 class WeatherDisplay extends React.Component {
   constructor() {
@@ -10,16 +11,26 @@ class WeatherDisplay extends React.Component {
       loading: true,
       citySearch: "Berlin"
     };
+    // console.log(this.state);
   }
   /// call the fetch function
   componentDidMount() {
     this.getAPI();
   }
+  // change location based on user's input
+  handleChange = event => {
+    this.setState({ citySearch: event.target.value });
+  };
+  // this function gets called when user presses enter in serchbar
+  searchForNewLocation = event => {
+    this.getAPI();
+  };
+
   // get API function
   getAPI() {
-    fetch(`api.openweathermap.org/data/2.5/weather?q=${this.state.citySearch}&appid=886d3852a40cc28c819dfcb6e2ae6402
-
-    `) // "https://api.openweathermap.org/data/2.5/weather?q=London,uk&appid=f5365eb604c7d477c4906365a030169e"
+    fetch(
+      `http://api.openweathermap.org/data/2.5/weather?q=${this.state.citySearch}&units=metric&APPID=886d3852a40cc28c819dfcb6e2ae6402`
+    )
       .then(response => response.json())
       .then(result => {
         this.setState({
@@ -33,12 +44,15 @@ class WeatherDisplay extends React.Component {
     const { loading } = this.state;
     return (
       <div className="weatherDisplay">
-        <WeatherCard />
         {/* add information that data isn't here yet */}
         {loading ? (
           "...loading</br> Please wait!"
         ) : (
-          <WeatherCard weatherProps={this.state.weatherDisplay} />
+          <WeatherCard
+            weatherProps={this.state.weatherDisplay}
+            onSearch={this.searchForNewLocation}
+            handleChange={this.handleChange}
+          />
         )}
       </div>
     );

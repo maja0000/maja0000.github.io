@@ -10,9 +10,9 @@ function App() {
     <Router>
       <Header />
       <Switch>
-        <Route exact path="/" component={Frontpage} />
-        <Route exact path="/home" component={Frontpage} />
-        <Route exact path="/legal" component={Legal} />
+        <Route exact={true} path="/" component={Frontpage} />
+        <Route exact={true} path="/home" component={Frontpage} />
+        <Route exact={true} path="/legal" component={Legal} />
       </Switch>
       <StickyFooter />
     </Router>

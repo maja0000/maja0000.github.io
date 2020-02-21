@@ -50,10 +50,10 @@ export default function SignInSide() {
   return (
     <Grid container className={classes.root}>
       <CssBaseline />
-      <Grid item xs={8} square>
+      <Grid item xs={8}>
         <WeatherDisplay />
       </Grid>
-      <Grid item xs={4} component={Paper} square>
+      <Grid item xs={4} component={Paper}>
         <div className={classes.paper}>
           <Typography component="h1" variant="h5">
             Sign in
