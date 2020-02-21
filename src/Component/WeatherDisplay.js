@@ -1,6 +1,7 @@
 import React from "react";
 import "../css/WeatherDisplay.css";
 import WeatherCard from "./WeatherCard.js";
+import { responsiveFontSizes } from "@material-ui/core";
 // import DailyWeatherDetails from "./DailyWeatherDetails";
 
 class WeatherDisplay extends React.Component {
@@ -33,14 +34,20 @@ class WeatherDisplay extends React.Component {
     fetch(
       `http://api.openweathermap.org/data/2.5/weather?q=${this.state.citySearch}&units=metric&APPID=886d3852a40cc28c819dfcb6e2ae6402`
     )
-      .then(response => response.json())
-      .then(result => {
-        this.setState({
-          weatherDisplay: result,
-          loading: false
-        });
-        console.log(this.state.weatherDisplay);
-      });
+      .then(response => {
+        if (response.ok){
+          return response.json() 
+        }
+      else{
+        return Promise.reject("no such City")
+      }
+        })
+    .then(result => {
+      this.setState({
+        weatherDisplay: result,
+        loading: false
+      })
+    })   
   }
   render() {
     const { loading } = this.state;
