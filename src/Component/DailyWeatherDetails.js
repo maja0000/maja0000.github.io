@@ -15,8 +15,7 @@ function DailyWeatherDetails({ weatherDetailsProps }) {
         <li>
           Humidity : {weatherDetailsProps.main.humidity} %
           <br />
-          Pressure:
-          {weatherDetailsProps.main.pressure} mbar
+          Pressure :{weatherDetailsProps.main.pressure} mbar
           <br />
           Visibility : {weatherDetailsProps.main.visibility}
         </li>

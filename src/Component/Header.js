@@ -2,7 +2,7 @@ import React from "react";
 import { ReactComponent as Logo } from "../pictures/logo.svg";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
-import { fade, makeStyles } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles";
 import profileIcon from "../pictures/icons/profileIcon.svg";
 import "../css/Header.css";
 import calendarIcon from "../pictures/icons/calendarIcon.svg";
