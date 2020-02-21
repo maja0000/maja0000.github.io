@@ -28,9 +28,12 @@ class WeatherDisplay extends React.Component {
 
   // get API function
   getAPI() {
+
     fetch(
       `http://api.openweathermap.org/data/2.5/weather?q=${this.state.citySearch}&units=metric&APPID=886d3852a40cc28c819dfcb6e2ae6402`
     )
+
+
       .then(response => response.json())
       .then(result => {
         this.setState({

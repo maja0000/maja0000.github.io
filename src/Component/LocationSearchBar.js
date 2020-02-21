@@ -3,6 +3,7 @@ import InputBase from "@material-ui/core/InputBase";
 import { fade, makeStyles } from "@material-ui/core/styles";
 import SearchIcon from "@material-ui/icons/Search";
 import "../css/LocationSearchBar.css";
+import Button from "@material-ui/core/Button";
 
 const useStyles = makeStyles(theme => ({
   //   root: {},
@@ -67,9 +68,11 @@ export default function SearchBar({ onSearch, handleChange }) {
   return (
     <div className="searchBarBox">
       <div className={classes.search}>
-        <div className={classes.searchIcon}>
+        <Button variant="contained">
+          {" "}
           <SearchIcon />
-        </div>
+        </Button>
+        <div className={classes.searchIcon}></div>
         <InputBase
           placeholder="Location…"
           classes={{
