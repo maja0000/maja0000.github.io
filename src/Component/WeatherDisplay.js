@@ -1,6 +1,7 @@
 import React from "react";
 import "../css/WeatherDisplay.css";
 import WeatherCard from "./WeatherCard.js";
+// import { responsiveFontSizes } from "@material-ui/core";
 // import DailyWeatherDetails from "./DailyWeatherDetails";
 
 class WeatherDisplay extends React.Component {
@@ -22,7 +23,7 @@ class WeatherDisplay extends React.Component {
     console.log("change input");
     this.setState({ citySearch: event.target.value });
   };
-  // this function gets called when user presses enter in serchbar
+  // this function gets called when user presses enter in searchbar
   searchForNewLocation = event => {
     console.log("click search");
     this.getAPI();
@@ -37,7 +38,7 @@ class WeatherDisplay extends React.Component {
         if (response.ok) {
           return response.json();
         } else {
-          return Promise.reject("no such City");
+          return Promise.reject(alert("Sorry, we could not find your city."));
         }
       })
       .then(result => {

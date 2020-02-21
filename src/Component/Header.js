@@ -9,13 +9,14 @@ import calendarIcon from "../pictures/icons/calendarIcon.svg";
 import statisticIcon from "../pictures/icons/statisticIcon.svg";
 import travelIcon from "../pictures/icons/travelIcon.svg";
 import { Link } from "react-router-dom";
+import Colors from "../utils/Colors";
 
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1
   },
   backColor: {
-    backgroundColor: "#FECC5E",
+    backgroundColor: Colors.mainYellow,
     marginBottom: "5px"
   },
   menuButton: {
@@ -36,7 +37,7 @@ export default function Header() {
   return (
     <div className={classes.root}>
       <AppBar position="static" className={classes.backColor}>
-        <Toolbar>
+        <Toolbar variant="dense">
           <div className={classes.title} noWrap>
             <Link exact to="/home">
               <Logo />
