@@ -1,3 +1,12 @@
+An Project from Wild Code School studendts.
+
+Mission: ->The intention of this App is to give the user access to a personalized weather app.
+
+Status: -> 21.Febuary: The basic layout for the main-page has been desinged and implemented. This will be a one page application, therfore now
+the components will be finaliazied or added. The main page displays the weather-info component for Berlin as default. This can be changed by entering a city name in the "location" search-bar, as the first API fetch has been set up succesfully. A sign in component is dislplayed on the front page. A navbar component is displayed in the front page and on click takes the user to the respectiv components. (Components not yet implemented) A Footer component is displayed on the main page, it contains links to "legal notice & data privacy policy".
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
