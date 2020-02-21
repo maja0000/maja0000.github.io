@@ -39,7 +39,7 @@ class WeatherDisplay extends React.Component {
           return response.json() 
         }
       else{
-        return Promise.reject("no such City")
+        return Promise.reject(alert("Sorry, we could not find your city."))
       }
         })
     .then(result => {
