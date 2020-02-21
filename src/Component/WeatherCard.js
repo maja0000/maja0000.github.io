@@ -16,7 +16,7 @@ var daylist = [
   "Friday",
   "Saturday"
 ];
-console.log("Today is : " + daylist[day] + ".");
+
 var hour = today.getHours();
 var minute = today.getMinutes();
 var second = today.getSeconds();
@@ -40,9 +40,9 @@ if (hour === 0 && prepand === " AM ") {
     prepand = " AM";
   }
 }
-console.log(
-  "Current Time : " + hour + prepand + " : " + minute + " : " + second
-);
+let Today = new Date();
+let date =
+  Today.getFullYear() + "." + (Today.getMonth() + 1) + "." + Today.getDate();
 
 function WeatherCard(props) {
   // console.log("test", props.weatherProps.main.temp);
@@ -57,13 +57,14 @@ function WeatherCard(props) {
           handleChange={props.handleChange}
         />
         <ul>
-          <li className="temperature">{props.weatherProps.main.temp}</li>
+          <li className="temperature">
+            {Math.round(props.weatherProps.main.temp)}°
+          </li>
           <li className="">
             <p className="city">{props.weatherProps.name}</p>
             <p className="date">
-              {daylist[day]}
-              <br />
-              7th January <br /> {hour}:{minute}
+              {daylist[day]}, {date}
+              <br /> {hour}:{minute}
               {prepand}
             </p>
           </li>
@@ -77,20 +78,20 @@ function WeatherCard(props) {
         {/* <WeatherSlider/> */}
         <div className="blurred-background slide">
           <p className="day">
-            Monday <br />
+            {daylist[day + 1]} <br />
             date here <br />
             <img alt="cloud" src={cloud}></img>
           </p>
           <ul className="daily-list">
             <li className="weather-details">
-              Wind :{props.weatherProps.wind.speed}km/h ↑
+              Wind - {props.weatherProps.wind.speed}km/h ↑
             </li>
             <br />
             <li className="weather-details">
-              Humidity :{props.weatherProps.main.humidity}%
+              Humidity - {props.weatherProps.main.humidity}%
             </li>
             <br />
-            <li>Temp :{props.weatherProps.main.temp}</li>
+            <li>Temp - {props.weatherProps.main.temp}</li>
           </ul>
         </div>
 
