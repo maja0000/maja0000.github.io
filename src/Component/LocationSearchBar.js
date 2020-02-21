@@ -57,9 +57,9 @@ export default function SearchBar({ onSearch, handleChange }) {
     }
   };
 
-  const handleSubmit = event => {
-    handleChange();
-  };
+  //   const handleSubmit = event => {
+  //     handleChange();
+  //   };
 
   const classes = useStyles();
 
