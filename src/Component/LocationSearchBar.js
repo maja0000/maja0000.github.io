@@ -56,13 +56,17 @@ export default function SearchBar({ onSearch, handleChange }) {
       onSearch();
     }
   };
+
+  const handleSubmit = event => {
+    handleChange();
+  };
+
   const classes = useStyles();
 
   return (
     <div className="searchBarBox">
       <div className={classes.search}>
-        <Button variant="contained">
-          {" "}
+        <Button variant="contained" onClick={onSearch}>
           <SearchIcon />
         </Button>
         <div className={classes.searchIcon}></div>
@@ -70,10 +74,10 @@ export default function SearchBar({ onSearch, handleChange }) {
           placeholder="Location…"
           classes={{
             root: classes.inputRoot,
-            input: classes.inputInput,
-            onChange: { handleChange },
-            onKeyPress: { handleKeyPress }
+            input: classes.inputInput
           }}
+          onInput={handleChange}
+          onKeyPress={handleKeyPress}
           inputProps={{ "aria-label": "search" }}
         />
       </div>
