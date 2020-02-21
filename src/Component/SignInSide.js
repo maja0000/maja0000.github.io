@@ -52,7 +52,7 @@ export default function SignInSide() {
     <Grid container xs={12} className={classes.root}>
       <CssBaseline />
 
-      <Grid item xs={12} component={Paper} elevation={6} square>
+      <Grid item xs={12} component={Paper} elevation={6} rounded>
         {/* <Grid item xs={8} square> */}
         {/* <WeatherDisplay /> */}
         {/* </Grid> */}
@@ -101,7 +101,6 @@ export default function SignInSide() {
                     {"Don't have an account? Sign Up"}
                   </Link>
                 </Grid>
-
               </Grid>
               <Box mt={5}></Box>
             </form>
