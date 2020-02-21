@@ -11,13 +11,11 @@ function App() {
     <Router>
       <Header />
       <Switch>
-
         <BreakpointProvider>
           <Route exact path="/" component={Frontpage} />
           <Route exact path="/home" component={Frontpage} />
+          <Route exact path="/legal" component={Legal} />
         </BreakpointProvider>
-        <Route exact path="/legal" component={Legal} />
-
       </Switch>
       <StickyFooter />
     </Router>
