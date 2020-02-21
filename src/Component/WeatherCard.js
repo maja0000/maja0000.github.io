@@ -52,7 +52,10 @@ function WeatherCard(props) {
         <WeatherSlider key={idx} uniqueProps={element} /> */}
       {/* ))} */}
       <div className="date-temperature">
-        <LocationSearchBar />
+        <LocationSearchBar
+          onSearch={props.onSearch}
+          handleChange={props.handleChange}
+        />
         <ul>
           <li className="temperature">{props.weatherProps.main.temp}</li>
           <li className="">
