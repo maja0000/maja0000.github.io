@@ -73,6 +73,13 @@ img {
   margin-top: 30px;
   width: 100%;
 }
+.weather-icon {
+  height: 70px;
+  width: auto;
+  -webkit-filter: drop-shadow(5px 5px 5px #222);
+  filter: drop-shadow(5px 5px 5px #696767);
+  margin-right: 20px;
+}
 .daily-prediction-list {
   text-align: left;
   display: flex;
