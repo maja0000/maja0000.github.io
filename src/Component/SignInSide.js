@@ -16,7 +16,8 @@ const useStyles = makeStyles(theme => ({
   root: {
     height: "100vh",
     width: "100%",
-    flexShrink: 2
+    flexShrink: 2,
+    marginTop: "20px"
   },
 
   paper: {

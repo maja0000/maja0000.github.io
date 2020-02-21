@@ -11,12 +11,6 @@ const useStyles = makeStyles(theme => ({
   //     backgroundColor: "#B9BABA"
   //   },
 
-  title: {
-    display: "none",
-    [theme.breakpoints.up("sm")]: {
-      display: "block"
-    }
-  },
   search: {
     // margin: "14px 0 14px 150px",
     // paddingLeft: "82px",
@@ -41,13 +35,12 @@ const useStyles = makeStyles(theme => ({
     alignItems: "center",
     justifyContent: "center"
   },
-  inputRoot: {
-    // color: 'inherit',
-  },
+  inputRoot: {},
   inputInput: {
     padding: theme.spacing(1, 1, 1, 7),
     transition: theme.transitions.create("width"),
     width: "100%",
+    alignItems: "flex-start",
     [theme.breakpoints.up("sm")]: {
       width: 120,
       "&:focus": {
