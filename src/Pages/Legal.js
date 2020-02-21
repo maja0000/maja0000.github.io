@@ -18,7 +18,8 @@ function Legal() {
   const classes = useStyles();
 
   return (
-    <div className={classes.root} className="legal">
+    <div className={classes.root}>
+      {/* className="legal" */}
       <h1>Impressum</h1>
       <p>Angaben gemäß § 5 TMG</p>
       <p>Wild Code School: Students Heller, Gach and Kolem</p>

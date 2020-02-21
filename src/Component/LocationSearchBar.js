@@ -57,7 +57,12 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function SearchBar() {
+export default function SearchBar({ onSearch, handleChange }) {
+  const handleKeyPress = event => {
+    if (event.key === "Enter") {
+      onSearch();
+    }
+  };
   const classes = useStyles();
 
   return (
@@ -72,7 +77,9 @@ export default function SearchBar() {
           placeholder="Location…"
           classes={{
             root: classes.inputRoot,
-            input: classes.inputInput
+            input: classes.inputInput,
+            onChange: { handleChange },
+            onKeyPress: { handleKeyPress }
           }}
           inputProps={{ "aria-label": "search" }}
         />

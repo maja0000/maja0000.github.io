@@ -1,19 +1,24 @@
 import React from "react";
 
-function DailyWeatherDetails() {
+function DailyWeatherDetails({ weatherDetailsProps }) {
+  console.log(weatherDetailsProps);
   return (
     <div className="daily-weather">
       <ul className="daily-prediction-list flex">
         <li className="daily-prediction-list-leftcolumn flex-item">
-          {" "}
-          Rain prediction : 0% <br /> Wind: 12km/h <br /> Humidity: 60% <br />
-          Visibility 5.0 mi
-        </li>
-        <li className="flex-item">
-          UV Index 0 of 10
+          {weatherDetailsProps.weather[0].main}
           <br />
-          Sunrise : 7:25am <br />
-          Sunset: 5:15 pm
+          Desc : {weatherDetailsProps.weather[0].description}
+          <br />
+          Wind : {weatherDetailsProps.wind.speed}km/h
+        </li>
+        <li>
+          Humidity : {weatherDetailsProps.main.humidity} %
+          <br />
+          Pressure:
+          {weatherDetailsProps.main.pressure} mbar
+          <br />
+          Visibility : {weatherDetailsProps.main.visibility}
         </li>
       </ul>
     </div>
