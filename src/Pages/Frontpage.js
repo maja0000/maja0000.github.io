@@ -2,7 +2,7 @@ import React from "react";
 import SignInSide from "../Component/SignInSide";
 import WeatherDisplay from "../Component/WeatherDisplay.js";
 import "../css/Frontpage.css";
-import { Breakpoint, BreakpointProvider } from "react-socks";
+import { Breakpoint } from "react-socks";
 
 function Frontpage() {
   return (
