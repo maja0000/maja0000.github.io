@@ -53,8 +53,8 @@ function WeatherCard(props) {
       {/* ))} */}
       <div className="date-temperature">
         <LocationSearchBar
-          handleChange={props.handleChange}
           onSearch={props.onSearch}
+          handleChange={props.handleChange}
         />
         <ul>
           <li className="temperature">

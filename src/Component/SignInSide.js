@@ -11,12 +11,13 @@ import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Colors from "../utils/Colors";
-import WeatherDisplay from "./WeatherDisplay.js";
 
 const useStyles = makeStyles(theme => ({
   root: {
     height: "100vh",
-    width: "100%"
+    width: "100%",
+    flexShrink: 2,
+    marginTop: "20px"
   },
 
   paper: {
@@ -48,60 +49,64 @@ export default function SignInSide() {
   const classes = useStyles();
 
   return (
-    <Grid container className={classes.root}>
+    <Grid container xs={12} className={classes.root}>
       <CssBaseline />
-      <Grid item xs={8}>
-        <WeatherDisplay />
-      </Grid>
-      <Grid item xs={4} component={Paper}>
-        <div className={classes.paper}>
-          <Typography component="h1" variant="h5">
-            Sign in
-          </Typography>
-          <form className={classes.form} noValidate>
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              id="email"
-              label="Email Address"
-              name="email"
-              autoComplete="email"
-              autoFocus
-            />
-            <TextField
-              //   variant="outlined"
-              margin="normal"
-              required
-              fullWidth
-              name="password"
-              label="Password"
-              type="password"
-              id="password"
-              autoComplete="current-password"
-            />
-            <Button type="submit" className={classes.submitButton}>
-              Sign In
-            </Button>
-            <FormControlLabel
-              control={<Checkbox value="remember" color="primary" />}
-              label="Remember me"
-            />
-            <Grid container>
-              <Grid item xs>
-                <Link href="#" variant="body2">
-                  Forgot password?
-                </Link>
+
+      <Grid item xs={12} component={Paper} elevation={6} square>
+        {/* <Grid item xs={8} square> */}
+        {/* <WeatherDisplay /> */}
+        {/* </Grid> */}
+        <Grid item component={Paper} square>
+          <div className={classes.paper}>
+            <Typography component="h1" variant="h5">
+              Sign in
+            </Typography>
+            <form className={classes.form} noValidate>
+              <TextField
+                margin="normal"
+                required
+                fullWidth
+                id="email"
+                label="Email Address"
+                name="email"
+                autoComplete="email"
+                autoFocus
+              />
+              <TextField
+                //   variant="outlined"
+                margin="normal"
+                required
+                fullWidth
+                name="password"
+                label="Password"
+                type="password"
+                id="password"
+                autoComplete="current-password"
+              />
+              <Button type="submit" className={classes.submitButton}>
+                Sign In
+              </Button>
+              <FormControlLabel
+                control={<Checkbox value="remember" color="primary" />}
+                label="Remember me"
+              />
+              <Grid container>
+                <Grid item xs>
+                  <Link href="#" variant="body2">
+                    Forgot password?
+                  </Link>
+                </Grid>
+                <Grid item>
+                  <Link href="#" variant="body2">
+                    {"Don't have an account? Sign Up"}
+                  </Link>
+                </Grid>
+
               </Grid>
-              <Grid item>
-                <Link href="#" variant="body2">
-                  {"Don't have an account? Sign Up"}
-                </Link>
-              </Grid>
-            </Grid>
-            <Box mt={5}></Box>
-          </form>
-        </div>
+              <Box mt={5}></Box>
+            </form>
+          </div>
+        </Grid>
       </Grid>
     </Grid>
   );

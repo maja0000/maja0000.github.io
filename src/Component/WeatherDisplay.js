@@ -19,10 +19,12 @@ class WeatherDisplay extends React.Component {
   }
   // change location based on user's input
   handleChange = event => {
+    console.log("change input");
     this.setState({ citySearch: event.target.value });
   };
   // this function gets called when user presses enter in serchbar
   searchForNewLocation = event => {
+    console.log("click search");
     this.getAPI();
   };
 
