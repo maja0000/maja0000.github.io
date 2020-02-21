@@ -42,7 +42,7 @@ if (hour === 0 && prepand === " AM ") {
 }
 let Today = new Date();
 let date =
-  Today.getFullYear() + "-" + (Today.getMonth() + 1) + "-" + Today.getDate();
+  Today.getFullYear() + "." + (Today.getMonth() + 1) + "." + Today.getDate();
 
 function WeatherCard(props) {
   // console.log("test", props.weatherProps.main.temp);
@@ -52,7 +52,10 @@ function WeatherCard(props) {
         <WeatherSlider key={idx} uniqueProps={element} /> */}
       {/* ))} */}
       <div className="date-temperature">
-        <LocationSearchBar />
+        <LocationSearchBar
+          handleChange={props.handleChange}
+          onSearch={props.onSearch}
+        />
         <ul>
           <li className="temperature">
             {Math.round(props.weatherProps.main.temp)}°
@@ -81,14 +84,14 @@ function WeatherCard(props) {
           </p>
           <ul className="daily-list">
             <li className="weather-details">
-              Wind :{props.weatherProps.wind.speed}km/h ↑
+              Wind - {props.weatherProps.wind.speed}km/h ↑
             </li>
             <br />
             <li className="weather-details">
-              Humidity :{props.weatherProps.main.humidity}%
+              Humidity - {props.weatherProps.main.humidity}%
             </li>
             <br />
-            <li>Temp :{props.weatherProps.main.temp}</li>
+            <li>Temp - {props.weatherProps.main.temp}</li>
           </ul>
         </div>
 
