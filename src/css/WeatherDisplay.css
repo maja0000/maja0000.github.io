@@ -2,15 +2,19 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  width: 100%;
 }
 
 .background {
   /* position: absolute; */
   width: 90%;
-  height: 90%;
+  height: 40%;
   margin: 20px;
   background: url(../pictures/berlin-sky.jpg);
   background-repeat: no-repeat;
+  background-size: cover;
+  align-content: space-between;
+
   border-radius: 20px;
   display: flex;
   flex-direction: column;
