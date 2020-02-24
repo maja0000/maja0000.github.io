@@ -1,0 +1,146 @@
+.weatherDisplay {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+
+.background {
+  /* position: absolute; */
+
+  width: 96%;
+
+  height: 40%;
+  margin: 20px 20px 20px 10px;
+  background: url(../pictures/berlin-sky.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  align-content: space-between;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  min-height: 100vh;
+  justify-content: flex-start;
+  align-items: center;
+}
+.blurred-background {
+  position: relative;
+  width: 100%;
+  margin: 5px;
+  background: rgba(255, 251, 251, 0.32);
+  backdrop-filter: blur(2px);
+  border-radius: 20px;
+  margin-bottom: 5px;
+}
+.date-temperature {
+  list-style-type: none;
+  margin: 20px;
+  padding-bottom: 10px;
+  /* position: absolute;
+  left: 0; */
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row-reverse;
+  min-width: 90%;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+li {
+  display: inline-block;
+}
+img {
+  height: 30px;
+  width: auto;
+}
+.temperature {
+  font-size: 5em;
+}
+.city {
+  font-size: 30px;
+  margin: 0px;
+  margin-left: 8px;
+}
+.date {
+  margin-top: 0px;
+  text-align: left;
+  margin-left: 10px;
+}
+.weekly-weather {
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  margin-top: 30px;
+  width: 100%;
+}
+.weather-icon {
+  height: 70px;
+  width: auto;
+  -webkit-filter: drop-shadow(5px 5px 5px #222);
+  filter: drop-shadow(5px 5px 5px #696767);
+  margin-right: 20px;
+}
+.daily-prediction-list {
+  text-align: left;
+  display: flex;
+  line-height: 1.6;
+  font-size: 1em;
+}
+.daily-prediction-list-leftcolumn {
+  margin-right: 100px;
+  font-size: 1em;
+}
+.slider {
+  width: 90%;
+  height: 30%;
+  display: flex;
+  overflow-x: auto;
+}
+.slide {
+  width: 40%;
+  flex-shrink: 0;
+  max-height: 230px;
+}
+
+.daily-weather {
+  background: rgba(255, 251, 251, 0.32);
+  backdrop-filter: blur(2px);
+  border-radius: 20px;
+  /* right: 0; */
+  /* margin-top: 110px; */
+  min-width: 90%;
+  /*height: 20%;
+  */
+  padding: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+}
+.daily-list {
+  justify-content: flex-start;
+  font-size: 20px;
+  margin-left: 0px;
+  background: rgba(255, 251, 251, 0.32);
+  margin-top: 0px;
+  line-height: 0.6;
+}
+
+.daily-list li {
+  margin: 0 0 5px 0;
+  padding: 5px;
+  padding-top: 10px;
+  font-size: 0.7em;
+}
+
+.day {
+  font-size: 1em;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 8px;
+}
+.weather-details {
+  content: "☁";
+  margin-left: -20px;
+  margin-right: 10px;
+}
