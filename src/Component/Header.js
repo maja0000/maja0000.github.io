@@ -20,7 +20,7 @@ const useStyles = makeStyles(theme => ({
     marginBottom: "5px"
   },
   menuButton: {
-    marginRight: theme.spacing()
+    marginRight: theme.spacing(2)
   },
   title: {
     flexGrow: 1,
