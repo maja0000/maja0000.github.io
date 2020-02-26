@@ -6,6 +6,7 @@
     opacity: 1;
   }
 }
+
 .weatherDisplay {
   display: flex;
   /* flex-direction: column; */

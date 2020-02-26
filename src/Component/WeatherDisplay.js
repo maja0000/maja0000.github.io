@@ -3,8 +3,11 @@ import "../css/WeatherDisplay.css";
 import WeatherCard from "./WeatherCard.js";
 // import { responsiveFontSizes } from "@material-ui/core";
 // import DailyWeatherDetails from "./DailyWeatherDetails";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 class WeatherDisplay extends React.Component {
+  notify = () => toast("Sorry we can't find your city !");
   constructor() {
     super();
     this.state = {
@@ -38,7 +41,8 @@ class WeatherDisplay extends React.Component {
           return response.json();
         } else {
           return Promise.reject(
-            alert("Sorry, we could not find your location.")
+            // alert("Sorry, we could not find your location.")
+            this.notify()
           );
         }
       })
@@ -60,7 +64,9 @@ class WeatherDisplay extends React.Component {
         if (response.ok) {
           return response.json();
         } else {
-          return Promise.reject(alert("Sorry, we could not find your city."));
+          return Promise.reject(
+            toast.error("Sorry we can't find your city, try again!")
+          );
         }
       })
       .then(result => {
@@ -78,11 +84,14 @@ class WeatherDisplay extends React.Component {
         {loading ? (
           "...loading</br> Please wait!"
         ) : (
-          <WeatherCard
-            weatherProps={this.state.weatherDisplay}
-            onSearch={this.searchForNewLocation}
-            handleChange={this.handleChange}
-          />
+          <div>
+            <ToastContainer />
+            <WeatherCard
+              weatherProps={this.state.weatherDisplay}
+              onSearch={this.searchForNewLocation}
+              handleChange={this.handleChange}
+            />
+          </div>
         )}
       </div>
     );

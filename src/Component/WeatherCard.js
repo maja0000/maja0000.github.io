@@ -46,8 +46,6 @@ let date =
   Today.getFullYear() + "." + (Today.getMonth() + 1) + "." + Today.getDate();
 
 function WeatherCard(props) {
-  console.log("test", day);
-
   return (
     <div className="background">
       <div className="date-temperature">

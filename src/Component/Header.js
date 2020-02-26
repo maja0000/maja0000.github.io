@@ -17,8 +17,10 @@ const useStyles = makeStyles(theme => ({
   },
   backColor: {
     backgroundColor: Colors.mainYellow,
-    marginBottom: "5px"
+    marginBottom: "5px",
+    animation: "slideInDown"
   },
+
   menuButton: {
     marginRight: theme.spacing(2)
   },
