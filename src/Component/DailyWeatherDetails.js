@@ -8,20 +8,28 @@ function DailyWeatherDetails({ weatherDetailsProps }) {
       <ul className="daily-prediction-list flex">
         <img
           className="weather-icon"
-          src={`http://openweathermap.org/img/wn/${weatherDetailsProps.weather[0].icon}@2x.png`}
+          src={`http://openweathermap.org/img/wn/${weatherDetailsProps.list[0].weather[0].icon}@2x.png`}
           alt="icon"
         ></img>
+
         <li className="daily-prediction-list-leftcolumn flex-item">
-          Desc : {weatherDetailsProps.weather[0].description}
+          Feels like : {Math.round(weatherDetailsProps.list[0].main.feels_like)}
+          °
+          <br /> Desc : {weatherDetailsProps.list[0].weather[0].description}
           <br />
-          Wind : {weatherDetailsProps.wind.speed}km/h
+          Wind : {weatherDetailsProps.list[0].wind.speed}km/h
+          <br />
         </li>
         <li>
-          Humidity : {weatherDetailsProps.main.humidity} %
+          Humidity : {weatherDetailsProps.list[0].main.humidity} %
           <br />
-          Pressure :{weatherDetailsProps.main.pressure} mbar
+          Pressure : {weatherDetailsProps.list[0].main.pressure} mbar
           <br />
-          Visibility : {weatherDetailsProps.main.visibility}
+          Temp min : {weatherDetailsProps.list[0].main.temp_min} °
+          <br />
+          Temp max : {weatherDetailsProps.list[0].main.temp_max} °
+          <br />
+          {/* Visibility : {weatherDetailsProps.main.visibility} */}
         </li>
       </ul>
     </div>

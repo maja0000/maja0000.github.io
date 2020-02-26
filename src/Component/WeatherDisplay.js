@@ -1,7 +1,7 @@
 import React from "react";
 import "../css/WeatherDisplay.css";
 import WeatherCard from "./WeatherCard.js";
-import { responsiveFontSizes } from "@material-ui/core";
+// import { responsiveFontSizes } from "@material-ui/core";
 // import DailyWeatherDetails from "./DailyWeatherDetails";
 
 class WeatherDisplay extends React.Component {
@@ -21,23 +21,17 @@ class WeatherDisplay extends React.Component {
     this.getWeather(); /*gave different name to differenciate the api fetches better*/
   }
 
-  //   displayWeatherFromIp = position => {
-  //     console.log(position);
-  //     let lng = position.coords.longitude;
-  //     let lat = position.coords.latitude;
-  //     console.log(`longitude: ${lng} | latitude: ${lat}`);
-  //   };
-
   // change location based on user's input
   handleChange = event => {
-    console.log("change input");
     this.setState({ citySearch: event.target.value });
   };
 
   // this function gets called when user presses enter in searchbar
   searchForNewLocation = event => {
-    console.log("click search");
+
+
     this.getWeather();
+
   };
 
   // get City name from ip address
@@ -64,7 +58,7 @@ class WeatherDisplay extends React.Component {
   getWeather() {
     /*gave different name*/
     fetch(
-      `http://api.openweathermap.org/data/2.5/weather?q=${this.state.citySearch}&units=metric&APPID=886d3852a40cc28c819dfcb6e2ae6402`
+      `http://api.openweathermap.org/data/2.5/forecast?q=${this.state.citySearch}&units=metric&appid=886d3852a40cc28c819dfcb6e2ae6402`
     )
       .then(response => {
         if (response.ok) {

@@ -18,8 +18,9 @@
   animation-duration: 2s;
   /* position: absolute; */
 
-  width: 96%;
-
+  -webkit-box-shadow: 10px -8px 26px -18px rgba(105, 103, 103, 1);
+  -moz-box-shadow: 10px -8px 26px -18px rgba(105, 103, 103, 1);
+  box-shadow: 10px -8px 26px -18px rgba(105, 103, 103, 1);
   height: 40%;
   margin: 20px 20px 20px 10px;
   background: url(../pictures/berlin-sky.jpg);
@@ -97,7 +98,7 @@ img {
   height: 70px;
   width: auto;
   -webkit-filter: drop-shadow(5px 5px 5px #222);
-  filter: drop-shadow(5px 5px 5px #696767);
+  filter: drop-shadow(3px 2px 5px #696767);
   margin-right: 20px;
 }
 .daily-prediction-list {
@@ -193,10 +194,17 @@ img {
   margin-right: 10px;
 }
 
+
+.weather-icon-slider {
+  height: 40px;
+  -webkit-filter: drop-shadow(5px 5px 5px #222);
+  filter: drop-shadow(2px 2px 5px #696767);
+
 .day:hover {
   font-size: 1.3em;
 }
 
 .daily-list li:hover {
   font-size: 1.3em;
+
 }
