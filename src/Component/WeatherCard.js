@@ -46,6 +46,8 @@ let date =
   Today.getFullYear() + "." + (Today.getMonth() + 1) + "." + Today.getDate();
 
 function WeatherCard(props) {
+  console.log("test", day);
+
   return (
     <div className="background">
       <div className="date-temperature">
@@ -74,8 +76,7 @@ function WeatherCard(props) {
         {props.weatherProps.list.slice(0, 5).map((element, idx) => (
           <WeatherSlider
             key={idx}
-            day={daylist[day + idx + 1]}
-            // {day ==="Sunday"? daylist[day+idx]}
+            day={daylist[(day + idx + 1) % daylist.length]}
             daylist={daylist}
             uniquePropsForecast={element}
           />

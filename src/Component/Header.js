@@ -3,11 +3,11 @@ import Logo from "../pictures/logo.svg";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import { makeStyles } from "@material-ui/core/styles";
-import profileIcon from "../pictures/icons/profileIcon.svg";
+// import profileIcon from "../pictures/icons/profileIcon.svg";
 import "../css/Header.css";
-import calendarIcon from "../pictures/icons/calendarIcon.svg";
-import statisticIcon from "../pictures/icons/statisticIcon.svg";
-import travelIcon from "../pictures/icons/travelIcon.svg";
+// import calendarIcon from "../pictures/icons/calendarIcon.svg";
+// import statisticIcon from "../pictures/icons/statisticIcon.svg";
+// import travelIcon from "../pictures/icons/travelIcon.svg";
 import { Link } from "react-router-dom";
 import Colors from "../utils/Colors";
 
@@ -33,9 +33,9 @@ const useStyles = makeStyles(theme => ({
 
 export default function Header() {
   const classes = useStyles();
-  const changelogoStyle = event => {
-    event.target.style.width = "280px";
-  };
+  // const changelogoStyle = event => {
+  //   event.target.style.width = "280px";
+  // };
 
   return (
     <div className={classes.root}>
@@ -43,7 +43,7 @@ export default function Header() {
         <Toolbar variant="dense">
           <div className={classes.title} noWrap>
             <Link exact to="/home">
-              <img src={Logo} className="header-logo" />
+              <img src={Logo} alt="logo" className="header-logo" />
             </Link>
             {/* <nav className="navbar">
               <ul>

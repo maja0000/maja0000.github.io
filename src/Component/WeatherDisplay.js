@@ -12,7 +12,6 @@ class WeatherDisplay extends React.Component {
       loading: true,
       citySearch: "Berlin"
     };
-    // console.log(this.state);
   }
   /// call the fetch function
   componentDidMount() {
@@ -28,10 +27,7 @@ class WeatherDisplay extends React.Component {
 
   // this function gets called when user presses enter in searchbar
   searchForNewLocation = event => {
-
-
     this.getWeather();
-
   };
 
   // get City name from ip address
