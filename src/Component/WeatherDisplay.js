@@ -20,19 +20,17 @@ class WeatherDisplay extends React.Component {
   }
   // change location based on user's input
   handleChange = event => {
-    console.log("change input");
     this.setState({ citySearch: event.target.value });
   };
   // this function gets called when user presses enter in searchbar
   searchForNewLocation = event => {
-    console.log("click search");
     this.getAPI();
   };
 
   // get API function
   getAPI() {
     fetch(
-      `http://api.openweathermap.org/data/2.5/weather?q=${this.state.citySearch}&units=metric&APPID=886d3852a40cc28c819dfcb6e2ae6402`
+      `http://api.openweathermap.org/data/2.5/forecast?q=${this.state.citySearch}&units=metric&appid=886d3852a40cc28c819dfcb6e2ae6402`
     )
       .then(response => {
         if (response.ok) {

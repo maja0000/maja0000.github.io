@@ -78,7 +78,7 @@ img {
   height: 70px;
   width: auto;
   -webkit-filter: drop-shadow(5px 5px 5px #222);
-  filter: drop-shadow(5px 5px 5px #696767);
+  filter: drop-shadow(3px 2px 5px #696767);
   margin-right: 20px;
 }
 .daily-prediction-list {
@@ -144,4 +144,10 @@ img {
   content: "☁";
   margin-left: -20px;
   margin-right: 10px;
+}
+
+.weather-icon-slider {
+  height: 40px;
+  -webkit-filter: drop-shadow(5px 5px 5px #222);
+  filter: drop-shadow(2px 2px 5px #696767);
 }

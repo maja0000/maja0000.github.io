@@ -1,20 +1,46 @@
 import React from "react";
-import cloud from "../pictures/clouds-icon.svg";
+import "../css/WeatherDisplay.css";
 
-function WeatherSlider() {
+// import cloud from "../pictures/clouds-icon.svg";
+
+function WeatherSlider({ day, uniquePropsForecast, key }) {
   return (
     <div className="blurred-background slide">
       <p className="day">
-        Monday <br />
-        date here <br />
-        <img alt="cloud" src={cloud}></img>
+        {day}
+        <br />
+        <div>
+          <img
+            className="weather-icon-slider"
+            src={`http://openweathermap.org/img/wn/${uniquePropsForecast.weather[0].icon}@2x.png`}
+            alt="icon"
+          ></img>
+          <img
+            className="weather-icon-slider"
+            src={`http://openweathermap.org/img/wn/${uniquePropsForecast.weather[0].icon}@2x.png`}
+            alt="icon"
+          ></img>
+          <img
+            className="weather-icon-slider"
+            src={`http://openweathermap.org/img/wn/${uniquePropsForecast.weather[0].icon}@2x.png`}
+            alt="icon"
+          ></img>
+        </div>
       </p>
       <ul className="daily-list">
-        <li className="weather-details">Wind :</li>
+        {" "}
+        <li>Temp : {Math.round(uniquePropsForecast.main.temp)}°</li>
         <br />
-        <li className="weather-details">Humidity:</li>
+        <li>Feels like : {Math.round(uniquePropsForecast.main.feels_like)}°</li>
         <br />
-        <li className="weather-details">Air quality:</li>
+        <li className="weather-details">
+          Wind : {uniquePropsForecast.wind.speed} km/h ↑
+        </li>
+        <br />
+        <li className="weather-details">
+          Humidity : {uniquePropsForecast.main.humidity}%
+        </li>
+        <br />
       </ul>
     </div>
   );
