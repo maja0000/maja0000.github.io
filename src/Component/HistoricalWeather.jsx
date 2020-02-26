@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import WeatherContext from "../Component/WeatherContext.jsx";
 
 export default function HistoricalWeather() {
   const [station, setStation] = useState(0);
@@ -6,10 +7,12 @@ export default function HistoricalWeather() {
   const [precipitation, setPrecipitation] = useState(0);
   const [sunshine, setSunshine] = useState(0);
   const [pressure, setPressure] = useState(0);
+  const [citySearch, setCitySearch] = useContext(WeatherContext);
 
+  console.log("useContext", citySearch);
   useEffect(() => {
     getWeatherStation();
-  });
+  }, []);
 
   const getWeatherStation = () => {
     fetch(
@@ -19,6 +22,7 @@ export default function HistoricalWeather() {
         return response.json();
       })
       .then(result => {
+        console.log("historical", result);
         setStation(result.data[0].station);
       })
       .then(result => getHistoricalWeatherData());
@@ -38,4 +42,5 @@ export default function HistoricalWeather() {
         setPressure(result.data.pressure);
       });
   };
+  return <h1>Hello</h1>;
 }

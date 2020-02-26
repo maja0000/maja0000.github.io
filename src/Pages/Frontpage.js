@@ -3,8 +3,9 @@ import "../css/Frontpage.css";
 import { Breakpoint } from "react-socks";
 import React, { useState, useEffect } from "react";
 import "../css/WeatherDisplay.css";
-import WeatherCard from "./WeatherCard.js";
+import WeatherCard from "../Component/WeatherCard";
 import HistoricalWeather from "../Component/HistoricalWeather.jsx";
+import WeatherContext from "../Component/WeatherContext.jsx";
 
 function Frontpage() {
   const [weatherDisplay, setWeatherDisplay] = useState([]);
@@ -15,19 +16,22 @@ function Frontpage() {
   useEffect(() => {
     ///  call function for geolocation
     getCityNameFromIp();
-    getWeather(); /*gave different name to differenciate the api fetches better*/
-  });
+    getWeather(
+      citySearch
+    ); /*gave different name to differenciate the api fetches better*/
+  }, []);
 
   // change location based on user's input
-  const handleChange = event => {
-    console.log("change input");
-    setCitySearch(event.target.value);
-  };
+  //   const handleChange = event => {
+  //     console.log("change input");
+  //     setCitySearch(event.target.value);
+  //   };
 
   // this function gets called when user presses enter in searchbar
-  const searchForNewLocation = event => {
+  const searchForNewLocation = city => {
     console.log("click search");
-    getWeather();
+    setCitySearch(city);
+    getWeather(citySearch);
   };
 
   // get City name from ip address
@@ -37,9 +41,8 @@ function Frontpage() {
         if (response.ok) {
           return response.json();
         } else {
-          return Promise.reject(
-            alert("Sorry, we could not find your location.")
-          );
+          alert("Sorry, we could not find your location.")();
+          return Promise.reject;
         }
       })
       .then(result => {
@@ -49,15 +52,17 @@ function Frontpage() {
   };
 
   // get API function for current weather
-  const getWeather = () => {
+  const getWeather = city => {
+    console.log("function getWeather", citySearch);
     /*gave different name*/
     fetch(
-      `http://api.openweathermap.org/data/2.5/weather?q=${citySearch}&units=metric&APPID=886d3852a40cc28c819dfcb6e2ae6402`
+      `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&APPID=886d3852a40cc28c819dfcb6e2ae6402`
     )
       .then(response => {
         if (response.ok) {
           return response.json();
         } else {
+          console.log("reject");
           return Promise.reject(alert("Sorry, we could not find your city."));
         }
       })
@@ -69,23 +74,23 @@ function Frontpage() {
 
   return (
     <div className="frontpage">
-      <div className="weatherDisplay">
-        {/* add information that data isn't here yet */}
-        {loading ? (
-          "...loading</br> Please wait!"
-        ) : (
-          <WeatherCard
-            weatherProps={weatherDisplay}
-            onSearch={searchForNewLocation}
-            handleChange={handleChange}
-          />
-        )}
-      </div>
-      <Breakpoint large up>
-        {" "}
-        */}
-        <HistoricalWeather />
-      </Breakpoint>
+      <WeatherContext.Provider value={[citySearch, setCitySearch]}>
+        <div className="weatherDisplay">
+          {/* add information that data isn't here yet */}
+          {loading ? (
+            "...loading</br> Please wait!"
+          ) : (
+            <WeatherCard
+              weatherProps={weatherDisplay}
+              onSearch={searchForNewLocation}
+              //   handleChange={handleChange}
+            />
+          )}
+        </div>
+        <Breakpoint large up>
+          {/* <HistoricalWeather /> */}
+        </Breakpoint>
+      </WeatherContext.Provider>
     </div>
   );
 }

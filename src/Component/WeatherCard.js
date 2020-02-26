@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import cloud from "../pictures/clouds-icon.svg";
 import DailyWeatherDetails from "./DailyWeatherDetails";
 import "../css/WeatherDisplay.css";
 import LocationSearchBar from "./LocationSearchBar.js";
 // import WeatherSlider from "./WeatherSlider.js";
+import WeatherContext from "../Component/WeatherContext.jsx";
 
 var today = new Date();
 var day = today.getDay();
@@ -45,23 +46,23 @@ let date =
   Today.getFullYear() + "." + (Today.getMonth() + 1) + "." + Today.getDate();
 
 function WeatherCard(props) {
-  // console.log("test", props.weatherProps.main.temp);
+  console.log("WeatherCard Props", props.weatherProps);
+
+  const [citySearch, setCitySearch] = useContext(WeatherContext);
+  console.log("WeatherCard", citySearch);
   return (
     <div className="background">
       {/* {props.weatherProps.map((element, idx) => (
         <WeatherSlider key={idx} uniqueProps={element} /> */}
       {/* ))} */}
       <div className="date-temperature">
-        <LocationSearchBar
-          onSearch={props.onSearch}
-          handleChange={props.handleChange}
-        />
+        <LocationSearchBar onSearch={props.onSearch} />
         <ul>
           <li className="temperature">
             {Math.round(props.weatherProps.main.temp)}°
           </li>
           <li className="">
-            <p className="city">{props.weatherProps.name}</p>
+            <p className="city">{citySearch}</p>
             <p className="date">
               {daylist[day]}, {date}
               <br /> {hour}:{minute}
