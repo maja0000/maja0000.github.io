@@ -1,5 +1,5 @@
 import React from "react";
-import { ReactComponent as Logo } from "../pictures/logo.svg";
+import Logo from "../pictures/logo.svg";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import { makeStyles } from "@material-ui/core/styles";
@@ -33,6 +33,9 @@ const useStyles = makeStyles(theme => ({
 
 export default function Header() {
   const classes = useStyles();
+  const changelogoStyle = event => {
+    event.target.style.width = "280px";
+  };
 
   return (
     <div className={classes.root}>
@@ -40,9 +43,9 @@ export default function Header() {
         <Toolbar variant="dense">
           <div className={classes.title} noWrap>
             <Link exact to="/home">
-              <Logo />
+              <img src={Logo} className="header-logo" />
             </Link>
-            <nav className="navbar">
+            {/* <nav className="navbar">
               <ul>
                 <li>
                   <Link to="/travel">
@@ -81,7 +84,7 @@ export default function Header() {
                   </Link>
                 </li>
               </ul>
-            </nav>
+            </nav> */}
           </div>
         </Toolbar>
       </AppBar>

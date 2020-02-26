@@ -1,11 +1,21 @@
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 .weatherDisplay {
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   justify-content: center;
   width: 100%;
 }
 
 .background {
+  animation-name: appear;
+  animation-duration: 2s;
   /* position: absolute; */
 
   width: 96%;
@@ -46,6 +56,7 @@
   align-items: flex-start;
   justify-content: space-between;
 }
+
 li {
   display: inline-block;
 }
@@ -55,6 +66,15 @@ img {
 }
 .temperature {
   font-size: 5em;
+  transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -ms-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+}
+
+.temperature:hover {
+  font-size: 5.5em;
 }
 .city {
   font-size: 30px;
@@ -85,11 +105,29 @@ img {
   display: flex;
   line-height: 1.6;
   font-size: 1em;
+  transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -ms-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
 }
 .daily-prediction-list-leftcolumn {
   margin-right: 100px;
   font-size: 1em;
+  transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -ms-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
 }
+.daily-prediction-list:hover {
+  font-size: 1.3em;
+}
+
+.daily-prediction-list-leftcolumn:hover {
+  font-size: 1.3em;
+}
+
 .slider {
   width: 90%;
   height: 30%;
@@ -131,6 +169,11 @@ img {
   padding: 5px;
   padding-top: 10px;
   font-size: 0.7em;
+  transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -ms-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
 }
 
 .day {
@@ -138,9 +181,22 @@ img {
   text-align: center;
   margin-top: 10px;
   margin-bottom: 8px;
+  transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -ms-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
 }
 .weather-details {
   content: "☁";
   margin-left: -20px;
   margin-right: 10px;
+}
+
+.day:hover {
+  font-size: 1.3em;
+}
+
+.daily-list li:hover {
+  font-size: 1.3em;
 }

@@ -13,8 +13,7 @@ function Copyright() {
       <Link color="inherit" href="https://juliaheller.github.io/myMeteo/">
         MyMeteo
       </Link>
-      {new Date().getFullYear()}
-      {"."}
+      {" " + new Date().getFullYear() + "."}
     </Typography>
   );
 }
