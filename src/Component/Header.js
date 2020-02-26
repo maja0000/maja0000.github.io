@@ -17,8 +17,7 @@ const useStyles = makeStyles(theme => ({
   },
   backColor: {
     backgroundColor: Colors.mainYellow,
-    marginBottom: "5px",
-    animation: "slideInDown"
+    marginBottom: "5px"
   },
 
   menuButton: {
@@ -40,7 +39,7 @@ export default function Header() {
   // };
 
   return (
-    <div className={classes.root}>
+    <div className={classes.root} className="header-effect">
       <AppBar position="static" className={classes.backColor}>
         <Toolbar variant="dense">
           <div className={classes.title} noWrap>

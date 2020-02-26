@@ -1,0 +1,29 @@
+@keyframes slideInUp {
+  from {
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+    visibility: visible;
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.slideInUp {
+  -webkit-animation-name: slideInUp;
+  animation-name: slideInUp;
+}
+
+.footer-effect {
+  animation-duration: 0.5s;
+  animation-name: slideInUp;
+  animation-delay: 0.3s;
+  background-color: #fecc5e;
+  height: 60px;
+  padding: 10px;
+  -webkit-box-shadow: 3px 7px 16px 0px rgba(185, 186, 186, 1);
+  -moz-box-shadow: 3px 7px 16px 0px rgba(185, 186, 186, 1);
+  box-shadow: 3px 7px 16px 0px rgba(185, 186, 186, 1);
+}
