@@ -42,7 +42,7 @@ export default function Header() {
             <Link exact to="/home">
               <Logo />
             </Link>
-            <nav className="navbar">
+            {/* <nav className="navbar">
               <ul>
                 <li>
                   <Link to="/travel">
@@ -81,7 +81,7 @@ export default function Header() {
                   </Link>
                 </li>
               </ul>
-            </nav>
+            </nav> */}
           </div>
         </Toolbar>
       </AppBar>
