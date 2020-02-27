@@ -4,6 +4,8 @@ import WeatherDisplay from "../Component/WeatherDisplay.js";
 import "../css/Frontpage.css";
 import { Breakpoint } from "react-socks";
 import HistoricalWeather from "../Component/HistoricalWeather";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 class Frontpage extends React.Component {
   constructor() {
@@ -40,7 +42,7 @@ class Frontpage extends React.Component {
           return response.json();
         } else {
           return Promise.reject(
-            alert("Sorry, we could not find your location.")
+            toast.error("Sorry we can't find your city, try again!")
           );
         }
       })
@@ -62,7 +64,9 @@ class Frontpage extends React.Component {
         if (response.ok) {
           return response.json();
         } else {
-          return Promise.reject(alert("Sorry, we could not find your city."));
+          return Promise.reject(
+            toast.error("Sorry we can't find your city, try again!")
+          );
         }
       })
       .then(result => {
@@ -75,6 +79,7 @@ class Frontpage extends React.Component {
   render() {
     return (
       <div className="frontpage">
+        <ToastContainer />
         <WeatherDisplay
           weatherProps={this.state.weatherDisplay}
           onSearch={this.searchForNewLocation}
