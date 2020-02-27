@@ -2,7 +2,7 @@ import React from "react";
 
 function DailyWeatherDetails({ weatherDetailsProps }) {
   // let { icon } = weatherDetailsProps.weather[0].icon;
-  console.log(weatherDetailsProps);
+  //   console.log(weatherDetailsProps);
   return (
     <div className="daily-weather">
       <ul className="daily-prediction-list flex">

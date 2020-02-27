@@ -2,7 +2,7 @@ import React from "react";
 // import SignInSide from "../Component/SignInSide";
 import WeatherDisplay from "../Component/WeatherDisplay.js";
 import "../css/Frontpage.css";
-import { Breakpoint } from "react-socks";
+// import { Breakpoint } from "react-socks";
 import HistoricalWeather from "../Component/HistoricalWeather";
 
 class Frontpage extends React.Component {
@@ -70,10 +70,13 @@ class Frontpage extends React.Component {
           weatherDisplay: result,
           loading: false
         });
+        console.log("weatherDisplay:", this.state.weatherDisplay);
       });
   }
   render() {
-    return (
+    return this.state.loading ? (
+      <h1>Loading</h1>
+    ) : (
       <div className="frontpage">
         <WeatherDisplay
           weatherProps={this.state.weatherDisplay}
@@ -81,9 +84,12 @@ class Frontpage extends React.Component {
           handleChange={this.handleChange}
           loading={this.state.loading}
         />
-        <Breakpoint large up>
-          <HistoricalWeather citySearch={this.state.citySearch} />
-        </Breakpoint>
+        {/* <Breakpoint large up> */}
+        <HistoricalWeather
+          citySearch={this.state.citySearch}
+          cityName={this.state.weatherDisplay.city.name}
+        />
+        {/* </Breakpoint> */}
       </div>
     );
   }
