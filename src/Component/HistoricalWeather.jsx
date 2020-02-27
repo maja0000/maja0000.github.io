@@ -50,7 +50,6 @@ export default function HistoricalWeather(props) {
   const getHistoricalWeatherData = () => {
     setError(false);
 
-    console.log(props.citySearch);
     fetch(
       `https://api.meteostat.net/v1/climate/normals?station=${station}&start=2019-01-01&end=2019-12-31&key=oiIXVxv8`
     )
@@ -58,7 +57,6 @@ export default function HistoricalWeather(props) {
         return response.json();
       })
       .then(result => {
-        console.log(result);
         if (result.data.temperature.JAN) {
           setTempData(result);
           setTemperature(result.data.temperature);

@@ -28,7 +28,7 @@ class Frontpage extends React.Component {
     setTimeout(() => {
       this.setState({ firstTime: false });
       sessionStorage.setItem("firstTime", false);
-    }, 2000);
+    }, 4000);
 
     ///  call function for geolocation
     this.getCityNameFromIp();
@@ -100,11 +100,11 @@ class Frontpage extends React.Component {
           handleChange={this.handleChange}
           loading={this.state.loading}
         />
-        {/* <HistoricalWeather
+        <HistoricalWeather
           className="historicalweather"
           citySearch={this.state.citySearch}
           cityName={this.state.weatherDisplay.city.name}
-        /> */}
+        />
       </div>
     );
   }
