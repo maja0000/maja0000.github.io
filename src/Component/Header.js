@@ -39,7 +39,7 @@ export default function Header() {
   // };
 
   return (
-    <div className={classes.root} className="header-effect">
+    <div className={classes.root + " header-effect"}>
       <AppBar position="static" className={classes.backColor}>
         <Toolbar variant="dense">
           <div className={classes.title} noWrap>

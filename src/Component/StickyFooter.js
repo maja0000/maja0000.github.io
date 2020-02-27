@@ -43,8 +43,8 @@ export default function StickyFooter() {
 
   return (
     <div>
-      <div className={classes.root}>
-        <footer className={classes.footer} className="footer-effect">
+      <div className={classes.root + "footer-effect"}>
+        <footer className={classes.footer}>
           <Container maxWidth="sm">
             <Typography variant="body1">
               <Link to="/legal">Legal notice and data privacy policy</Link>

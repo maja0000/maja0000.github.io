@@ -146,7 +146,7 @@ li {
 
 .slider {
   width: 90%;
-  height: 30%;
+  height: 40%;
   display: flex;
   overflow-x: auto;
 }
