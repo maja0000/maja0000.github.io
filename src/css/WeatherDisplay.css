@@ -194,17 +194,15 @@ img {
   margin-right: 10px;
 }
 
-
 .weather-icon-slider {
   height: 40px;
   -webkit-filter: drop-shadow(5px 5px 5px #222);
   filter: drop-shadow(2px 2px 5px #696767);
-
+}
 .day:hover {
   font-size: 1.3em;
 }
 
 .daily-list li:hover {
   font-size: 1.3em;
-
 }
