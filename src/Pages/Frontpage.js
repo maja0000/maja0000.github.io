@@ -4,6 +4,7 @@ import WeatherDisplay from "../Component/WeatherDisplay.js";
 import "../css/Frontpage.css";
 // import { Breakpoint } from "react-socks";
 import HistoricalWeather from "../Component/HistoricalWeather";
+import "../css/index.css";
 
 class Frontpage extends React.Component {
   constructor() {

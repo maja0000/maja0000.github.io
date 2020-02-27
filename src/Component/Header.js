@@ -6,7 +6,7 @@ import { makeStyles } from "@material-ui/core/styles";
 // import profileIcon from "../pictures/icons/profileIcon.svg";
 import "../css/Header.css";
 // import calendarIcon from "../pictures/icons/calendarIcon.svg";
-// import statisticIcon from "../pictures/icons/statisticIcon.svg";
+import statisticIcon from "../pictures/icons/statisticIcon.svg";
 // import travelIcon from "../pictures/icons/travelIcon.svg";
 import { Link } from "react-router-dom";
 import Colors from "../utils/Colors";
@@ -46,16 +46,16 @@ export default function Header() {
             <Link exact to="/home">
               <img src={Logo} alt="logo" className="header-logo" />
             </Link>
-            {/* <nav className="navbar">
+            <nav className="navbar">
               <ul>
                 <li>
-                  <Link to="/travel">
+                  {/* <Link to="/travel">
                     <img
                       src={travelIcon}
                       alt="travel-link"
                       className="navbarIcon"
                     />
-                  </Link>
+                  </Link> */}
                 </li>
                 <li>
                   <Link to="/statistics">
@@ -65,7 +65,7 @@ export default function Header() {
                       className="navbarIcon"
                     />
                   </Link>
-                </li>
+                  {/* </li>
                 <li>
                   <Link to="/calendar">
                     <img
@@ -82,10 +82,10 @@ export default function Header() {
                       alt="profile-link"
                       className="navbarIcon"
                     />
-                  </Link>
+                  </Link> */}
                 </li>
               </ul>
-            </nav> */}
+            </nav>
           </div>
         </Toolbar>
       </AppBar>

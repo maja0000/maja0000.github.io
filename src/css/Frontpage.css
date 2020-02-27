@@ -15,10 +15,33 @@
   min-height: 100vh;
   justify-content: center;
   align-items: center;
-  background-color: rgba(155, 190, 222, 0.424);
+  background-color: rgba(155, 190, 222, 0.294);
   height: 40%;
   margin: 20px 20px 20px 10px;
   padding: 20px;
+}
+
+.historicalweather h1 {
+  font-size: 30px;
+  margin: 0px;
+  margin-left: 8px;
+  text-align: center;
+  font-weight: 400;
+  padding: 5px;
+}
+
+.historicalweather h2 {
+  font-size: 25px;
+  margin: 0px;
+  margin-left: 8px;
+  text-align: center;
+  font-weight: 300;
+  padding: 5px;
+}
+.linechart {
+  padding: 5px;
+  align-self: center;
+  margin-right: 35px;
 }
 
 @media (max-device-width: 800px) {

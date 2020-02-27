@@ -142,7 +142,7 @@ export default function HistoricalWeather(props) {
     <div className="historicalweather">
       <h1>Average weather in 2019</h1>
       <h2>{props.cityName}</h2>
-      <LineChart width={350} height={160} data={tempData}>
+      <LineChart className="linechart" width={350} height={160} data={tempData}>
         <CartesianGrid stroke="#ccc" />
         <XAxis dataKey="name" />
         <YAxis />
@@ -152,12 +152,13 @@ export default function HistoricalWeather(props) {
         <Line
           type="monotone"
           dataKey="temp"
-          stroke="rgba(155, 190, 222)"
+          stroke="rgba(88, 0, 171, 0.9)"
+          strokeWidth="3"
           activeDot={{ r: 8 }}
         />
       </LineChart>
 
-      <LineChart width={350} height={160} data={sunData}>
+      <LineChart className="linechart" width={350} height={160} data={sunData}>
         <CartesianGrid stroke="#ccc" />
         <XAxis dataKey="name" />
         <YAxis />
@@ -167,12 +168,13 @@ export default function HistoricalWeather(props) {
         <Line
           type="monotone"
           dataKey="sun"
-          stroke="#8884d8"
+          stroke="rgba(245, 145, 29, 0.9)"
+          strokeWidth="3"
           activeDot={{ r: 8 }}
         />
       </LineChart>
 
-      <LineChart width={350} height={160} data={rainData}>
+      <LineChart className="linechart" width={350} height={160} data={rainData}>
         <CartesianGrid stroke="#ccc" />
         <XAxis dataKey="name" />
         <YAxis />
@@ -182,12 +184,18 @@ export default function HistoricalWeather(props) {
         <Line
           type="monotone"
           dataKey="rain"
-          stroke="#8884d8"
+          stroke=" rgba(43, 145, 254, 1)"
+          strokeWidth="3"
           activeDot={{ r: 8 }}
         />
       </LineChart>
 
-      <LineChart width={350} height={160} data={pressureData}>
+      <LineChart
+        className="linechart"
+        width={350}
+        height={160}
+        data={pressureData}
+      >
         <CartesianGrid stroke="#ccc" />
         <XAxis dataKey="name" />
         <YAxis />
@@ -197,7 +205,8 @@ export default function HistoricalWeather(props) {
         <Line
           type="monotone"
           dataKey="pressure"
-          stroke="#8884d8"
+          stroke="rgba(29, 29, 31, 1)"
+          strokeWidth="3"
           activeDot={{ r: 8 }}
         />
       </LineChart>
