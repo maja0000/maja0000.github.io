@@ -1,8 +1,9 @@
 import React from "react";
+// let { icon } = weatherDetailsProps.weather[0].icon;
 
 function DailyWeatherDetails({ weatherDetailsProps }) {
   // let { icon } = weatherDetailsProps.weather[0].icon;
-  //   console.log(weatherDetailsProps);
+
   return (
     <div className="daily-weather">
       <ul className="daily-prediction-list flex">
@@ -17,7 +18,7 @@ function DailyWeatherDetails({ weatherDetailsProps }) {
           °
           <br /> Desc : {weatherDetailsProps.list[0].weather[0].description}
           <br />
-          Wind : {weatherDetailsProps.list[0].wind.speed}km/h
+          Wind : {weatherDetailsProps.list[0].wind.speed} km/h
           <br />
         </li>
         <li>
@@ -25,9 +26,9 @@ function DailyWeatherDetails({ weatherDetailsProps }) {
           <br />
           Pressure : {weatherDetailsProps.list[0].main.pressure} mbar
           <br />
-          Temp min : {weatherDetailsProps.list[0].main.temp_min} °
+          Temp min : {Math.round(weatherDetailsProps.list[0].main.temp_min)} °
           <br />
-          Temp max : {weatherDetailsProps.list[0].main.temp_max} °
+          Temp max : {Math.round(weatherDetailsProps.list[0].main.temp_max)} °
           <br />
           {/* Visibility : {weatherDetailsProps.main.visibility} */}
         </li>

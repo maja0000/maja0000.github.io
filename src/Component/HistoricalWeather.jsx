@@ -152,7 +152,7 @@ export default function HistoricalWeather(props) {
         <Line
           type="monotone"
           dataKey="temp"
-          stroke="#8884d8"
+          stroke="rgba(155, 190, 222)"
           activeDot={{ r: 8 }}
         />
       </LineChart>

@@ -86,6 +86,7 @@ class Frontpage extends React.Component {
         />
         {/* <Breakpoint large up> */}
         <HistoricalWeather
+          className="historicalweather"
           citySearch={this.state.citySearch}
           cityName={this.state.weatherDisplay.city.name}
         />

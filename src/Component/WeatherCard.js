@@ -74,8 +74,7 @@ function WeatherCard(props) {
         {props.weatherProps.list.slice(0, 5).map((element, idx) => (
           <WeatherSlider
             key={idx}
-            day={daylist[day + idx + 1]}
-            // {day ==="Sunday"? daylist[day+idx]}
+            day={daylist[(day + idx + 1) % daylist.length]}
             daylist={daylist}
             uniquePropsForecast={element}
           />

@@ -6,6 +6,21 @@
     opacity: 1;
   }
 }
+@keyframes slideInDown {
+  0% {
+    -webkit-transform: translateY(-100%);
+    transform: translateY(-100%);
+    visibility: visible;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+.header-effect {
+  animation-name: slideInDown;
+  animation-duration: 0.5s;
+}
 .weatherDisplay {
   /* display: flex; */
   flex-direction: column;
@@ -62,7 +77,7 @@
 li {
   display: inline-block;
 }
-img {
+.weather-icon {
   height: 30px;
   width: auto;
 }
@@ -132,7 +147,7 @@ img {
 
 .slider {
   width: 90%;
-  height: 30%;
+  height: 40%;
   display: flex;
   overflow-x: auto;
 }
@@ -146,12 +161,7 @@ img {
   background: rgba(255, 251, 251, 0.32);
   backdrop-filter: blur(2px);
   border-radius: 20px;
-  /* right: 0; */
-  /* margin-top: 110px; */
   min-width: 90%;
-  /*height: 20%;
-  */
-  padding: 20px;
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
   -ms-border-radius: 20px;
