@@ -6,6 +6,21 @@
     opacity: 1;
   }
 }
+@keyframes slideInDown {
+  0% {
+    -webkit-transform: translateY(-100%);
+    transform: translateY(-100%);
+    visibility: visible;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+.header-effect {
+  animation-name: slideInDown;
+  animation-duration: 0.5s;
+}
 .weatherDisplay {
   display: flex;
   /* flex-direction: column; */
@@ -61,7 +76,7 @@
 li {
   display: inline-block;
 }
-img {
+.weather-icon {
   height: 30px;
   width: auto;
 }
@@ -131,7 +146,7 @@ img {
 
 .slider {
   width: 90%;
-  height: 30%;
+  height: 40%;
   display: flex;
   overflow-x: auto;
 }
@@ -194,17 +209,15 @@ img {
   margin-right: 10px;
 }
 
-
 .weather-icon-slider {
   height: 40px;
   -webkit-filter: drop-shadow(5px 5px 5px #222);
   filter: drop-shadow(2px 2px 5px #696767);
-
+}
 .day:hover {
   font-size: 1.3em;
 }
 
 .daily-list li:hover {
   font-size: 1.3em;
-
 }

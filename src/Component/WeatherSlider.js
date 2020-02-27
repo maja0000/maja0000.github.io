@@ -8,6 +8,7 @@ function WeatherSlider({ day, uniquePropsForecast, key }) {
     <div className="blurred-background slide">
       <p className="day">
         {day}
+
         <br />
         <div>
           <img
