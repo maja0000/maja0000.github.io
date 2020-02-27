@@ -7,27 +7,25 @@ function ParticlesComponent() {
       params={{
         particles: {
           number: {
-            value: 65,
+            value: 192,
             density: {
               enable: false
             }
           },
+          color: {
+            value: "#ffffff"
+          },
           size: {
             value: 10,
-            random: true,
-            anim: {
-              speed: 4,
-              size_min: 0.3
-            }
-          },
-          line_linked: {
-            enable: false
+            random: true
           },
           move: {
-            random: true,
-            speed: 4,
             direction: "bottom-left",
-            out_mode: "out"
+            out_mode: "out",
+            speed: 3.1
+          },
+          pagebackground: {
+            backgroundImage: `url(${"https://live.staticflickr.com/4840/31162319667_c7baf8bee5_b.jp"})`
           }
         }
       }}

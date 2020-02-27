@@ -42,7 +42,7 @@ class Frontpage extends React.Component {
           return response.json();
         } else {
           return Promise.reject(
-            toast.error("Sorry we can't find your city, try again!")
+            toast.error("Sorry we can't find your city⚠️ please try again!  ")
           );
         }
       })
@@ -65,7 +65,7 @@ class Frontpage extends React.Component {
           return response.json();
         } else {
           return Promise.reject(
-            toast.error("Sorry we can't find your city, try again!")
+            toast.error("Sorry we can't find your city ⚠️  please try again! ")
           );
         }
       })
