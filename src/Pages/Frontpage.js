@@ -3,22 +3,32 @@ import React from "react";
 import WeatherDisplay from "../Component/WeatherDisplay.js";
 import "../css/Frontpage.css";
 import { Breakpoint } from "react-socks";
-import HistoricalWeather from "../Component/HistoricalWeather";
+// import HistoricalWeather from "../Component/HistoricalWeather";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
+import Animation from "../Component/Animation";
 class Frontpage extends React.Component {
   constructor() {
     super();
     this.state = {
       weatherDisplay: [],
       loading: true,
-      citySearch: "Berlin"
+      citySearch: "Berlin",
+      firstTime: !sessionStorage.getItem("firstTime")
     };
-    // console.log(this.state);
   }
   /// call the fetch function
   componentDidMount() {
+    console.log(this.state.firstTime);
+    if (this.state.firstTime) {
+      sessionStorage.setItem("firstTime", true);
+      // this.setState({ firstTime: false });
+    }
+    setTimeout(() => {
+      this.setState({ firstTime: false });
+      sessionStorage.setItem("firstTime", false);
+    }, 2000);
+
     ///  call function for geolocation
     this.getCityNameFromIp();
     this.getWeather(); /*gave different name to differenciate the api fetches better*/
@@ -77,7 +87,9 @@ class Frontpage extends React.Component {
       });
   }
   render() {
-    return (
+    return this.state.firstTime ? (
+      <Animation />
+    ) : (
       <div className="frontpage">
         <ToastContainer />
         <WeatherDisplay
@@ -87,7 +99,7 @@ class Frontpage extends React.Component {
           loading={this.state.loading}
         />
         <Breakpoint large up>
-          <HistoricalWeather citySearch={this.state.citySearch} />
+          {/* <HistoricalWeather citySearch={this.state.citySearch} /> */}
         </Breakpoint>
       </div>
     );

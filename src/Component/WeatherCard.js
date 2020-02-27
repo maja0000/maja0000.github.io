@@ -5,6 +5,7 @@ import WeatherSlider from "./WeatherSlider";
 import "../css/WeatherDisplay.css";
 import LocationSearchBar from "./LocationSearchBar.js";
 // import WeatherSlider from "./WeatherSlider.js";
+import Snow from "./ParticlesComponent.js";
 
 var today = new Date();
 var day = today.getDay();
@@ -47,38 +48,53 @@ let date =
 
 function WeatherCard(props) {
   return (
-    <div className="background">
-      <div className="date-temperature">
-        <LocationSearchBar
-          onSearch={props.onSearch}
-          handleChange={props.handleChange}
-        />
-        <ul>
-          <li className="temperature">
-            {Math.round(props.weatherProps.list[0].main.temp)}°
-          </li>
-          <li className="">
-            <p className="city">{props.weatherProps.city.name}</p>
-            <p className="date">
-              {daylist[day]}, {date}
-              <br /> {hour}:{minute}
-              {prepand}
-            </p>
-          </li>
-        </ul>
+    <div className="bgContainer">
+      <div
+        style={{
+          position: "absolute",
+          height: "100%",
+          width: "100%",
+          zIndex: -1,
+          backgroundSize: "cover",
+          backgroundImage:
+            'url("https://live.staticflickr.com/4840/31162319667_c7baf8bee5_b.jpg")'
+        }}
+      >
+        <Snow />
       </div>
-      <DailyWeatherDetails weatherDetailsProps={props.weatherProps} />
-
-      <div className="weekly-weather slider">
-        {/* slider component goes here! */}
-        {props.weatherProps.list.slice(0, 5).map((element, idx) => (
-          <WeatherSlider
-            key={idx}
-            day={daylist[(day + idx + 1) % daylist.length]}
-            daylist={daylist}
-            uniquePropsForecast={element}
+      <div className="background">
+        <div className="date-temperature">
+          <LocationSearchBar
+            onSearch={props.onSearch}
+            handleChange={props.handleChange}
           />
-        ))}
+          <ul>
+            <li className="temperature">
+              {Math.round(props.weatherProps.list[0].main.temp)}°
+            </li>
+            <li className="">
+              <p className="city">{props.weatherProps.city.name}</p>
+              <p className="date">
+                {daylist[day]}, {date}
+                <br /> {hour}:{minute}
+                {prepand}
+              </p>
+            </li>
+          </ul>
+        </div>
+        <DailyWeatherDetails weatherDetailsProps={props.weatherProps} />
+
+        <div className="weekly-weather slider">
+          {/* slider component goes here! */}
+          {props.weatherProps.list.slice(0, 5).map((element, idx) => (
+            <WeatherSlider
+              key={idx}
+              day={daylist[(day + idx + 1) % daylist.length]}
+              daylist={daylist}
+              uniquePropsForecast={element}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );
