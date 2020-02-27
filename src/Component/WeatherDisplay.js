@@ -1,10 +1,8 @@
 import React from "react";
 import "../css/WeatherDisplay.css";
 import WeatherCard from "./WeatherCard.js";
-
 import "react-toastify/dist/ReactToastify.css";
-// import Particles from "react-particles-js";
-// import Snow from "./ParticlesComponent.js";
+
 
 function WeatherDisplay(props) {
   return (
@@ -13,11 +11,13 @@ function WeatherDisplay(props) {
       {props.loading ? (
         "...loading. Please wait!"
       ) : (
+
         <WeatherCard
           weatherProps={props.weatherProps}
           onSearch={props.onSearch}
           handleChange={props.handleChange}
         />
+
       )}
     </div>
   );

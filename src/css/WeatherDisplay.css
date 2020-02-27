@@ -22,10 +22,11 @@
   animation-duration: 0.5s;
 }
 .weatherDisplay {
-  display: flex;
-  /* flex-direction: column; */
+  /* display: flex; */
+  flex-direction: column;
   justify-content: center;
   width: 100%;
+  flex-shrink: 1;
 }
 .bgContainer {
   position: relative;
