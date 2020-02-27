@@ -54,7 +54,7 @@ class Frontpage extends React.Component {
           return response.json();
         } else {
           return Promise.reject(
-            alert("Sorry, we could not find your location.")
+            toast.error("Sorry, we could not find your location.")
           );
         }
       })
@@ -76,7 +76,7 @@ class Frontpage extends React.Component {
         if (response.ok) {
           return response.json();
         } else {
-          return Promise.reject(alert("Sorry, we could not find your city."));
+          return Promise.reject(toast.error("Sorry, we could not find your city."));
         }
       })
       .then(result => {
