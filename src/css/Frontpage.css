@@ -4,3 +4,31 @@
   flex-wrap: no-wrap;
   justify-content: space-between;
 }
+
+.historicalweather {
+  display: flex;
+  flex-shrink: 2;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(155, 190, 222, 0.424);
+  height: 40%;
+  margin: 20px 20px 20px 10px;
+  padding: 20px;
+}
+
+@media (max-device-width: 800px) {
+  .frontpage {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .historicalweather {
+    width: 100vw;
+  }
+}

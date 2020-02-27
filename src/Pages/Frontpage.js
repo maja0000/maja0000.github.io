@@ -2,10 +2,8 @@ import React from "react";
 // import SignInSide from "../Component/SignInSide";
 import WeatherDisplay from "../Component/WeatherDisplay.js";
 import "../css/Frontpage.css";
-import { Breakpoint } from "react-socks";
+// import { Breakpoint } from "react-socks";
 import HistoricalWeather from "../Component/HistoricalWeather";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 
 class Frontpage extends React.Component {
   constructor() {
@@ -42,7 +40,7 @@ class Frontpage extends React.Component {
           return response.json();
         } else {
           return Promise.reject(
-            toast.error("Sorry we can't find your city⚠️ please try again!  ")
+            alert("Sorry, we could not find your location.")
           );
         }
       })
@@ -64,9 +62,7 @@ class Frontpage extends React.Component {
         if (response.ok) {
           return response.json();
         } else {
-          return Promise.reject(
-            toast.error("Sorry we can't find your city ⚠️  please try again! ")
-          );
+          return Promise.reject(alert("Sorry, we could not find your city."));
         }
       })
       .then(result => {
@@ -74,21 +70,27 @@ class Frontpage extends React.Component {
           weatherDisplay: result,
           loading: false
         });
+        console.log("weatherDisplay:", this.state.weatherDisplay);
       });
   }
   render() {
-    return (
+    return this.state.loading ? (
+      <h1>Loading</h1>
+    ) : (
       <div className="frontpage">
-        <ToastContainer />
         <WeatherDisplay
           weatherProps={this.state.weatherDisplay}
           onSearch={this.searchForNewLocation}
           handleChange={this.handleChange}
           loading={this.state.loading}
         />
-        <Breakpoint large up>
-          <HistoricalWeather citySearch={this.state.citySearch} />
-        </Breakpoint>
+        {/* <Breakpoint large up> */}
+        <HistoricalWeather
+          className="historicalweather"
+          citySearch={this.state.citySearch}
+          cityName={this.state.weatherDisplay.city.name}
+        />
+        {/* </Breakpoint> */}
       </div>
     );
   }

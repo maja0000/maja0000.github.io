@@ -3,7 +3,7 @@ import "../css/WeatherDisplay.css";
 import WeatherCard from "./WeatherCard.js";
 
 import "react-toastify/dist/ReactToastify.css";
-import Particles from "react-particles-js";
+// import Particles from "react-particles-js";
 // import ParticlesComponent from "./Particles";
 
 const particlesOprtions = {
@@ -40,7 +40,7 @@ function WeatherDisplay(props) {
         "...loading. Please wait!"
       ) : (
         <div>
-          <Particles params={particlesOprtions} />
+          {/* <Particles params={particlesOprtions} /> */}
           {/* <ParticlesComponent /> */}
           <WeatherCard
             weatherProps={props.weatherProps}
