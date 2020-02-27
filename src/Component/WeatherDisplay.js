@@ -3,6 +3,8 @@ import "../css/WeatherDisplay.css";
 import WeatherCard from "./WeatherCard.js";
 // import { responsiveFontSizes } from "@material-ui/core";
 // import DailyWeatherDetails from "./DailyWeatherDetails";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function WeatherDisplay(props) {
   return (
