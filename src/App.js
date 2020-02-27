@@ -6,10 +6,12 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Frontpage from "./Pages/Frontpage.js";
 import { BreakpointProvider } from "react-socks";
 
+
 function App() {
   return (
     <Router>
       <Header />
+
       <Switch>
         <BreakpointProvider>
           <Route exact path="/" component={Frontpage} />

@@ -36,7 +36,7 @@ class WeatherDisplay extends React.Component {
 
   // this function gets called when user presses enter in searchbar
   searchForNewLocation = event => {
-    console.log("click search");
+    let input = document.querySelector(`.city-search`);
     this.getWeather();
   };
 
@@ -88,12 +88,12 @@ class WeatherDisplay extends React.Component {
         {loading ? (
           "...loading</br> Please wait!"
         ) : (
-          <WeatherCard
-            weatherProps={this.state.weatherDisplay}
-            onSearch={this.searchForNewLocation}
-            handleChange={this.handleChange}
-          />
-        )}
+            <WeatherCard
+              weatherProps={this.state.weatherDisplay}
+              onSearch={this.searchForNewLocation}
+              handleChange={this.handleChange}
+            />
+          )}
       </div>
     );
   }

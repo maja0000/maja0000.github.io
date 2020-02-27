@@ -4,6 +4,7 @@ import { fade, makeStyles } from "@material-ui/core/styles";
 import SearchIcon from "@material-ui/icons/Search";
 import "../css/LocationSearchBar.css";
 import Button from "@material-ui/core/Button";
+import AutoComplete from './AutoComplete';
 
 const useStyles = makeStyles(theme => ({
   //   root: {},
@@ -66,7 +67,10 @@ export default function SearchBar({ onSearch, handleChange }) {
           <SearchIcon />
         </Button>
         <div className={classes.searchIcon}></div>
-        <InputBase
+        <AutoComplete
+          onInput={handleChange}
+          onKeyPress={handleKeyPress} />
+        {/* <InputBase
           placeholder="Location…"
           classes={{
             root: classes.inputRoot,
@@ -74,8 +78,8 @@ export default function SearchBar({ onSearch, handleChange }) {
           }}
           onInput={handleChange}
           onKeyPress={handleKeyPress}
-          inputProps={{ "aria-label": "search" }}
-        />
+          inputProps={{ "aria-label": "search" }}   
+        /> */}
       </div>
     </div>
   );
