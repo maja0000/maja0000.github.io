@@ -28,26 +28,31 @@
   width: 100%;
   flex-shrink: 1;
 }
-
-.background {
-  animation-name: appear;
-  animation-duration: 2s;
-  /* position: absolute; */
-
+.bgContainer {
+  position: relative;
   -webkit-box-shadow: 10px -8px 26px -18px rgba(105, 103, 103, 1);
   -moz-box-shadow: 10px -8px 26px -18px rgba(105, 103, 103, 1);
   box-shadow: 10px -8px 26px -18px rgba(105, 103, 103, 1);
   height: 40%;
   margin: 20px 20px 20px 10px;
-  background: url(../pictures/berlin-sky.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  align-content: space-between;
   border-radius: 20px;
+  min-height: 100vh;
+}
+
+.background {
+  animation-name: appear;
+  animation-duration: 2s;
+  /* position: absolute; */
+  /* width: 100vw; */
+  /* background: url(../pictures/berlin-sky.jpg); */
+  /* background-repeat: no-repeat;
+  background-size: cover; */
+  align-content: space-between;
+
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
-  min-height: 100vh;
+
   justify-content: flex-start;
   align-items: center;
 }
