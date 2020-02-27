@@ -5,9 +5,13 @@ import "../css/Frontpage.css";
 
 import { Breakpoint } from "react-socks";
 import HistoricalWeather from "../Component/HistoricalWeather";
+
+import "../css/index.css";
+
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Animation from "../Component/Animation";
+
 
 class Frontpage extends React.Component {
   constructor() {
