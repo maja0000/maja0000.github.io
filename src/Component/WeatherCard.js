@@ -64,8 +64,7 @@ function WeatherCard(props) {
       >
         {/* {props.weatherProps.list[0].weather[0].description.toLowerCase().includes("snow")? <Snow/> }
         {props.weatherProps.list[0].weather[0].description.toLowerCase().includes("rain")? <Rain/>}
-        {props.weatherProps.list[0].weather[0].description.toLowerCase().includes("cloud")? <Clouds/>} */}
-
+        {props.weatherProps.list[0].weather[0].description.toLowerCase().includes("cloud")? <Clouds/>} */}{" "}
         {/* {/* <Snow /> */}
         <Rain />
         {/* <Clouds /> */}

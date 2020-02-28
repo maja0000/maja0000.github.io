@@ -2,9 +2,13 @@ import React from "react";
 import Particles from "react-particles-js";
 import Raindrop from "../pictures/icons/drop2.svg";
 
+const style = {
+  height: "100%"
+};
+
 function Rain() {
   return (
-    <div>
+    <div style={style}>
       <Particles
         params={{
           particles: {
