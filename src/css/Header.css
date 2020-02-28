@@ -16,9 +16,10 @@
 }
 
 .navbarIcon {
-  margin: 10px;
-  padding: 5px;
-  min-height: 40px;
+  margin: 5px;
+  /* padding: 5px; */
+  min-height: 20px;
+  float: right;
 }
 .header-logo:hover {
   -webkit-transform: scale(1.2);

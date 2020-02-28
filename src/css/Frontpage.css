@@ -1,8 +1,8 @@
 .frontpage {
   display: flex;
   flex-direction: row;
-  flex-wrap: no-wrap;
-  justify-content: space-between;
+  flex-wrap: nowrap;
+  justify-content: center;
 }
 
 .historicalweather {
@@ -11,14 +11,29 @@
   border-radius: 20px;
   display: flex;
   flex-direction: column;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   min-height: 100vh;
   justify-content: center;
   align-items: center;
   background-color: rgba(155, 190, 222, 0.294);
-  height: 40%;
   margin: 20px 20px 20px 10px;
   padding: 20px;
+  width: 100%;
+  position: relative;
+}
+
+.description {
+  justify-self: center;
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+  flex-direction: column;
+}
+.charts {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-self: center;
 }
 
 .historicalweather h1 {
@@ -49,9 +64,22 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
   }
+
   .historicalweather {
+    display: flex;
+    flex-shrink: 2;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(155, 190, 222, 0.294);
+    margin: 20px 20px 20px 10px;
+    padding: 20px;
     width: 100vw;
   }
 }
