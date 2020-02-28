@@ -42,30 +42,29 @@ export default function Header() {
     <div className={classes.root + " header-effect"}>
       <AppBar position="static" className={classes.backColor}>
         <Toolbar variant="dense">
-          <div className={classes.title} noWrap>
-            <Link exact to="/home">
+          <div className={classes.title}>
+            <Link exact="true" to="/home">
               <img src={Logo} alt="logo" className="header-logo" />
             </Link>
-            <nav className="navbar">
+            {/* <img
+              src={statisticIcon}
+              alt="statistic-link"
+              className="navbarIcon"
+            /> */}
+            {/* <nav className="navbar">
               <ul>
-                <li>
-                  {/* <Link to="/travel">
+                <li> */}
+            {/* <Link to="/travel">
                     <img
                       src={travelIcon}
                       alt="travel-link"
                       className="navbarIcon"
                     />
                   </Link> */}
-                </li>
-                <li>
-                  <Link to="/statistics">
-                    <img
-                      src={statisticIcon}
-                      alt="statistic-link"
-                      className="navbarIcon"
-                    />
-                  </Link>
-                  {/* </li>
+            {/* </li>
+                <li> */}
+
+            {/* </li>
                 <li>
                   <Link to="/calendar">
                     <img
@@ -83,9 +82,9 @@ export default function Header() {
                       className="navbarIcon"
                     />
                   </Link> */}
-                </li>
+            {/* </li>
               </ul>
-            </nav>
+            </nav> */}
           </div>
         </Toolbar>
       </AppBar>

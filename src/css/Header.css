@@ -18,7 +18,8 @@
   height: 4.5em;
 }
 .navbarIcon {
-  margin: 10px;
-  padding: 5px;
-  min-height: 40px;
+  margin: 5px;
+  /* padding: 5px; */
+  min-height: 20px;
+  float: right;
 }
