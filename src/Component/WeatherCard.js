@@ -8,6 +8,7 @@ import LocationSearchBar from "./LocationSearchBar.js";
 import Snow from "./Snow.js";
 import Rain from "./Rain.js";
 import Clouds from "./Clouds.js";
+import BgMeteo from "./BgMeteo";
 
 var today = new Date();
 var day = today.getDay();
@@ -64,9 +65,12 @@ function WeatherCard(props) {
       >
         {/* {props.weatherProps.list[0].weather[0].description.toLowerCase().includes("snow")? <Snow/> }
         {props.weatherProps.list[0].weather[0].description.toLowerCase().includes("rain")? <Rain/>}
-        {props.weatherProps.list[0].weather[0].description.toLowerCase().includes("cloud")? <Clouds/>} */}{" "}
+        {props.weatherProps.list[0].weather[0].description.toLowerCase().includes("cloud")? <Clouds/>} */}
         {/* {/* <Snow /> */}
-        <Rain />
+        <BgMeteo
+          weatherCondition={props.weatherProps.list[0].weather[0].main}
+        />
+        {/* <Rain /> */}
         {/* <Clouds /> */}
       </div>
       <div className="background">

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import "../css/Animation.css";
 import Logo from "../pictures/icons/newlogo.svg";
 import Cloud from "../pictures/icons/singlecloud.svg";
+
 function Animation() {
   return (
     <div className="animation-group">

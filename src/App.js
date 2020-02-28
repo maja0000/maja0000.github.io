@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Frontpage from "./Pages/Frontpage.js";
 import Notfound from "./Pages/Notfound";
 import React from "react";
+import Animation from "./Component/Animation";
 
 function App() {
   // function on click of statistic button in header
