@@ -5,7 +5,9 @@ import WeatherSlider from "./WeatherSlider";
 import "../css/WeatherDisplay.css";
 import LocationSearchBar from "./LocationSearchBar.js";
 // import WeatherSlider from "./WeatherSlider.js";
-import Snow from "./ParticlesComponent.js";
+import Snow from "./Snow.js";
+import Rain from "./Rain.js";
+import Clouds from "./Clouds.js";
 
 var today = new Date();
 var day = today.getDay();
@@ -57,11 +59,16 @@ function WeatherCard(props) {
           zIndex: -1,
           backgroundSize: "cover",
           backgroundImage:
-            // 'url("https://live.staticflickr.com/4840/31162319667_c7baf8bee5_b.jpg")'
-            'url("https://images.unsplash.com/photo-1543139263-5547e3c86903?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2326&q=80")'
+            'url("https://images.unsplash.com/photo-1529000920031-b8f994d2eb27?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2434&q=80")'
         }}
       >
-        <Snow />
+        {/* {props.weatherProps.list[0].weather[0].description.toLowerCase().includes("snow")? <Snow/> }
+        {props.weatherProps.list[0].weather[0].description.toLowerCase().includes("rain")? <Rain/>}
+        {props.weatherProps.list[0].weather[0].description.toLowerCase().includes("cloud")? <Clouds/>} */}
+
+        {/* {/* <Snow /> */}
+        <Rain />
+        {/* <Clouds /> */}
       </div>
       <div className="background">
         <div className="date-temperature">
@@ -84,7 +91,6 @@ function WeatherCard(props) {
           </ul>
         </div>
         <DailyWeatherDetails weatherDetailsProps={props.weatherProps} />
-
         <div className="weekly-weather slider">
           {/* slider component goes here! */}
           {props.weatherProps.list.slice(0, 5).map((element, idx) => (

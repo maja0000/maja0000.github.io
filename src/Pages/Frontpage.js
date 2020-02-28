@@ -11,7 +11,6 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Animation from "../Component/Animation";
 
-
 class Frontpage extends React.Component {
   constructor() {
     super();
