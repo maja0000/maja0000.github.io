@@ -48,11 +48,10 @@
   /* background-repeat: no-repeat;
   background-size: cover; */
   align-content: space-between;
-
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
-
+  border-radius: 20px;
   justify-content: flex-start;
   align-items: center;
 }

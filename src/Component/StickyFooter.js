@@ -6,6 +6,8 @@ import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 // import Link from "@material-ui/core/Link";
 import { Link } from "react-router-dom";
+import Cloud from "../pictures/icons/legal-c.svg";
+import CloudA from "../pictures/icons/animation-c.svg";
 
 function Copyright() {
   return (
@@ -32,8 +34,8 @@ const useStyles = makeStyles(theme => ({
     padding: theme.spacing(3, 2),
     marginTop: "auto",
     backgroundColor:
-      theme.palette.type === "dark"
-        ? theme.palette.grey[800]
+      theme.palette.type === "light"
+        ? theme.palette.grey[400]
         : theme.palette.grey[200]
   }
 }));
@@ -47,9 +49,12 @@ export default function StickyFooter() {
         <footer className={classes.footer}>
           <Container maxWidth="sm">
             <Typography variant="body1">
-              <Link to="/legal">Legal notice and data privacy policy</Link>
-              <br />
-              <Link to="/animation">Animation</Link>
+              <Link exact to="/legal">
+                <img src={Cloud} alt="logo" className="cloudL" />
+              </Link>
+              <Link exact to="/Animation">
+                <img src={CloudA} alt="logo" className="cloudA" />
+              </Link>
             </Typography>
 
             <Copyright />

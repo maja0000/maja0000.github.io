@@ -57,7 +57,8 @@ function WeatherCard(props) {
           zIndex: -1,
           backgroundSize: "cover",
           backgroundImage:
-            'url("https://live.staticflickr.com/4840/31162319667_c7baf8bee5_b.jpg")'
+            // 'url("https://live.staticflickr.com/4840/31162319667_c7baf8bee5_b.jpg")'
+            'url("https://images.unsplash.com/photo-1543139263-5547e3c86903?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2326&q=80")'
         }}
       >
         <Snow />

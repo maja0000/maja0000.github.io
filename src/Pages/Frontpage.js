@@ -3,7 +3,6 @@ import React from "react";
 import WeatherDisplay from "../Component/WeatherDisplay.js";
 import "../css/Frontpage.css";
 
-import { Breakpoint } from "react-socks";
 import HistoricalWeather from "../Component/HistoricalWeather";
 
 import "../css/index.css";
@@ -33,7 +32,7 @@ class Frontpage extends React.Component {
     setTimeout(() => {
       this.setState({ firstTime: false });
       sessionStorage.setItem("firstTime", false);
-    }, 2000);
+    }, 4000);
 
     ///  call function for geolocation
     this.getCityNameFromIp();
@@ -58,7 +57,7 @@ class Frontpage extends React.Component {
           return response.json();
         } else {
           return Promise.reject(
-            toast.error("Sorry, we could not find your location.")
+            toast.error("⚠️ Sorry, we could not find your location.")
           );
         }
       })
@@ -80,7 +79,9 @@ class Frontpage extends React.Component {
         if (response.ok) {
           return response.json();
         } else {
-          return Promise.reject(toast.error("Sorry, we could not find your city."));
+          return Promise.reject(
+            toast.error("⚠️ Sorry, we could not find your city.")
+          );
         }
       })
       .then(result => {
@@ -92,7 +93,6 @@ class Frontpage extends React.Component {
       });
   }
   render() {
-
     return this.state.firstTime ? (
       <Animation />
     ) : (
@@ -104,14 +104,11 @@ class Frontpage extends React.Component {
           handleChange={this.handleChange}
           loading={this.state.loading}
         />
-
-        {/* <Breakpoint large up> */}
         <HistoricalWeather
           className="historicalweather"
           citySearch={this.state.citySearch}
           cityName={this.state.weatherDisplay.city.name}
         />
-        {/* </Breakpoint> */}
       </div>
     );
   }
