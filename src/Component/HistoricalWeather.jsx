@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+
 import {
   LineChart,
   Line,
@@ -132,82 +133,102 @@ export default function HistoricalWeather(props) {
       { name: "DEC", pressure: +pressure.DEC }
     ];
   }
+
   return loading ? (
     <h1>Loading...</h1>
   ) : (
     //use map to render all charts?
 
     <div className="historicalweather">
-      <h1>Average weather in 2019</h1>
-      <h2>{props.cityName}</h2>
-      <LineChart className="linechart" width={350} height={160} data={tempData}>
-        <CartesianGrid stroke="#ccc" />
-        <XAxis dataKey="name" />
-        <YAxis />
-        <CartesianGrid strokeDasharray="3 3" />
-        <Tooltip />
-        <Legend />
-        <Line
-          type="monotone"
-          dataKey="temp"
-          stroke="rgba(88, 0, 171, 0.9)"
-          strokeWidth="3"
-          activeDot={{ r: 8 }}
-        />
-      </LineChart>
+      <div className="description">
+        <h1>Average weather in 2019</h1>
+        <h2>{props.cityName}</h2>
+      </div>
+      <div className="charts">
+        <LineChart
+          className="linechart"
+          width={350}
+          height={160}
+          data={tempData}
+        >
+          <CartesianGrid stroke="#ccc" />
+          <XAxis dataKey="name" />
+          <YAxis />
+          <CartesianGrid strokeDasharray="3 3" />
+          <Tooltip />
+          <Legend />
+          <Line
+            type="monotone"
+            dataKey="temp"
+            stroke="rgba(88, 0, 171, 0.9)"
+            strokeWidth="3"
+            activeDot={{ r: 8 }}
+          />
+        </LineChart>
 
-      <LineChart className="linechart" width={350} height={160} data={sunData}>
-        <CartesianGrid stroke="#ccc" />
-        <XAxis dataKey="name" />
-        <YAxis />
-        <CartesianGrid strokeDasharray="3 3" />
-        <Tooltip />
-        <Legend />
-        <Line
-          type="monotone"
-          dataKey="sun"
-          stroke="rgba(245, 145, 29, 0.9)"
-          strokeWidth="3"
-          activeDot={{ r: 8 }}
-        />
-      </LineChart>
+        <LineChart
+          className="linechart"
+          width={350}
+          height={160}
+          data={sunData}
+        >
+          <CartesianGrid stroke="#ccc" />
+          <XAxis dataKey="name" />
+          <YAxis />
+          <CartesianGrid strokeDasharray="3 3" />
+          <Tooltip />
+          <Legend />
+          <Line
+            type="monotone"
+            dataKey="sun"
+            stroke="rgba(245, 145, 29, 0.9)"
+            strokeWidth="3"
+            activeDot={{ r: 8 }}
+          />
+        </LineChart>
 
-      <LineChart className="linechart" width={350} height={160} data={rainData}>
-        <CartesianGrid stroke="#ccc" />
-        <XAxis dataKey="name" />
-        <YAxis />
-        <CartesianGrid strokeDasharray="3 3" />
-        <Tooltip />
-        <Legend />
-        <Line
-          type="monotone"
-          dataKey="rain"
-          stroke=" rgba(43, 145, 254, 1)"
-          strokeWidth="3"
-          activeDot={{ r: 8 }}
-        />
-      </LineChart>
+        <LineChart
+          className="linechart"
+          width={350}
+          height={160}
+          data={rainData}
+        >
+          <CartesianGrid stroke="#ccc" />
+          <XAxis dataKey="name" />
+          <YAxis />
+          <CartesianGrid strokeDasharray="3 3" />
+          <Tooltip />
+          <Legend />
+          <Line
+            type="monotone"
+            dataKey="rain"
+            stroke=" rgba(43, 145, 254, 1)"
+            strokeWidth="3"
+            activeDot={{ r: 8 }}
+          />
+        </LineChart>
 
-      <LineChart
-        className="linechart"
-        width={350}
-        height={160}
-        data={pressureData}
-      >
-        <CartesianGrid stroke="#ccc" />
-        <XAxis dataKey="name" />
-        <YAxis />
-        <CartesianGrid strokeDasharray="3 3" />
-        <Tooltip />
-        <Legend />
-        <Line
-          type="monotone"
-          dataKey="pressure"
-          stroke="rgba(29, 29, 31, 1)"
-          strokeWidth="3"
-          activeDot={{ r: 8 }}
-        />
-      </LineChart>
+        <LineChart
+          className="linechart"
+          width={350}
+          height={160}
+          data={pressureData}
+        >
+          <CartesianGrid stroke="#ccc" />
+          <XAxis dataKey="name" />
+          <YAxis />
+          <CartesianGrid strokeDasharray="3 3" />
+          <Tooltip />
+          <Legend />
+          <Line
+            type="monotone"
+            dataKey="pressure"
+            stroke="rgba(29, 29, 31, 1)"
+            strokeWidth="3"
+            activeDot={{ r: 8 }}
+          />
+        </LineChart>
+      </div>
     </div>
   );
 }
