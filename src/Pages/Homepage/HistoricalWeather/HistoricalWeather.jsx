@@ -91,31 +91,37 @@ export default function HistoricalWeather() {
   return loading ? (
     <h1>Loading...</h1>
   ) : (
-    <div>
-      {tempData.map(function(dataParser, idx) {
-        return (
-          <LineChart
-            className="linechart"
-            width={350}
-            height={160}
-            data={dataParser.data}
-          >
-            <CartesianGrid stroke="#ccc" />
-            <XAxis dataKey="name" />
-            <YAxis />
-            <CartesianGrid strokeDasharray="3 3" />
-            <Tooltip />
-            <Legend />
-            <Line
-              type="monotone"
-              dataKey={dataParser.type}
-              stroke={colors[idx % colors.length]}
-              strokeWidth="3"
-              activeDot={{ r: 8 }}
-            />
-          </LineChart>
-        );
-      })}
+    <div className="historicalweather">
+      <div className="description">
+        <h1>Average weather in 2019</h1>
+        <h2>{cityName}</h2>
+      </div>
+      <div className="charts">
+        {tempData.map(function(dataParser, idx) {
+          return (
+            <LineChart
+              className="linechart"
+              width={350}
+              height={160}
+              data={dataParser.data}
+            >
+              <CartesianGrid stroke="#ccc" />
+              <XAxis dataKey="name" />
+              <YAxis />
+              <CartesianGrid strokeDasharray="3 3" />
+              <Tooltip />
+              <Legend />
+              <Line
+                type="monotone"
+                dataKey={dataParser.type}
+                stroke={colors[idx % colors.length]}
+                strokeWidth="3"
+                activeDot={{ r: 8 }}
+              />
+            </LineChart>
+          );
+        })}
+      </div>
     </div>
   );
 }

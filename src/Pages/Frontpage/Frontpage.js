@@ -80,7 +80,8 @@ function Frontpage() {
         citySearch: citySearch,
         setCitySearch: setCitySearch,
         getWeather: getWeather,
-        setOnlyStatistics: setOnlyStatistics
+        setOnlyStatistics: setOnlyStatistics,
+        cityName: cityName
       }}
     >
       <div className="frontpage">
