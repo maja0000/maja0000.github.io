@@ -22,3 +22,12 @@
   -ms-transform: scale(1.2);
   transform: scale(1.2);
 }
+a {
+  text-decoration: none;
+}
+a:active {
+  text-decoration: underline;
+}
+a:visited {
+  color: #fecc5e;
+}
