@@ -19,15 +19,14 @@ const colors = [
 export default function HistoricalWeather() {
   let [station, setStation] = useState(10381);
   let [tempData, setTempData] = useState([]);
-  let sunData = [{}];
-  let rainData = [{}];
-  let pressureData = [{}];
-  const [temperature, setTemperature] = useState(0);
-  const [precipitation, setPrecipitation] = useState(0);
-  const [sunshine, setSunshine] = useState(0);
-  const [pressure, setPressure] = useState(0);
   let [loading, setloading] = useState(true);
   let [hasError, setError] = useState(false);
+  const [displayedData, setDisplayedData] = useState([
+    "temperature",
+    "precipitation",
+    "sunshine"
+  ]);
+
   const { citySearch, weatherDisplay, setOnlyStatistics } = useContext(
     WeatherContext
   );
@@ -72,7 +71,7 @@ export default function HistoricalWeather() {
 
         for (let data in result.data) {
           let localArray = [];
-
+          console.log(data);
           for (let key in result.data[data]) {
             localArray.push({ name: key, [data]: +result.data[data][key] });
           }
@@ -99,26 +98,28 @@ export default function HistoricalWeather() {
       <div className="charts">
         {tempData.map(function(dataParser, idx) {
           return (
-            <LineChart
-              className="linechart"
-              width={350}
-              height={160}
-              data={dataParser.data}
-            >
-              <CartesianGrid stroke="#ccc" />
-              <XAxis dataKey="name" />
-              <YAxis />
-              <CartesianGrid strokeDasharray="3 3" />
-              <Tooltip />
-              <Legend />
-              <Line
-                type="monotone"
-                dataKey={dataParser.type}
-                stroke={colors[idx % colors.length]}
-                strokeWidth="3"
-                activeDot={{ r: 8 }}
-              />
-            </LineChart>
+            displayedData.includes(dataParser.type) && (
+              <LineChart
+                className="linechart"
+                width={350}
+                height={160}
+                data={dataParser.data}
+              >
+                <CartesianGrid stroke="#ccc" />
+                <XAxis dataKey="name" />
+                <YAxis />
+                <CartesianGrid strokeDasharray="3 3" />
+                <Tooltip />
+                <Legend />
+                <Line
+                  type="monotone"
+                  dataKey={dataParser.type}
+                  stroke={colors[idx % colors.length]}
+                  strokeWidth="3"
+                  activeDot={{ r: 8 }}
+                />
+              </LineChart>
+            )
           );
         })}
       </div>
