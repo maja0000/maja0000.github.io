@@ -3,48 +3,50 @@
   justify-content: center;
   align-items: center;
   height: 580px;
+  background-color: #9bbede;
 }
-
+.smaller-container {
+  position: relative;
+  margin: 40px;
+}
 .c1 {
   animation-name: slide-in-fwd-tl;
   animation-duration: 1s;
   z-index: 2;
   height: 45px;
   position: absolute;
-  left: 40%;
-  top: 46%;
+  top: 9px;
+  left: 110px;
 }
 
 .c2 {
   animation-name: slide-in-fwd-left;
   animation-duration: 1s;
   position: absolute;
-  top: 430px;
-  left: 440px;
   z-index: 2;
   height: 60px;
+  bottom: 0px;
+  left: 100px;
 }
 
 .c3 {
   animation-duration: 1s;
   animation-name: slide-in-fwd-tr;
   position: absolute;
-  left: 570px;
   z-index: 2;
   height: 65px;
-  top: 380px;
+  bottom: 90px;
+  right: 100px;
 }
 .logo {
   animation-duration: 2s;
   animation-name: tada;
   animation-delay: 0.7s;
-  position: absolute;
   z-index: 1;
   height: 60px;
   position: absolute;
-  z-index: 0;
-  right: 508px;
-  top: 338px;
+  bottom: 50px;
+  left: 28px;
 }
 @keyframes tada {
   from {
@@ -122,9 +124,6 @@
   }
 }
 
-.animation-group {
-  background-color: #9bbede;
-}
 /* the svg element */
 .svg-sun {
   width: 160px;

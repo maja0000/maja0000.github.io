@@ -2,31 +2,29 @@ import React from "react";
 
 // import cloud from "../pictures/clouds-icon.svg";
 
-function WeatherSlider({ day, uniquePropsForecast, key }) {
+function WeatherSlider({ day, uniquePropsForecast }) {
   return (
     <div className="blurred-background slide">
-      <p className="day">
-        {day}
+      <p className="day">{day}</p>
 
-        <br />
-        <div>
-          <img
-            className="weather-icon-slider"
-            src={`http://openweathermap.org/img/wn/${uniquePropsForecast.weather[0].icon}@2x.png`}
-            alt="icon"
-          ></img>
-          <img
-            className="weather-icon-slider"
-            src={`http://openweathermap.org/img/wn/${uniquePropsForecast.weather[0].icon}@2x.png`}
-            alt="icon"
-          ></img>
-          <img
-            className="weather-icon-slider"
-            src={`http://openweathermap.org/img/wn/${uniquePropsForecast.weather[0].icon}@2x.png`}
-            alt="icon"
-          ></img>
-        </div>
-      </p>
+      <div className="icons-row">
+        <img
+          className="weather-icon-slider"
+          src={`http://openweathermap.org/img/wn/${uniquePropsForecast.weather[0].icon}@2x.png`}
+          alt="icon"
+        ></img>
+        <img
+          className="weather-icon-slider"
+          src={`http://openweathermap.org/img/wn/${uniquePropsForecast.weather[0].icon}@2x.png`}
+          alt="icon"
+        ></img>
+        <img
+          className="weather-icon-slider"
+          src={`http://openweathermap.org/img/wn/${uniquePropsForecast.weather[0].icon}@2x.png`}
+          alt="icon"
+        ></img>
+      </div>
+
       <ul className="daily-list">
         {" "}
         <li>Temp : {Math.round(uniquePropsForecast.main.temp)}°</li>

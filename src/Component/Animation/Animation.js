@@ -10,9 +10,9 @@ function Animation() {
   return (
     <div className="animation-group">
       <div className="smaller-container">
-        <div class="container-sun">
+        <div className="container-sun">
           <svg
-            class="svg-sun"
+            className="svg-sun"
             version="1.1"
             viewBox="0 0 100 100"
             preserveAspectRatio="xMinYMin meet"
@@ -21,13 +21,15 @@ function Animation() {
           </svg>
         </div>
         {/* <img src={Sun} alt="sun" className="sun" /> */}
-        <img src={Cloud} alt="Cloud" className="c1" />
-        <img src={Cloud} alt="Cloud" className="c2" />
-        <img src={Cloud} alt="Cloud" className="c3" />
         <Link exact to="/home">
           <img src={Logo} alt="logo" className="logo" />
         </Link>
+        <img src={Cloud} alt="Cloud" className="c1" />
+        <img src={Cloud} alt="Cloud" className="c2" />
+        <img src={Cloud} alt="Cloud" className="c3" />
       </div>
+      <br />
+      <div className="clouds"></div>
     </div>
   );
 }

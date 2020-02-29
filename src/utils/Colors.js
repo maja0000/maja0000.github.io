@@ -3,3 +3,7 @@ const Colors = {
 };
 
 export default Colors;
+
+// const CloudyBackground ={
+
+// }
