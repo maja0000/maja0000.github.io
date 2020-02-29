@@ -1,6 +1,6 @@
 import React from "react";
 import "./WeatherDisplay.css";
-import WeatherCard from "../WeatherCard/WeatherCard";
+import WeatherCard from "../../Component/WeatherCard/WeatherCard";
 import "react-toastify/dist/ReactToastify.css";
 
 function WeatherDisplay(props) {

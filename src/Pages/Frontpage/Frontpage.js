@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { ToastContainer, toast } from "react-toastify";
 // Components
-import WeatherDisplay from "../../Component/WeatherDisplay/WeatherDisplay.js";
+import WeatherDisplay from "../../Pages/WeatherDisplay/WeatherDisplay.js";
 import Animation from "../../Component/Animation/Animation";
 import statisticIcon from "../../pictures/icons/statisticIcon.svg";
 import HistoricalWeather from "../Homepage/HistoricalWeather/HistoricalWeather";

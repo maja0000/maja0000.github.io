@@ -6,8 +6,6 @@ import DailyWeatherDetails from "../DailyWeatherDetails/DailyWeatherDetails";
 import Background from "../Background/Background";
 import WeatherCardHeader from "./WeatherCardHeader";
 import Slider from "../Slider/Slider.jsx";
-// css
-import "../WeatherDisplay/WeatherDisplay.css";
 
 // utils
 
