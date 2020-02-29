@@ -17,10 +17,7 @@ function WeatherCard(props) {
   ) : (
     <div className="weatherCard">
       <Background />
-      <WeatherCardHeader
-        onSearch={props.onSearch}
-        handleChange={props.handleChange}
-      />
+      <WeatherCardHeader />
       <DailyWeatherDetails />
       <Slider data={weatherDisplay.list} />
     </div>

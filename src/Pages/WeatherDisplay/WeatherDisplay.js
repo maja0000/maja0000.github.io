@@ -3,18 +3,11 @@ import "./WeatherDisplay.css";
 import WeatherCard from "../../Component/WeatherCard/WeatherCard";
 import "react-toastify/dist/ReactToastify.css";
 
-function WeatherDisplay(props) {
+function WeatherDisplay() {
   return (
     <div className="weatherDisplay">
       {/* add information that data isn't here yet */}
-      {props.loading ? (
-        "🔄🔄🔄 ...loading. Please wait!"
-      ) : (
-        <WeatherCard
-          onSearch={props.onSearch}
-          handleChange={props.handleChange}
-        />
-      )}
+      <WeatherCard />
     </div>
   );
 }

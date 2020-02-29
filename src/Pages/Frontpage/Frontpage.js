@@ -6,7 +6,7 @@ import WeatherDisplay from "../../Pages/WeatherDisplay/WeatherDisplay.js";
 import Animation from "../../Component/Animation/Animation";
 import statisticIcon from "../../pictures/icons/statisticIcon.svg";
 import HistoricalWeather from "../Homepage/HistoricalWeather/HistoricalWeather";
-import useFetch from "../../Component/FetchWeather/FetchWeather";
+
 // Context
 import WeatherContext from "../../Context/WeatherContext";
 
