@@ -1,6 +1,6 @@
 import React from "react";
-import "../css/WeatherDisplay.css";
-import WeatherCard from "./WeatherCard.js";
+import "./WeatherDisplay.css";
+import WeatherCard from "../WeatherCard/WeatherCard";
 import "react-toastify/dist/ReactToastify.css";
 
 function WeatherDisplay(props) {
@@ -11,7 +11,6 @@ function WeatherDisplay(props) {
         "🔄🔄🔄 ...loading. Please wait!"
       ) : (
         <WeatherCard
-          weatherProps={props.weatherProps}
           onSearch={props.onSearch}
           handleChange={props.handleChange}
         />

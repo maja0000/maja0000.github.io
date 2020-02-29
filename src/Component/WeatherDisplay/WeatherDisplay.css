@@ -29,7 +29,8 @@
   flex-shrink: 1;
 }
 .bgContainer {
-  position: relative;
+  position: absolute;
+  width: 60%;
   -webkit-box-shadow: 10px -8px 26px -18px rgba(105, 103, 103, 1);
   -moz-box-shadow: 10px -8px 26px -18px rgba(105, 103, 103, 1);
   box-shadow: 10px -8px 26px -18px rgba(105, 103, 103, 1);
@@ -39,7 +40,7 @@
   min-height: 100vh;
 }
 
-.background {
+.weatherCard {
   animation-name: appear;
   animation-duration: 2s;
   /* position: absolute; */
@@ -64,7 +65,7 @@
   border-radius: 20px;
   margin-bottom: 5px;
 }
-.date-temperature {
+.weatherCard-header {
   list-style-type: none;
   margin: 20px;
   padding-bottom: 10px;

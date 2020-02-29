@@ -1,19 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
+
 import InputBase from "@material-ui/core/InputBase";
 import { fade, makeStyles } from "@material-ui/core/styles";
 import SearchIcon from "@material-ui/icons/Search";
-import "../css/LocationSearchBar.css";
+import "./LocationSearchBar.css";
 import Button from "@material-ui/core/Button";
 
 const useStyles = makeStyles(theme => ({
-  //   root: {},
-  //   backColor: {
-  //     backgroundColor: "#B9BABA"
-  //   },
-
   search: {
-    // margin: "14px 0 14px 150px",
-    // paddingLeft: "82px",
     display: "flex",
     justifyContent: "space-between",
     borderRadius: theme.shape.borderRadius,
@@ -50,17 +44,13 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function SearchBar({ onSearch, handleChange }) {
-  const handleKeyPress = event => {
-    if (event.key === "Enter") {
-      onSearch();
-    }
-  };
-
+const useInput = (className, defaultState) => {
+  const [state, setState] = useState(defaultState);
+  const id = `use-input-${className}`;
   const classes = useStyles();
 
-  return (
-    <div className="searchBarBox">
+  const SearchBar = () => (
+    <div className={`searchBarBox ${className}`}>
       <div className={classes.search}>
         <Button variant="contained" onClick={onSearch}>
           <SearchIcon />
@@ -79,4 +69,8 @@ export default function SearchBar({ onSearch, handleChange }) {
       </div>
     </div>
   );
-}
+
+  return [state, SearchBar, setState];
+};
+
+export default useInput;

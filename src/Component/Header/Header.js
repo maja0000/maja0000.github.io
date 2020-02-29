@@ -1,11 +1,11 @@
 import React from "react";
-import Logo from "../pictures/logo.svg";
+import Logo from "../../pictures/logo.svg";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import { makeStyles } from "@material-ui/core/styles";
-import "../css/Header.css";
+import "./Header.css";
 import { Link } from "react-router-dom";
-import Colors from "../utils/Colors";
+import Colors from "../../utils/Colors";
 
 const useStyles = makeStyles(theme => ({
   root: {

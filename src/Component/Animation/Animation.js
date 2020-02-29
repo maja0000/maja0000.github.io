@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../css/Animation.css";
+import "./Animation.css";
 // import Sun from "../pictures/icons/sun.svg";
-import Logo from "../pictures/icons/newlogo.svg";
-import Cloud from "../pictures/icons/singlecloud.svg";
+import Logo from "../../pictures/icons/newlogo.svg";
+import Cloud from "../../pictures/icons/singlecloud.svg";
 // import Clouds from "../pictures/icons/clouds-icon.svg";
 
 function Animation() {

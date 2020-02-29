@@ -1,9 +1,9 @@
-import Header from "./Component/Header";
-import StickyFooter from "./Component/StickyFooter.js";
-import Legal from "./Pages/Legal";
+import Header from "./Component/Header/Header";
+import StickyFooter from "./Component/Footer/StickyFooter";
+import Legal from "./Pages/Legal/Legal";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Frontpage from "./Pages/Frontpage.js";
-import Notfound from "./Pages/Notfound";
+import Frontpage from "./Pages/Frontpage/Frontpage";
+import Notfound from "./Pages/NotFound/Notfound";
 import React from "react";
 
 function App() {

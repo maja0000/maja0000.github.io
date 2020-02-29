@@ -1,5 +1,5 @@
 import React from "react";
-import "../css/Legal.css";
+import "./Legal.css";
 
 function Legal() {
   return (

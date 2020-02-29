@@ -1,5 +1,5 @@
 import React from "react";
-import "./WeatherDisplay.css";
+import "../WeatherDisplay/WeatherDisplay.css";
 
 class NextDayWeather extends React.Component() {
   constructor() {

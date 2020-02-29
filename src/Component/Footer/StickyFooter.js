@@ -1,13 +1,13 @@
 import React from "react";
-import "../css/StickyFooter.css";
+import "./StickyFooter.css";
 // import CssBaseline from "@material-ui/core/CssBaseline";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 // import Link from "@material-ui/core/Link";
 import { Link } from "react-router-dom";
-import Cloud from "../pictures/icons/legal-c.svg";
-import CloudA from "../pictures/icons/animation-c.svg";
+import Cloud from "../../pictures/icons/legal-c.svg";
+import CloudA from "../../pictures/icons/animation-c.svg";
 
 function Copyright() {
   return (

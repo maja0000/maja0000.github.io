@@ -1,9 +1,8 @@
 import React from "react";
-import "../css/WeatherDisplay.css";
 
 // import cloud from "../pictures/clouds-icon.svg";
 
-function WeatherSlider({ day, uniquePropsForecast, key }) {
+function SliderElem({ day, uniquePropsForecast, key }) {
   return (
     <div className="blurred-background slide">
       <p className="day">
@@ -46,4 +45,4 @@ function WeatherSlider({ day, uniquePropsForecast, key }) {
     </div>
   );
 }
-export default WeatherSlider;
+export default SliderElem;
