@@ -1,6 +1,6 @@
 import React from "react";
 import Particles from "react-particles-js";
-import Raindrop from "../pictures/icons/drop2.svg";
+import Raindrop from "../../pictures/icons/drop2.svg";
 
 const style = {
   height: "100%"

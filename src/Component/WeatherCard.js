@@ -8,7 +8,7 @@ import LocationSearchBar from "./LocationSearchBar.js";
 import Snow from "./Snow.js";
 import Rain from "./Rain.js";
 import Clouds from "./Clouds.js";
-import BgMeteo from "./BgMeteo";
+import BgMeteo from "./Animation/BgMeteo";
 
 var today = new Date();
 var day = today.getDay();
