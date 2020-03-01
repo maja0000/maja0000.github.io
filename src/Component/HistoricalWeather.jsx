@@ -11,29 +11,20 @@ import {
 } from "recharts";
 
 export default function HistoricalWeather(props) {
-  let [station, setStation] = useState(10381);
-  let [tempData, setTempData] = useState([]);
-  let sunData = [{}];
-  let rainData = [{}];
-  let pressureData = [{}];
-  const [temperature, setTemperature] = useState(0);
-  const [precipitation, setPrecipitation] = useState(0);
-  const [sunshine, setSunshine] = useState(0);
-  const [pressure, setPressure] = useState(0);
-  let [loading, setloading] = useState(true);
-  let [hasError, setError] = useState(false);
+  const [station, setStation] = useState(10381);
+  const [weatherData, setWeatherData] = useState([]);
+  const [loading, setloading] = useState(true);
+  const [hasError, setError] = useState(false);
 
   useEffect(() => {
-    console.log("useEffect");
-    console.log("error ? ", hasError);
     getWeatherStation();
   }, [station, props.cityName]);
 
-  //${props.citySearch}  keys: yVhCGjs9 , oiIXVxv8
+  // api keys: yVhCGjs9 , oiIXVxv8
   const getWeatherStation = () => {
     setError(false);
     fetch(
-      `https://api.meteostat.net/v1/stations/search?q=${props.citySearch}&key=oiIXVxv8`
+      `https://api.meteostat.net/v1/stations/search?q=${props.cityName}&key=yVhCGjs9`
     )
       .then(response => {
         return response.json();
@@ -52,19 +43,70 @@ export default function HistoricalWeather(props) {
     setError(false);
 
     fetch(
-      `https://api.meteostat.net/v1/climate/normals?station=${station}&start=2019-01-01&end=2019-12-31&key=oiIXVxv8`
+      `https://api.meteostat.net/v1/climate/normals?station=${station}&start=2019-01-01&end=2019-12-31&key=yVhCGjs9`
     )
       .then(response => {
         return response.json();
       })
       .then(result => {
-        if (result.data.temperature.JAN) {
-          setTempData(result);
-          setTemperature(result.data.temperature);
-          setPrecipitation(result.data.precipitation);
-          setSunshine(result.data.sunshine);
-          setPressure(result.data.pressure);
+        if (result.data.length === 0) {
+          setError(true);
           setloading(false);
+        } else {
+          // process data...
+
+          const months = Object.keys(result.data.temperature);
+          const weatherLabels = [
+            "temperature",
+            "precipitation",
+            "sunshine",
+            "pressure"
+          ];
+
+          let tempData = [];
+
+          /* weatherData = {
+          'temperature' : {
+              'dataLabel': 'temperature',
+              'yearData' : [
+                { name: 'JAN', value: 0.3},
+                { name: 'FEB', temp: 0.3}
+              ]
+          },
+          'precipitation' : {
+              'dataLabel': 'precipitation',
+              'yearData' : [
+                { name: 'JAN', value: 0.3},
+                { name: 'FEB', temp: 0.3}
+              ]
+          }
+    
+    
+            } */
+
+          weatherLabels.forEach(label => {
+            // only process data if the data contains a label from the weatherLabels defined above
+            if (result.data[label]) {
+              tempData[label] = {
+                dataLabel: label,
+                yearData: []
+              };
+
+              months.forEach(month => {
+                tempData[label]["yearData"].push({
+                  name: month,
+                  value: +result.data[label][month]
+                });
+              });
+            }
+          });
+
+          console.log("tempdata:", tempData);
+          setWeatherData(tempData);
+          console.log("weatherData:", weatherData);
+
+          setloading(false);
+          setError(false);
         }
       })
       .catch(err => {
@@ -72,162 +114,94 @@ export default function HistoricalWeather(props) {
         setError(true);
       });
   };
-  if (!loading) {
-    tempData = [
-      { name: "JAN", temp: +temperature.JAN },
-      { name: "FEB", temp: +temperature.FEB },
-      { name: "MAR", temp: +temperature.MAR },
-      { name: "APR", temp: +temperature.APR },
-      { name: "MAY", temp: +temperature.MAY },
-      { name: "JUN", temp: +temperature.JUN },
-      { name: "JUL", temp: +temperature.JUL },
-      { name: "AUG", temp: +temperature.AUG },
-      { name: "SEP", temp: +temperature.SEP },
-      { name: "OCT", temp: +temperature.OCT },
-      { name: "NOV", temp: +temperature.NOV },
-      { name: "DEC", temp: +temperature.DEC }
-    ];
 
-    sunData = [
-      { name: "JAN", sun: +sunshine.JAN },
-      { name: "FEB", sun: +sunshine.FEB },
-      { name: "MAR", sun: +sunshine.MAR },
-      { name: "APR", sun: +sunshine.APR },
-      { name: "MAY", sun: +sunshine.MAY },
-      { name: "JUN", sun: +sunshine.JUN },
-      { name: "JUL", sun: +sunshine.JUL },
-      { name: "AUG", sun: +sunshine.AUG },
-      { name: "SEP", sun: +sunshine.SEP },
-      { name: "OCT", sun: +sunshine.OCT },
-      { name: "NOV", sun: +sunshine.NOV },
-      { name: "DEC", sun: +sunshine.DEC }
-    ];
+  return (
+    <DisplayWeatherData
+      weatherData={weatherData}
+      hasError={hasError}
+      loading={loading}
+      cityName={props.cityName}
+    />
+  );
+}
 
-    rainData = [
-      { name: "JAN", rain: +precipitation.JAN },
-      { name: "FEB", rain: +precipitation.FEB },
-      { name: "MAR", rain: +precipitation.MAR },
-      { name: "APR", rain: +precipitation.APR },
-      { name: "MAY", rain: +precipitation.MAY },
-      { name: "JUN", rain: +precipitation.JUN },
-      { name: "JUL", rain: +precipitation.JUL },
-      { name: "AUG", rain: +precipitation.AUG },
-      { name: "SEP", rain: +precipitation.SEP },
-      { name: "OCT", rain: +precipitation.OCT },
-      { name: "NOV", rain: +precipitation.NOV },
-      { name: "DEC", rain: +precipitation.DEC }
-    ];
-
-    pressureData = [
-      { name: "JAN", pressure: +pressure.JAN },
-      { name: "FEB", pressure: +pressure.FEB },
-      { name: "MAR", pressure: +pressure.MAR },
-      { name: "APR", pressure: +pressure.APR },
-      { name: "MAY", pressure: +pressure.MAY },
-      { name: "JUN", pressure: +pressure.JUN },
-      { name: "JUL", pressure: +pressure.JUL },
-      { name: "AUG", pressure: +pressure.AUG },
-      { name: "SEP", pressure: +pressure.SEP },
-      { name: "OCT", pressure: +pressure.OCT },
-      { name: "NOV", pressure: +pressure.NOV },
-      { name: "DEC", pressure: +pressure.DEC }
-    ];
+function DisplayWeatherData({ cityName, weatherData, loading, hasError }) {
+  console.warn(cityName, weatherData, loading, hasError);
+  const colors = [
+    "rgba(88, 0, 171, 0.9)",
+    "rgba(245, 145, 29, 0.9)",
+    "rgba(43, 145, 254, 1)"
+  ];
+  if (loading) {
+    return (
+      <div className="historicalweather">
+        <div className="description">
+          <h1>Loading ...</h1>
+        </div>
+      </div>
+    );
   }
 
-  return loading ? (
-    <h1>Loading...</h1>
-  ) : (
-    //use map to render all charts?
+  if (hasError) {
+    return (
+      <div className="historicalweather">
+        <div className="description">
+          <h1>
+            Sorry, we cannot reach the historical weather data for '{cityName}'
+          </h1>
+        </div>
+      </div>
+    );
+  }
 
+  return (
     <div className="historicalweather">
       <div className="description">
         <h1>Average weather in 2019</h1>
-        <h2>{props.cityName}</h2>
+        <h2>{cityName}</h2>
       </div>
-      <div className="charts">
-        <LineChart
-          className="linechart"
-          width={350}
-          height={160}
-          data={tempData}
-        >
-          <CartesianGrid stroke="#ccc" />
-          <XAxis dataKey="name" />
-          <YAxis />
-          <CartesianGrid strokeDasharray="3 3" />
-          <Tooltip />
-          <Legend />
-          <Line
-            type="monotone"
-            dataKey="temp"
-            stroke="rgba(88, 0, 171, 0.9)"
-            strokeWidth="3"
-            activeDot={{ r: 8 }}
-          />
-        </LineChart>
 
-        <LineChart
-          className="linechart"
-          width={350}
-          height={160}
-          data={sunData}
-        >
-          <CartesianGrid stroke="#ccc" />
-          <XAxis dataKey="name" />
-          <YAxis />
-          <CartesianGrid strokeDasharray="3 3" />
-          <Tooltip />
-          <Legend />
-          <Line
-            type="monotone"
-            dataKey="sun"
-            stroke="rgba(245, 145, 29, 0.9)"
-            strokeWidth="3"
-            activeDot={{ r: 8 }}
-          />
-        </LineChart>
+      {Object.keys(weatherData).map((category, index) => (
+        <div className="charts">
+          <LineChart
+            className="linechart"
+            width={350}
+            height={160}
+            data={weatherData[category].yearData}
+          >
+            <CartesianGrid stroke="#ccc" />
+            <XAxis dataKey="name" />
+            <YAxis />
+            <CartesianGrid strokeDasharray="3 3" />
+            <Tooltip />
+            <Legend />
+            <Line
+              name={category}
+              type="monotone"
+              dataKey="value"
+              stroke={colors[index]}
+              strokeWidth="3"
+              activeDot={{ r: 8 }}
+            />
+          </LineChart>
+        </div>
+      ))}
 
-        <LineChart
-          className="linechart"
-          width={350}
-          height={160}
-          data={rainData}
+      <div className="dataSrc">
+        Data provided by{" "}
+        <a href="https://www.meteostat.net" title="meteostat" target="_blank">
+          meteostat. <br />
+        </a>
+        Meteorological data: Copyright &copy; National Oceanic and Atmospheric
+        Administration (NOAA), Deutscher Wetterdienst (DWD). Learn more about
+        the{" "}
+        <a
+          href="https://www.meteostat.net/sources"
+          title="meteostat Sources"
+          target="_blank"
         >
-          <CartesianGrid stroke="#ccc" />
-          <XAxis dataKey="name" />
-          <YAxis />
-          <CartesianGrid strokeDasharray="3 3" />
-          <Tooltip />
-          <Legend />
-          <Line
-            type="monotone"
-            dataKey="rain"
-            stroke=" rgba(43, 145, 254, 1)"
-            strokeWidth="3"
-            activeDot={{ r: 8 }}
-          />
-        </LineChart>
-
-        <LineChart
-          className="linechart"
-          width={350}
-          height={160}
-          data={pressureData}
-        >
-          <CartesianGrid stroke="#ccc" />
-          <XAxis dataKey="name" />
-          <YAxis />
-          <CartesianGrid strokeDasharray="3 3" />
-          <Tooltip />
-          <Legend />
-          <Line
-            type="monotone"
-            dataKey="pressure"
-            stroke="rgba(29, 29, 31, 1)"
-            strokeWidth="3"
-            activeDot={{ r: 8 }}
-          />
-        </LineChart>
+          sources.
+        </a>
       </div>
     </div>
   );
