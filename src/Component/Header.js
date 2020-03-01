@@ -9,7 +9,8 @@ import Colors from "../utils/Colors";
 
 const useStyles = makeStyles(theme => ({
   root: {
-    flexGrow: 1
+    flexGrow: 1,
+    witdh: "100%"
   },
   backColor: {
     backgroundColor: Colors.mainYellow,
