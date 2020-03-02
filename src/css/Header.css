@@ -14,11 +14,15 @@
   -ms-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
 }
-.header-logo:hover {
-  height: 4.5em;
-}
+
 .navbarIcon {
-  margin: 10px;
-  padding: 5px;
-  min-height: 40px;
+  margin: 5px;
+  /* padding: 5px; */
+  min-height: 20px;
+  float: right;
+}
+.header-logo:hover {
+  -webkit-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  transform: scale(1.2);
 }

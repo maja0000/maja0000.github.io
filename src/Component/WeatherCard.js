@@ -6,6 +6,10 @@ import "../css/WeatherDisplay.css";
 import LocationSearchBar from "./LocationSearchBar.js";
 // import WeatherSlider from "./WeatherSlider.js";
 import BackgroundIMG from "./Background-img-change";
+import Snow from "./Snow.js";
+import Rain from "./Rain.js";
+import Clouds from "./Clouds.js";
+import BgMeteo from "./BgMeteo";
 
 
 var today = new Date();
@@ -49,39 +53,68 @@ let date =
 
 function WeatherCard(props) {
   return (
+
     <div className="background" >
       <BackgroundIMG weatherDetailsProps={props.weatherProps} />
       <div className="date-temperature">
         <LocationSearchBar
           onSearch={props.onSearch}
           handleChange={props.handleChange}
-        />
-        <ul>
-          <li className="temperature">
-            {Math.round(props.weatherProps.list[0].main.temp)}°
-          </li>
-          <li className="">
-            <p className="city">{props.weatherProps.city.name}</p>
-            <p className="date">
-              {daylist[day]}, {date}
-              <br /> {hour}:{minute}
-              {prepand}
-            </p>
-          </li>
-        </ul>
-      </div>
-      <DailyWeatherDetails weatherDetailsProps={props.weatherProps} />
 
-      <div className="weekly-weather slider">
-        {/* slider component goes here! */}
-        {props.weatherProps.list.slice(0, 5).map((element, idx) => (
-          <WeatherSlider
-            key={idx}
-            day={daylist[(day + idx + 1) % daylist.length]}
-            daylist={daylist}
-            uniquePropsForecast={element}
+    <div className="bgContainer">
+      <div
+        style={{
+          position: "absolute",
+          height: "100%",
+          width: "100%",
+          zIndex: -1,
+          backgroundSize: "cover",
+          backgroundImage:
+            'url("https://images.unsplash.com/photo-1529000920031-b8f994d2eb27?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2434&q=80")'
+        }}
+      >
+        {/* {props.weatherProps.list[0].weather[0].description.toLowerCase().includes("snow")? <Snow/> }
+        {props.weatherProps.list[0].weather[0].description.toLowerCase().includes("rain")? <Rain/>}
+        {props.weatherProps.list[0].weather[0].description.toLowerCase().includes("cloud")? <Clouds/>} */}
+        {/* {/* <Snow /> */}
+        <BgMeteo
+          weatherCondition={props.weatherProps.list[0].weather[0].main}
+        />
+        {/* <Rain /> */}
+        {/* <Clouds /> */}
+      </div>
+      <div className="background">
+        <div className="date-temperature">
+          <LocationSearchBar
+            onSearch={props.onSearch}
+            handleChange={props.handleChange}
           />
-        ))}
+          <ul>
+            <li className="temperature">
+              {Math.round(props.weatherProps.list[0].main.temp)}°
+            </li>
+            <li className="">
+              <p className="city">{props.weatherProps.city.name}</p>
+              <p className="date">
+                {daylist[day]}, {date}
+                <br /> {hour}:{minute}
+                {prepand}
+              </p>
+            </li>
+          </ul>
+        </div>
+        <DailyWeatherDetails weatherDetailsProps={props.weatherProps} />
+        <div className="weekly-weather slider">
+          {/* slider component goes here! */}
+          {props.weatherProps.list.slice(0, 5).map((element, idx) => (
+            <WeatherSlider
+              key={idx}
+              day={daylist[(day + idx + 1) % daylist.length]}
+              daylist={daylist}
+              uniquePropsForecast={element}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );

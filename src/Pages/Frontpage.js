@@ -2,10 +2,12 @@ import React from "react";
 // import SignInSide from "../Component/SignInSide";
 import WeatherDisplay from "../Component/WeatherDisplay.js";
 import "../css/Frontpage.css";
-import { Breakpoint } from "react-socks";
+import statisticIcon from "../pictures/icons/statisticIcon.svg";
 import HistoricalWeather from "../Component/HistoricalWeather";
+import "../css/index.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Animation from "../Component/Animation";
 
 class Frontpage extends React.Component {
   constructor() {
@@ -13,12 +15,25 @@ class Frontpage extends React.Component {
     this.state = {
       weatherDisplay: [],
       loading: true,
-      citySearch: "Berlin"
+      citySearch: "Berlin",
+      firstTime: !sessionStorage.getItem("firstTime"),
+      cityName: "",
+      onlyStatistics: false
     };
-    // console.log(this.state);
   }
+
   /// call the fetch function
   componentDidMount() {
+    console.log(this.state.firstTime);
+    if (this.state.firstTime) {
+      sessionStorage.setItem("firstTime", true);
+      // this.setState({ firstTime: false });
+    }
+    setTimeout(() => {
+      this.setState({ firstTime: false });
+      sessionStorage.setItem("firstTime", false);
+    }, 4000);
+
     ///  call function for geolocation
     this.getCityNameFromIp();
     this.getWeather(); /*gave different name to differenciate the api fetches better*/
@@ -42,7 +57,7 @@ class Frontpage extends React.Component {
           return response.json();
         } else {
           return Promise.reject(
-            toast.error("Sorry we can't find your city⚠️ please try again!  ")
+            toast.error("⚠️ Sorry, we could not find your location.")
           );
         }
       })
@@ -54,9 +69,15 @@ class Frontpage extends React.Component {
       .then(result => this.getWeather());
   }
 
+  // function on click of statistic button in HistoricalWeather
+  clickStats = event => {
+    this.setState(prevState => ({
+      onlyStatistics: !prevState.onlyStatistics
+    }));
+  };
+
   // get API function for current weather
   getWeather() {
-    /*gave different name*/
     fetch(
       `http://api.openweathermap.org/data/2.5/forecast?q=${this.state.citySearch}&units=metric&appid=886d3852a40cc28c819dfcb6e2ae6402`
     )
@@ -65,30 +86,64 @@ class Frontpage extends React.Component {
           return response.json();
         } else {
           return Promise.reject(
-            toast.error("Sorry we can't find your city ⚠️  please try again! ")
+            toast.error("⚠️ Sorry, we could not find your city.")
           );
         }
       })
       .then(result => {
         this.setState({
           weatherDisplay: result,
+          cityName: result.city.name,
           loading: false
         }); console.log(result)
       });
   }
   render() {
-    return (
+    const buttonStyle = {
+      boxShadow: "0px 1px 0px 0px #1c1b18",
+      background:
+        "linear-gradient(to bottom, #FECC5E 5%, rgba(155, 190, 222) 100%)",
+      backgroundColor: "#FECC5E",
+      borderRadius: "15px",
+      border: "1px solid #333029",
+      display: "inline-block",
+      cursor: "pointer",
+      color: "#505739",
+      padding: "10px 14px",
+      textDecoration: "none",
+      textShadow: "0px 1px 0px #ffffff",
+      maxWidth: "82px",
+      height: "60px",
+      position: "absolute",
+      right: "0",
+      top: "4px"
+    };
+    return this.state.firstTime || this.state.loading ? (
+      <Animation />
+    ) : (
       <div className="frontpage">
         <ToastContainer />
-        <WeatherDisplay
-          weatherProps={this.state.weatherDisplay}
-          onSearch={this.searchForNewLocation}
-          handleChange={this.handleChange}
-          loading={this.state.loading}
+        {!this.state.onlyStatistics && (
+          <WeatherDisplay
+            weatherProps={this.state.weatherDisplay}
+            onSearch={this.searchForNewLocation}
+            handleChange={this.handleChange}
+            loading={this.state.loading}
+          />
+        )}
+        <HistoricalWeather
+          className="historicalweather"
+          citySearch={this.state.citySearch}
+          cityName={this.state.weatherDisplay.city.name}
+          onClickFunction={this.clickStats}
         />
-        <Breakpoint large up>
-          <HistoricalWeather citySearch={this.state.citySearch} />
-        </Breakpoint>
+        <button type="button" onClick={this.clickStats} style={buttonStyle}>
+          <img
+            src={statisticIcon}
+            alt="statistic-link"
+            className="navbarIcon"
+          />
+        </button>
       </div>
     );
   }

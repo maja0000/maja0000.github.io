@@ -2,14 +2,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 700px;
+  height: 580px;
+  background-color: #9bbede;
 }
-
-.sun {
-  height: 140px;
-  position: absolute;
-  z-index: 0;
-  right: 620px;
+.smaller-container {
+  position: relative;
+  margin: 40px;
 }
 .c1 {
   animation-name: slide-in-fwd-tl;
@@ -17,38 +15,38 @@
   z-index: 2;
   height: 45px;
   position: absolute;
-  left: 450px;
-  top: 390px;
+  top: 9px;
+  left: 110px;
 }
 
 .c2 {
   animation-name: slide-in-fwd-left;
   animation-duration: 1s;
   position: absolute;
-  top: 520px;
-  left: 480px;
   z-index: 2;
   height: 60px;
+  bottom: 0px;
+  left: 100px;
 }
 
 .c3 {
   animation-duration: 1s;
   animation-name: slide-in-fwd-tr;
   position: absolute;
-  left: 590px;
   z-index: 2;
   height: 65px;
-  top: 480px;
+  bottom: 90px;
+  right: 100px;
 }
 .logo {
   animation-duration: 2s;
   animation-name: tada;
   animation-delay: 0.7s;
-  position: absolute;
   z-index: 1;
   height: 60px;
-  left: 515px;
-  top: 460px;
+  position: absolute;
+  bottom: 50px;
+  left: 28px;
 }
 @keyframes tada {
   from {
@@ -123,5 +121,127 @@
     -webkit-transform: translateZ(0) translateY(0) translateX(0);
     transform: translateZ(0) translateY(0) translateX(0);
     opacity: 1;
+  }
+}
+
+/* the svg element */
+.svg-sun {
+  width: 160px;
+  height: 160px;
+
+  -webkit-transform-origin: center center;
+  -moz-transform-origin: 50% 50%;
+  -o-transform-origin: center center;
+  -ms-transform-origin: center center;
+  transform-origin: 50% 50%;
+
+  -webkit-animation: spin 25s linear infinite, sun-glow 3s 0s linear infinite;
+  -moz-animation: spin 25s linear infinite, sun-glow 3s 0s linear infinite;
+  -o-animation: spin 25s linear infinite, sun-glow 3s 0s linear infinite;
+  -ms-animation: spin 25s linear infinite, sun-glow 3s 0s ease-in-out infinite;
+  animation: spin 25s linear infinite, sun-glow 3s 0s linear infinite;
+}
+/* the circle element in the svg itself */
+#sun {
+  stroke-width: 30;
+  stroke-dasharray: 4;
+  stroke-dashoffset: 2;
+}
+/* animation for the sun glowing effect */
+@-webkit-keyframes sun-glow {
+  0% {
+    fill: #f1c40f;
+    stroke: #f1c40f;
+  }
+  50% {
+    fill: #e67e22;
+    stroke: #e67e22;
+  }
+  100% {
+    fill: #f1c40f;
+    stroke: #f1c40f;
+  }
+}
+@-moz-keyframes sun-glow {
+  0% {
+    fill: #f1c40f;
+    stroke: #f1c40f;
+  }
+  50% {
+    fill: #e67e22;
+    stroke: #e67e22;
+  }
+  100% {
+    fill: #f1c40f;
+    stroke: #f1c40f;
+  }
+}
+@-o-keyframes sun-glow {
+  0% {
+    fill: #f1c40f;
+    stroke: #f1c40f;
+  }
+  50% {
+    fill: #e67e22;
+    stroke: #e67e22;
+  }
+  100% {
+    fill: #f1c40f;
+    stroke: #f1c40f;
+  }
+}
+@-ms-keyframes sun-glow {
+  0% {
+    fill: #f1c40f;
+    stroke: #f1c40f;
+  }
+  50% {
+    fill: #e67e22;
+    stroke: #e67e22;
+  }
+  100% {
+    fill: #f1c40f;
+    stroke: #f1c40f;
+  }
+}
+@keyframes sun-glow {
+  0% {
+    fill: #f1c40f;
+    stroke: #f1c40f;
+  }
+  50% {
+    fill: #e67e22;
+    stroke: #e67e22;
+  }
+  100% {
+    fill: #f1c40f;
+    stroke: #f1c40f;
+  }
+}
+
+/* start spin animation */
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@-moz-keyframes spin {
+  100% {
+    -moz-transform: rotate(360deg);
+  }
+}
+@-o-keyframes spin {
+  100% {
+    -o-transform: rotate(360deg);
+  }
+}
+@-ms-keyframes spin {
+  100% {
+    -ms-transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
   }
 }

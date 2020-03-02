@@ -22,31 +22,43 @@
   animation-duration: 0.5s;
 }
 .weatherDisplay {
-  display: flex;
-  /* flex-direction: column; */
+  /* display: flex; */
+  flex-direction: column;
   justify-content: center;
   width: 100%;
+  flex-shrink: 1;
+}
+.bgContainer {
+  position: relative;
+  -webkit-box-shadow: 10px -8px 26px -18px rgba(105, 103, 103, 1);
+  -moz-box-shadow: 10px -8px 26px -18px rgba(105, 103, 103, 1);
+  box-shadow: 10px -8px 26px -18px rgba(105, 103, 103, 1);
+  height: 40%;
+  margin: 20px 20px 20px 10px;
+
+  /* background: url(../pictures/berlin-sky.jpg); */
+  background-repeat: no-repeat;
+  background-size: cover;
+  align-content: space-between;
+
+  min-height: 820px;
+
+  border-radius: 20px;
 }
 
 .background {
   animation-name: appear;
   animation-duration: 2s;
   /* position: absolute; */
-
-  -webkit-box-shadow: 10px -8px 26px -18px rgba(105, 103, 103, 1);
-  -moz-box-shadow: 10px -8px 26px -18px rgba(105, 103, 103, 1);
-  box-shadow: 10px -8px 26px -18px rgba(105, 103, 103, 1);
-  height: 40%;
-  margin: 20px 20px 20px 10px;
+  /* width: 100vw; */
   /* background: url(../pictures/berlin-sky.jpg); */
-  background-repeat: no-repeat;
-  background-size: cover;
+  /* background-repeat: no-repeat;
+  background-size: cover; */
   align-content: space-between;
-  border-radius: 20px;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
-  min-height: 100vh;
+  border-radius: 20px;
   justify-content: flex-start;
   align-items: center;
 }
@@ -71,8 +83,13 @@
   min-width: 90%;
   align-items: flex-start;
   justify-content: space-between;
+  background: rgba(255, 251, 251, 0.32);
+  backdrop-filter: blur(2px);
+  border-radius: 20px;
 }
-
+.icons-row {
+  text-align: center;
+}
 li {
   display: inline-block;
 }
@@ -153,7 +170,8 @@ li {
 .slide {
   width: 40%;
   flex-shrink: 0;
-  max-height: 230px;
+
+  max-height: 280px;
 }
 
 .daily-weather {

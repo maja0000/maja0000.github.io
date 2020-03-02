@@ -1,4 +1,33 @@
-.legal {
-  text-align: justify;
-  padding: 50px;
+.container-legal {
+  padding: 60px;
+}
+* {
+  line-height: 1.5em;
+}
+.cloudA {
+  height: 70px;
+  padding-left: 20px;
+}
+.cloudL {
+  height: 70px;
+  padding-right: 20px;
+}
+.cloudL:hover {
+  -webkit-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  transform: scale(1.2);
+}
+.cloudA:hover {
+  -webkit-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  transform: scale(1.2);
+}
+a {
+  text-decoration: none;
+}
+a:active {
+  text-decoration: underline;
+}
+a:visited {
+  color: #fecc5e;
 }

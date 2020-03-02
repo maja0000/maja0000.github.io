@@ -2,6 +2,7 @@ import React from "react";
 import "../css/WeatherDisplay.css";
 import WeatherCard from "./WeatherCard.js";
 import "react-toastify/dist/ReactToastify.css";
+
 //import Particles from "react-particles-js";
 // import ParticlesComponent from "./Particles";
 
@@ -31,13 +32,15 @@ const particlesOprtions = {
   }
 };
 
+
 function WeatherDisplay(props) {
   return (
     <div className="weatherDisplay">
       {/* add information that data isn't here yet */}
       {props.loading ? (
-        "...loading. Please wait!"
+        "🔄🔄🔄 ...loading. Please wait!"
       ) : (
+
           <div>
             {/* <Particles params={particlesOprtions} /> */}
             {/* <ParticlesComponent /> */}
@@ -48,6 +51,12 @@ function WeatherDisplay(props) {
             />
           </div>
         )}
+        <WeatherCard
+          weatherProps={props.weatherProps}
+          onSearch={props.onSearch}
+          handleChange={props.handleChange}
+        />
+      )}
     </div>
   );
 }

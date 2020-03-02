@@ -1,44 +1,35 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
 import "../css/Legal.css";
 
 function Legal() {
-  const useStyles = makeStyles(theme => ({
-    root: {
-      display: "flex",
-      flexDirection: "column",
-      minHeight: "100vh"
-    },
-    main: {
-      marginTop: theme.spacing(8),
-      marginBottom: theme.spacing(2)
-    }
-  }));
-
-  const classes = useStyles();
-
   return (
-    <div className={classes.root}>
-      {/* className="legal" */}
+    <div className="container-legal">
       <h1>Impressum</h1>
-      <p>Angaben gemäß § 5 TMG</p>
-      <p>Wild Code School: Students Heller, Gach and Kolem</p>
-      <p>Oudenarder Straße 16, Building E23 </p>
-      <p> 13347 Berlin</p>
-
+      <div>
+        Angaben gemäß § 5 TMG
+        <br />
+        Wild Code School: Students Heller, Gach and Kolem
+        <br />
+        Oudenarder Straße 16, Building E23
+        <br />
+        13347 Berlin
+      </div>
+      <br />
+      <br />
+      <hr />
       <h1>Privacy Policy for MyMeteo</h1>
 
-      <p>
+      <div>
         At MyMeteo, accessible from https://juliaheller.github.io/myMeteo/, one
         of our main priorities is the privacy of our visitors. This Privacy
         Policy document contains types of information that is collected and
         recorded by MyMeteo and how we use it.
-      </p>
-
-      <p>
+        <br />
         If you have additional questions or require more information about our
         Privacy Policy, do not hesitate to contact us.
-      </p>
+      </div>
+      <br />
+      <br />
 
       <h2>Log Files</h2>
 

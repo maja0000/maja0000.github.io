@@ -1,6 +1,92 @@
 .frontpage {
   display: flex;
   flex-direction: row;
-  flex-wrap: no-wrap;
-  justify-content: space-between;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+
+.historicalweather {
+  display: flex;
+  flex-shrink: 2;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(155, 190, 222, 0.294);
+  margin: 20px 20px 20px 10px;
+  padding: 20px;
+  width: 100%;
+  position: relative;
+}
+
+.description {
+  justify-self: center;
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+  flex-direction: column;
+}
+.charts {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-self: center;
+}
+
+.historicalweather h1 {
+  font-size: 30px;
+  margin: 0px;
+  margin-left: 8px;
+  text-align: center;
+  font-weight: 400;
+  padding: 5px;
+}
+
+.historicalweather h2 {
+  font-size: 25px;
+  margin: 0px;
+  margin-left: 8px;
+  text-align: center;
+  font-weight: 300;
+  padding: 5px;
+}
+.linechart {
+  padding: 5px;
+  align-self: center;
+  margin-right: 35px;
+}
+
+.dataSrc {
+  border-top: 1px solid grey;
+  padding-top: 20px;
+  margin-top: 20px;
+  color: grey;
+  text-align: justify;
+}
+@media (max-device-width: 800px) {
+  .frontpage {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .historicalweather {
+    display: flex;
+    flex-shrink: 2;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(155, 190, 222, 0.294);
+    margin: 20px 20px 20px 10px;
+    padding: 20px;
+    width: 100vw;
+  }
 }
