@@ -59,6 +59,13 @@
   margin-right: 35px;
 }
 
+.dataSrc {
+  border-top: 1px solid grey;
+  padding-top: 20px;
+  margin-top: 20px;
+  color: grey;
+  text-align: justify;
+}
 @media (max-device-width: 800px) {
   .frontpage {
     display: flex;

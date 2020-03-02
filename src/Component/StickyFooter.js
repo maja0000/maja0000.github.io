@@ -56,7 +56,6 @@ export default function StickyFooter() {
                 <img src={CloudA} alt="logo" className="cloudA" />
               </Link>
             </Typography>
-
             <Copyright />
           </Container>
         </footer>

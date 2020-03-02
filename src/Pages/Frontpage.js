@@ -95,7 +95,7 @@ class Frontpage extends React.Component {
           weatherDisplay: result,
           cityName: result.city.name,
           loading: false
-        });
+        }); console.log(result)
       });
   }
   render() {
@@ -112,7 +112,8 @@ class Frontpage extends React.Component {
       padding: "10px 14px",
       textDecoration: "none",
       textShadow: "0px 1px 0px #ffffff",
-      maxWidth: "80px",
+      maxWidth: "82px",
+      height: "60px",
       position: "absolute",
       right: "0",
       top: "4px"
