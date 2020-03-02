@@ -35,7 +35,14 @@
   box-shadow: 10px -8px 26px -18px rgba(105, 103, 103, 1);
   height: 40%;
   margin: 20px 20px 20px 10px;
+
+  /* background: url(../pictures/berlin-sky.jpg); */
+  background-repeat: no-repeat;
+  background-size: cover;
+  align-content: space-between;
+
   min-height: 820px;
+
   border-radius: 20px;
 }
 
