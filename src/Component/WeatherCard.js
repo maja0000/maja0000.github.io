@@ -10,6 +10,8 @@ import Rain from "./Rain.js";
 import Clouds from "./Clouds.js";
 import BgMeteo from "./BgMeteo";
 
+
+
 var today = new Date();
 var day = today.getDay();
 var daylist = [
