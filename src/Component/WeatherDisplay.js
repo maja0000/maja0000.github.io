@@ -1,9 +1,8 @@
 import React from "react";
 import "../css/WeatherDisplay.css";
 import WeatherCard from "./WeatherCard.js";
-
 import "react-toastify/dist/ReactToastify.css";
-import Particles from "react-particles-js";
+//import Particles from "react-particles-js";
 // import ParticlesComponent from "./Particles";
 
 const particlesOprtions = {
@@ -39,16 +38,16 @@ function WeatherDisplay(props) {
       {props.loading ? (
         "...loading. Please wait!"
       ) : (
-        <div>
-          <Particles params={particlesOprtions} />
-          {/* <ParticlesComponent /> */}
-          <WeatherCard
-            weatherProps={props.weatherProps}
-            onSearch={props.onSearch}
-            handleChange={props.handleChange}
-          />
-        </div>
-      )}
+          <div>
+            {/* <Particles params={particlesOprtions} /> */}
+            {/* <ParticlesComponent /> */}
+            <WeatherCard
+              weatherProps={props.weatherProps}
+              onSearch={props.onSearch}
+              handleChange={props.handleChange}
+            />
+          </div>
+        )}
     </div>
   );
 }

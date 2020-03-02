@@ -51,7 +51,6 @@ export default function StickyFooter() {
               <br />
               <Link to="/animation">Animation</Link>
             </Typography>
-
             <Copyright />
           </Container>
         </footer>

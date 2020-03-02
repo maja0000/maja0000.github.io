@@ -5,6 +5,8 @@ import WeatherSlider from "./WeatherSlider";
 import "../css/WeatherDisplay.css";
 import LocationSearchBar from "./LocationSearchBar.js";
 // import WeatherSlider from "./WeatherSlider.js";
+import BackgroundIMG from "./Background-img-change";
+
 
 var today = new Date();
 var day = today.getDay();
@@ -47,7 +49,8 @@ let date =
 
 function WeatherCard(props) {
   return (
-    <div className="background">
+    <div className="background" >
+      <BackgroundIMG weatherDetailsProps={props.weatherProps} />
       <div className="date-temperature">
         <LocationSearchBar
           onSearch={props.onSearch}

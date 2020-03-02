@@ -73,7 +73,7 @@ class Frontpage extends React.Component {
         this.setState({
           weatherDisplay: result,
           loading: false
-        });
+        }); console.log(result)
       });
   }
   render() {
