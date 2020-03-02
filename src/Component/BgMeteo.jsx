@@ -4,10 +4,6 @@ import Snow from "./Snow";
 import Clouds from "./Clouds";
 
 function BgMeteo({ weatherCondition }) {
-<<<<<<< HEAD
-=======
-  //   console.log(weatherCondition);
->>>>>>> a96544ab0104286462c5515a82d6fc26e8ad4021
   switch (weatherCondition) {
     case "Snow":
       return <Snow />;

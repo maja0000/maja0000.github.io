@@ -11,11 +11,6 @@ import Rain from "./Rain.js";
 import Clouds from "./Clouds.js";
 import BgMeteo from "./BgMeteo";
 
-
-<<<<<<< HEAD
-
-=======
->>>>>>> a96544ab0104286462c5515a82d6fc26e8ad4021
 var today = new Date();
 var day = today.getDay();
 var daylist = [
@@ -57,37 +52,15 @@ let date =
 
 function WeatherCard(props) {
   return (
-
-    <div className="background" >
-      <BackgroundIMG weatherDetailsProps={props.weatherProps} />
-      <div className="date-temperature">
-        <LocationSearchBar
-          onSearch={props.onSearch}
-          handleChange={props.handleChange}
-
-    <div className="bgContainer">
-      <div
-        style={{
-          position: "absolute",
-          height: "100%",
-          width: "100%",
-          zIndex: -1,
-          backgroundSize: "cover",
-          backgroundImage:
-            'url("https://images.unsplash.com/photo-1529000920031-b8f994d2eb27?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2434&q=80")'
-        }}
-      >
-        {/* {props.weatherProps.list[0].weather[0].description.toLowerCase().includes("snow")? <Snow/> }
-        {props.weatherProps.list[0].weather[0].description.toLowerCase().includes("rain")? <Rain/>}
-        {props.weatherProps.list[0].weather[0].description.toLowerCase().includes("cloud")? <Clouds/>} */}
-        {/* {/* <Snow /> */}
+    <div className="weatherCard-container">
+      {/* <div className="background" /> */}
+      <div className="bg-container">
+        <BackgroundIMG weatherDetailsProps={props.weatherProps} />
         <BgMeteo
           weatherCondition={props.weatherProps.list[0].weather[0].main}
         />
-        {/* <Rain /> */}
-        {/* <Clouds /> */}
       </div>
-      <div className="background">
+      <div className="Weather-infos">
         <div className="date-temperature">
           <LocationSearchBar
             onSearch={props.onSearch}
@@ -120,6 +93,7 @@ function WeatherCard(props) {
           ))}
         </div>
       </div>
+      {/* </div> */}
     </div>
   );
 }
