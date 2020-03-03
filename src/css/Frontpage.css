@@ -6,12 +6,13 @@
 }
 
 .historicalweather {
-  display: flex;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: repeat(4, auto);
   flex-shrink: 2;
   border-radius: 20px;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
+  flex-direction: row;
+  flex-wrap: nowrap;
   min-height: 100vh;
   justify-content: center;
   align-items: center;
@@ -20,9 +21,15 @@
   padding: 20px;
   width: 100%;
   position: relative;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
 }
 
 .description {
+  grid-column-start: 1;
+  grid-column-end: 3;
   justify-self: center;
   display: flex;
   justify-content: center;
@@ -60,6 +67,8 @@
 }
 
 .dataSrc {
+  grid-column-start: 1;
+  grid-column-end: 3;
   border-top: 1px solid grey;
   padding-top: 20px;
   margin-top: 20px;

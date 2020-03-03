@@ -3,7 +3,7 @@ import React from "react";
 import WeatherDisplay from "../Component/WeatherDisplay.js";
 import "../css/Frontpage.css";
 import statisticIcon from "../pictures/icons/statisticIcon.svg";
-import HistoricalWeather from "../Component/HistoricalWeather";
+import HistoricalWeather from "./HistoricalFront/HistoricalWeather";
 import "../css/index.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
