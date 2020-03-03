@@ -45,11 +45,14 @@
 
   border-radius: 20px;
 }
+.weatherCard-container {
+  position: relative;
+}
 
 .background {
   animation-name: appear;
   animation-duration: 2s;
-  /* position: absolute; */
+  position: relative;
   /* width: 100vw; */
   /* background: url(../pictures/berlin-sky.jpg); */
   /* background-repeat: no-repeat;
@@ -61,6 +64,11 @@
   border-radius: 20px;
   justify-content: flex-start;
   align-items: center;
+}
+.bg-container {
+  position: absolute;
+  height: 100%;
+  width: 100%;
 }
 .blurred-background {
   position: relative;

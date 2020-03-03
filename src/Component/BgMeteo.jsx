@@ -4,7 +4,6 @@ import Snow from "./Snow";
 import Clouds from "./Clouds";
 
 function BgMeteo({ weatherCondition }) {
-  //   console.log(weatherCondition);
   switch (weatherCondition) {
     case "Snow":
       return <Snow />;
