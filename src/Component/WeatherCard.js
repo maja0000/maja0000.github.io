@@ -53,7 +53,6 @@ function WeatherCard(props) {
           ))}
         </div>
       </div>
-      {/* </div> */}
     </div>
   );
 }
