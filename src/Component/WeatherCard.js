@@ -49,7 +49,7 @@ let Today = new Date();
 let date =
   Today.getFullYear() + "." + (Today.getMonth() + 1) + "." + Today.getDate();
 
-function WeatherCard(props) {
+function WeatherCard(props, searchBar) {
   return (
     <div className="bgContainer">
       <div
@@ -63,22 +63,12 @@ function WeatherCard(props) {
             'url("https://images.unsplash.com/photo-1529000920031-b8f994d2eb27?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2434&q=80")'
         }}
       >
-        {/* {props.weatherProps.list[0].weather[0].description.toLowerCase().includes("snow")? <Snow/> }
-        {props.weatherProps.list[0].weather[0].description.toLowerCase().includes("rain")? <Rain/>}
-        {props.weatherProps.list[0].weather[0].description.toLowerCase().includes("cloud")? <Clouds/>} */}
-        {/* {/* <Snow /> */}
         <BgMeteo
           weatherCondition={props.weatherProps.list[0].weather[0].main}
         />
-        {/* <Rain /> */}
-        {/* <Clouds /> */}
       </div>
       <div className="background">
         <div className="date-temperature">
-          <LocationSearchBar
-            onSearch={props.onSearch}
-            handleChange={props.handleChange}
-          />
           <ul>
             <li className="temperature">
               {Math.round(props.weatherProps.list[0].main.temp)}°

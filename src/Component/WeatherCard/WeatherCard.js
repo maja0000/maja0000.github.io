@@ -9,17 +9,15 @@ import Slider from "../Slider/Slider.jsx";
 
 // utils
 
-function WeatherCard(props) {
-  const { weatherDisplay, loading } = useContext(WeatherContext);
-
+function WeatherCard({ header, Background, loading, children, searchBar }) {
   return loading ? (
     <h1>Loading...</h1>
   ) : (
     <div className="weatherCard">
-      <Background />
-      <WeatherCardHeader />
-      <DailyWeatherDetails />
-      <Slider data={weatherDisplay.list} />
+      {Background}
+      {searchBar}
+      {header}
+      {children}
     </div>
   );
 }

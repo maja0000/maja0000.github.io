@@ -4,10 +4,9 @@ import Snow from "./Snow";
 import Clouds from "./Clouds";
 import WeatherContext from "../../Context/WeatherContext";
 
-function BgMeteo() {
-  const { weatherDisplay } = useContext(WeatherContext);
-  console.log("weather display :", weatherDisplay);
-  switch (weatherDisplay.list[0].weather[0].main) {
+function BgMeteo({ weatherType }) {
+  console.log("weather display :", weatherType);
+  switch (weatherType) {
     case "Snow":
       return <Snow />;
       break;

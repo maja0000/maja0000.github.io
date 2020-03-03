@@ -3,11 +3,10 @@ import React from "react";
 import LocationSearchBar from "../LocationSearchBar/LocationSearchBar";
 import MeteoDisplay from "./MeteoDisplay";
 
-function WeatherCardHeader(props) {
+function WeatherCardHeader({ weather }) {
   return (
     <div className="weatherCard-header">
-      <LocationSearchBar />
-      <MeteoDisplay />
+      <MeteoDisplay weather={weather} />
     </div>
   );
 }

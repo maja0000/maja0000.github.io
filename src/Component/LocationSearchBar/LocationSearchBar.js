@@ -1,17 +1,17 @@
-import React, { useContext } from "react";
+import React, { useState } from "react";
 import InputBase from "@material-ui/core/InputBase";
 import SearchIcon from "@material-ui/icons/Search";
 import "./LocationSearchBar.css";
 import Button from "@material-ui/core/Button";
-import WeatherContext from "../../Context/WeatherContext";
 import { useStyles } from "./useStyles";
 
-export default function SearchBar({ onSearch, handleChange }) {
-  const { citySearch, setCitySearch, getWeather } = useContext(WeatherContext);
+export default function SearchBar({ updateCity, weather }) {
+  // const { citySearch, setCitySearch, getWeather } = useContext(WeatherContext);
+  const [search, setSearch] = useState("");
 
   const handleKeyPress = event => {
     if (event.key === "Enter") {
-      getWeather();
+      updateCity(search);
     }
   };
 
@@ -20,7 +20,7 @@ export default function SearchBar({ onSearch, handleChange }) {
   return (
     <div className="searchBarBox">
       <div className={classes.search}>
-        <Button variant="contained" onClick={() => getWeather()}>
+        <Button variant="contained" onClick={() => updateCity(search)}>
           <SearchIcon />
         </Button>
         <div className={classes.searchIcon}></div>
@@ -30,7 +30,7 @@ export default function SearchBar({ onSearch, handleChange }) {
             root: classes.inputRoot,
             input: classes.inputInput
           }}
-          onInput={e => setCitySearch(e.target.value)}
+          onInput={e => setSearch(e.target.value)}
           onKeyPress={event => {
             handleKeyPress(event);
           }}

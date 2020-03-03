@@ -3,10 +3,10 @@ import WeatherSlider from "./WeatherSlider.js";
 // utils
 import { daylist, day } from "../WeatherCard/today";
 
-function Slider({ data }) {
+function Slider({ weather }) {
   return (
     <div className="slider">
-      {data.slice(0, 5).map((element, idx) => (
+      {weather.slice(0, 5).map((element, idx) => (
         <WeatherSlider
           key={idx}
           day={daylist[(day + idx + 1) % daylist.length]}
