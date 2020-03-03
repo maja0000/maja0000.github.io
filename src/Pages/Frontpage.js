@@ -2,12 +2,12 @@ import React from "react";
 // import SignInSide from "../Component/SignInSide";
 import WeatherDisplay from "../Component/WeatherDisplay.js";
 import "../css/Frontpage.css";
-import statisticIcon from "../pictures/icons/statisticIcon.svg";
-import HistoricalWeather from "./HistoricalFront/HistoricalWeather";
+import HistoricalWeather from "../Component/HistoricalWeather";
 import "../css/index.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Animation from "../Component/Animation";
+import Header from './../Component/Header';
 
 class Frontpage extends React.Component {
   constructor() {
@@ -70,7 +70,8 @@ class Frontpage extends React.Component {
   }
 
   // function on click of statistic button in HistoricalWeather
-  clickStats = event => {
+  clickStats = () => {
+    console.log('clickstats');
     this.setState(prevState => ({
       onlyStatistics: !prevState.onlyStatistics
     }));
@@ -100,53 +101,33 @@ class Frontpage extends React.Component {
       });
   }
   render() {
-    const buttonStyle = {
-      boxShadow: "0px 1px 0px 0px #1c1b18",
-      background:
-        "linear-gradient(to bottom, #FECC5E 5%, rgba(155, 190, 222) 100%)",
-      backgroundColor: "#FECC5E",
-      borderRadius: "15px",
-      border: "1px solid #333029",
-      display: "inline-block",
-      cursor: "pointer",
-      color: "#505739",
-      padding: "10px 14px",
-      textDecoration: "none",
-      textShadow: "0px 1px 0px #ffffff",
-      maxWidth: "82px",
-      height: "60px",
-      position: "absolute",
-      right: "0",
-      top: "4px"
-    };
+
     return this.state.firstTime || this.state.loading ? (
       <Animation />
     ) : (
-      <div className="frontpage">
-        <ToastContainer />
-        {!this.state.onlyStatistics && (
-          <WeatherDisplay
-            weatherProps={this.state.weatherDisplay}
-            onSearch={this.searchForNewLocation}
-            handleChange={this.handleChange}
-            loading={this.state.loading}
-          />
-        )}
-        <HistoricalWeather
-          className="historicalweather"
-          citySearch={this.state.citySearch}
-          cityName={this.state.weatherDisplay.city.name}
-          onClickFunction={this.clickStats}
-        />
-        <button type="button" onClick={this.clickStats} style={buttonStyle}>
-          <img
-            src={statisticIcon}
-            alt="statistic-link"
-            className="navbarIcon"
-          />
-        </button>
-      </div>
-    );
+        <React.Fragment>
+          <Header clickStats={this.clickStats} />
+          <div className="frontpage">
+
+            <ToastContainer />
+            {!this.state.onlyStatistics && (
+              <WeatherDisplay
+                weatherProps={this.state.weatherDisplay}
+                onSearch={this.searchForNewLocation}
+                handleChange={this.handleChange}
+                loading={this.state.loading}
+              />
+            )}
+            <HistoricalWeather
+              className="historicalweather"
+              citySearch={this.state.citySearch}
+              cityName={this.state.weatherDisplay.city.name}
+              onClickFunction={this.clickStats}
+            />
+
+          </div>
+        </React.Fragment>
+      );
   }
 }
 

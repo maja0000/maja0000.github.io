@@ -12,7 +12,6 @@ function App() {
 
   return (
     <Router>
-      <Header />
       <Switch>
         <Route exact path="/" component={Frontpage} />
         <Route exact path="/home" component={Frontpage} />

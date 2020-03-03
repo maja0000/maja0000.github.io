@@ -6,7 +6,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import "../css/Header.css";
 import { Link } from "react-router-dom";
 import Colors from "../utils/Colors";
-
+import statisticIcon from "../pictures/icons/statisticIcon.svg";
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
@@ -30,19 +30,28 @@ const useStyles = makeStyles(theme => ({
   statisticButtonClicked: {}
 }));
 
-export default function Header(props) {
+export default function Header({ clickStats }) {
   const classes = useStyles();
   return (
-    <div className={classes.root + "header-effect"}>
-      <AppBar position="static" className={classes.backColor}>
-        <Toolbar variant="dense">
-          <div className={classes.title}>
-            <Link exact="true" to="/home">
-              <img src={Logo} alt="logo" className="header-logo" />
-            </Link>
-          </div>
-        </Toolbar>
-      </AppBar>
-    </div>
+
+
+    <AppBar position="static" className={classes.backColor}>
+      <div className={classes.root + "header-effect"}>
+        <div className='button-statitics' >
+          <span>
+            <svg onClick={() => clickStats()}>
+              <image className='navbarIcon' xlinkHref={statisticIcon} ></image>
+            </svg>
+          </span>
+        </div>
+      </div>
+      <Toolbar variant="dense">
+        <div className={classes.title}>
+          <Link exact="true" to="/home">
+            <img src={Logo} alt="logo" className="header-logo" />
+          </Link>
+        </div>
+      </Toolbar>
+    </AppBar>
   );
 }
