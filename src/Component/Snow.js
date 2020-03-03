@@ -1,9 +1,16 @@
 import React from "react";
 import Particles from "react-particles-js";
 
+const style = {
+  width: "100%",
+  height: "100%",
+  position: "fixed",
+  zIndex: "-1"
+};
+
 function Snow() {
   return (
-    <div>
+    <div style={style}>
       <Particles
         params={{
           particles: {

@@ -6,9 +6,6 @@ import "../css/WeatherDisplay.css";
 import LocationSearchBar from "./LocationSearchBar.js";
 // import WeatherSlider from "./WeatherSlider.js";
 import BackgroundIMG from "./Background-img-change";
-import Snow from "./Snow.js";
-import Rain from "./Rain.js";
-import Clouds from "./Clouds.js";
 import BgMeteo from "./BgMeteo";
 import { daylist, day, date, hour, minute, prepand } from "./today";
 
@@ -22,6 +19,7 @@ function WeatherCard(props) {
           weatherCondition={props.weatherProps.list[0].weather[0].main}
         />
       </div>
+
       <div className="Weather-infos">
         <div className="date-temperature">
           <LocationSearchBar

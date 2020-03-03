@@ -3,7 +3,10 @@ import Particles from "react-particles-js";
 import Raindrop from "../pictures/icons/drop2.svg";
 
 const style = {
-  height: "100%"
+  width: "100%",
+  height: "100%",
+  position: "fixed",
+  zIndex: "-1"
 };
 
 function Rain() {
@@ -17,7 +20,6 @@ function Rain() {
               density: {
                 enable: false
               }
-              // url: Raindrop
             },
             size: {
               value: 3,

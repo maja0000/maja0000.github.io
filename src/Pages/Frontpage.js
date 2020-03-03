@@ -96,7 +96,8 @@ class Frontpage extends React.Component {
           weatherDisplay: result,
           cityName: result.city.name,
           loading: false
-        }); console.log(result)
+        });
+        console.log(result);
       });
   }
   render() {
