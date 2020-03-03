@@ -11,7 +11,7 @@ import { daylist, day, date, hour, minute, prepand } from "./today";
 
 function WeatherCard(props) {
   return (
-    <div className="weatherCard-container">
+    <div className="weatherCard-container effect">
       {/* <div className="background" /> */}
       <div className="bg-container">
         <BackgroundIMG weatherDetailsProps={props.weatherProps} />

@@ -33,14 +33,12 @@ const useStyles = makeStyles(theme => ({
 export default function Header({ clickStats }) {
   const classes = useStyles();
   return (
-
-
     <AppBar position="static" className={classes.backColor}>
       <div className={classes.root + "header-effect"}>
-        <div className='button-statitics' >
+        <div className="button-statitics">
           <span>
             <svg onClick={() => clickStats()}>
-              <image className='navbarIcon' xlinkHref={statisticIcon} ></image>
+              <image className="navbarIcon" xlinkHref={statisticIcon}></image>
             </svg>
           </span>
         </div>
