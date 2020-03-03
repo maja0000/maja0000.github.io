@@ -2,12 +2,12 @@ import React from "react";
 // import SignInSide from "../Component/SignInSide";
 import WeatherDisplay from "../Component/WeatherDisplay.js";
 import "../css/Frontpage.css";
-import HistoricalWeather from "../Component/HistoricalWeather";
+import HistoricalWeather from "./HistoricalFront/HistoricalWeather";
 import "../css/index.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Animation from "../Component/Animation";
-import Header from './../Component/Header';
+import Header from "./../Component/Header";
 
 class Frontpage extends React.Component {
   constructor() {
@@ -71,7 +71,7 @@ class Frontpage extends React.Component {
 
   // function on click of statistic button in HistoricalWeather
   clickStats = () => {
-    console.log('clickstats');
+    console.log("clickstats");
     this.setState(prevState => ({
       onlyStatistics: !prevState.onlyStatistics
     }));
@@ -101,33 +101,30 @@ class Frontpage extends React.Component {
       });
   }
   render() {
-
     return this.state.firstTime || this.state.loading ? (
       <Animation />
     ) : (
-        <React.Fragment>
-          <Header clickStats={this.clickStats} />
-          <div className="frontpage">
-
-            <ToastContainer />
-            {!this.state.onlyStatistics && (
-              <WeatherDisplay
-                weatherProps={this.state.weatherDisplay}
-                onSearch={this.searchForNewLocation}
-                handleChange={this.handleChange}
-                loading={this.state.loading}
-              />
-            )}
-            <HistoricalWeather
-              className="historicalweather"
-              citySearch={this.state.citySearch}
-              cityName={this.state.weatherDisplay.city.name}
-              onClickFunction={this.clickStats}
+      <React.Fragment>
+        <Header clickStats={this.clickStats} />
+        <div className="frontpage">
+          <ToastContainer />
+          {!this.state.onlyStatistics && (
+            <WeatherDisplay
+              weatherProps={this.state.weatherDisplay}
+              onSearch={this.searchForNewLocation}
+              handleChange={this.handleChange}
+              loading={this.state.loading}
             />
-
-          </div>
-        </React.Fragment>
-      );
+          )}
+          <HistoricalWeather
+            className="historicalweather"
+            citySearch={this.state.citySearch}
+            cityName={this.state.weatherDisplay.city.name}
+            onClickFunction={this.clickStats}
+          />
+        </div>
+      </React.Fragment>
+    );
   }
 }
 

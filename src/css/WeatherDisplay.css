@@ -48,10 +48,9 @@
 .weatherCard-container {
   position: relative;
   margin-top: 20px;
-  margin-left:10px;
+  margin-left: 10px;
   margin-right: 10px;
   margin-bottom: 20px;
-  
 }
 
 .background {
@@ -75,13 +74,12 @@
   position: absolute;
   height: 100%;
   width: 100%;
-  
 }
 .blurred-background {
   position: relative;
   width: 100%;
   margin: 5px;
-  background: rgba(58, 54, 54, 0.32);
+  background: rgba(255, 251, 251, 0.32);
   backdrop-filter: blur(2px);
   border-radius: 20px;
   margin-bottom: 5px;
@@ -149,6 +147,7 @@ li {
   margin-right: 20px;
 }
 .daily-prediction-list {
+  padding: 10px;
   text-align: left;
   display: flex;
   line-height: 1.6;
