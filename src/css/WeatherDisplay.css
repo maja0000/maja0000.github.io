@@ -68,6 +68,7 @@
 .bg-container {
   position: absolute;
   height: 100%;
+  width: 100%;
 }
 .blurred-background {
   position: relative;
