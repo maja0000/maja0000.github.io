@@ -20,8 +20,8 @@ function BackgroundIMG({ weatherDetailsProps }) {
     unsplash.search
       .photos(
         weatherDetailsProps.list[0].weather[0].main +
-          " " +
-          weatherDetailsProps.city.name,
+        " " +
+        weatherDetailsProps.city.name,
         1
       )
       .then(toJson => toJson.json())
@@ -32,6 +32,7 @@ function BackgroundIMG({ weatherDetailsProps }) {
 
   const style = {
     imageDiv: {
+      borderRadius: '20px',
       zIndex: -1,
       height: "100%",
       position: "absolute",
