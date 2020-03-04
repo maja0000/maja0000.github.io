@@ -27,6 +27,9 @@
   justify-content: center;
   width: 100%;
   flex-shrink: 1;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
 }
 .bgContainer {
   position: relative;
@@ -41,9 +44,12 @@
   background-size: cover;
   align-content: space-between;
 
-  min-height: 820px;
+  /* min-height: 820px; */
 
   border-radius: 20px;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
 }
 .weatherCard-container {
   position: relative;
@@ -51,7 +57,9 @@
   margin-left:10px;
   margin-right: 10px;
   margin-bottom: 20px;
-  
+  min-width:0;
+  min-height: 0;
+  overflow: hidden;
 }
 
 .background {
@@ -69,13 +77,19 @@
   border-radius: 20px;
   justify-content: flex-start;
   align-items: center;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+ 
 }
 .bg-container {
   display: flex;
   position: absolute;
   height: 100%;
   width: 100%;
-  
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
 }
 .blurred-background {
   position: relative;
@@ -101,6 +115,9 @@
   background: rgba(255, 251, 251, 0.32);
   backdrop-filter: blur(2px);
   border-radius: 20px;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
 }
 .icons-row {
   text-align: center;
@@ -119,6 +136,9 @@ li {
   -moz-transition: all 0.4s ease-in-out;
   -ms-transition: all 0.4s ease-in-out;
   -o-transition: all 0.4s ease-in-out;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
 }
 
 .temperature:hover {

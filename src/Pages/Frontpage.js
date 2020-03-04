@@ -2,12 +2,12 @@ import React from "react";
 // import SignInSide from "../Component/SignInSide";
 import WeatherDisplay from "../Component/WeatherDisplay.js";
 import "../css/Frontpage.css";
-import HistoricalWeather from "../Component/HistoricalWeather";
 import "../css/index.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Animation from "../Component/Animation";
 import Header from './../Component/Header';
+import HistoricalWeather from './HistoricalFront/HistoricalWeather';
 
 class Frontpage extends React.Component {
   constructor() {

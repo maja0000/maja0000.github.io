@@ -1,10 +1,11 @@
 .searchBarBox {
   display: flex;
-  flex-direction: row;
+  /* flex-direction: row; */
   align-items: flex-start;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   height: 50px;
   margin: 16px;
   /* position: relative;
   left: 0; */
+  min-width: 5px;
 }
