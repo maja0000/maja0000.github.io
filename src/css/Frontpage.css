@@ -95,7 +95,7 @@
   color: grey;
   text-align: justify;
 }
-@media (max-device-width: 800px) {
+@media (max-width: 1000px) {
   .frontpage {
     display: flex;
     flex-direction: row;

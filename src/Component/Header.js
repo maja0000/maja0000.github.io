@@ -39,7 +39,7 @@ export default function Header({ clickStats }) {
       <div className={classes.root + "header-effect"}>
         <div className='button-statitics' >
           <span>
-            <svg onClick={() => clickStats()}>
+            <svg onClick={() => clickStats()} width='40px' height='40px'>
               <image className='navbarIcon' xlinkHref={statisticIcon} ></image>
             </svg>
           </span>
