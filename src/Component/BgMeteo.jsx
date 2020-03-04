@@ -7,17 +7,15 @@ function BgMeteo({ weatherCondition }) {
   switch (weatherCondition) {
     case "Snow":
       return <Snow />;
-      break;
+
     case "Rain":
       return <Rain />;
-      break;
+
     case "Clouds":
       return <Clouds />;
-      break;
 
     default:
       return <React.Fragment></React.Fragment>;
-      break;
   }
 }
 

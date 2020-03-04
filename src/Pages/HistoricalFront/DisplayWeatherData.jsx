@@ -1,4 +1,5 @@
 import React from "react";
+import "./HistoricalWeather.css";
 import {
   LineChart,
   Line,
